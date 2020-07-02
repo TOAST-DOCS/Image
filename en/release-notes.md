@@ -19,11 +19,11 @@
 * [API] 처리 결과 Callback에 덮어쓰기 되었는지 여부 표시 추가 Added the display whether processing result has been overwritten to callback 
 	* [Uploading Multiple Images 다중 이미지 업로드](./api-guide/#_16)
 	* [Executing Image Operations 이미지 오퍼레이션 실행](./api-guide/#_37)
-* [Console] Changed UI design of the page 화면 UI 디자인 변경
+* [Console] Changed UI design of the screen 화면 UI 디자인 변경
 
 ### November 30, 2017
 #### More Features 
-* [API] 처리 결과 Callback 기능 추가 Added callback of processing results 
+* [API] 처리 결과 Callback 기능 추가 Added callback for processing results 
 	* API 호출 시 callbackUrl을 파라미터로 전달하면 처리 결과를 callbackUrl로 전송해주는 기능 추가 Added the feature of sending processing result to callbackUrl when it is sent to parameter for an API call
 		* [Uploading Multiple Images](./api-guide/#_16)
 		* [Executing Image Operations](./api-guide/#_37)
@@ -33,21 +33,21 @@
 
 ### 2017.11.23 November 23, 2017
 #### 기능 개선/변경 Feature Updates 
-* [Adding Image Processing 이미지 처리 기능 추가](./api-guide/#_25)
-	* 이미지 분할 기능에 격자 분할 추가 Added 
+* [Added Features of Image Processing 이미지 처리 기능 추가](./api-guide/#_25)
+	* 이미지 분할 기능에 격자 분할 추가 Added grid-split as part of splitting images
 	* 워터마크 기능 추가 Added the watermark feature
 * [Console] [Added image processing option 이미지 처리 옵선 추가](./console-guide/#_10)
-	* 기존 Resize에서만 설정 가능했던 옵션을 공통 옵션으로 설정 가능하도록 수정 Modified to 
+	* 기존 Resize에서만 설정 가능했던 옵션을 공통 옵션으로 설정 가능하도록 수정 The option was available only for resizing but now is configurable as a common option  
 		* Quality, image format, callback URL for result, whether to maintain meta data, whether to rotate based on orientation data  품질, 이미지 포맷, 결과 콜백 URL, 메타정보 유지 여부, Orientation 정보를 기준으로 회전 여부
-	* GIF 애니메이션 유지 옵션의 default 값 변경 : Changed from 유지하지 않음에서 유지 함으로 변경
-* [Console] [이미지 처리 기능에 따라 Grouping](./console-guide/#_10)
-	* Group 1 기본 처리 : Resize, Gray, Rectangle Crop
-	* Group 2 분할 처리 : Slice Crop (가로, 세로, 격자)
-	* Group 3 합성 처리 : Circle Crop
-	* 이미지 처리는 Group 순서대로 처리 됨
-* [Console] [Changed 상품 종료 프로세스 변경](./console-guide/#_8)
-	* 상품 이용 종료 시 남아있는 파일이 있는 경우 이용 종료 불가능
-	* 전체 파일 삭제 기능이 추가되었고, 전체 삭제 후 상품 이용 종료 가능
+	* Changed default value for the option of maintaining GIF animation 애니메이션 유지 옵션의 default 값 변경 : Changed from Not Maintain to Maintain 유지하지 않음에서 유지 함으로 변경 
+* [Console] [To be grouped by image processing features 이미지 처리 기능에 따라 Grouping](./console-guide/#_10)
+	* Group 1 for Basic Processing기본 처리 : Resize, Gray, or Rectangle Crop
+	* Group 2 for Split Processing 분할 처리 : Slice Crop (width, heigh, grid 가로, 세로, 격자)
+	* Group 3 for Composite Processing 합성 처리 : Circle Crop
+	* Images are to be processed in the group sequence 이미지 처리는 Group 순서대로 처리 됨
+* [Console] [Changed Process for Product Closure 상품 종료 프로세스 변경](./console-guide/#_8)
+	* Unable to close when there is a file left after service is closed 상품 이용 종료 시 남아있는 파일이 있는 경우 이용 종료 불가능
+	* 전체 파일 삭제 기능이 추가되었고, 전체 삭제 후 상품 이용 종료 가능 With the feature of deleting the whole file added, service can be closed after all is deleted  
 
 ### 2017.05.25 May 25, 2017
 #### 버그 수정 Bug Fixes
@@ -55,17 +55,17 @@
 
 ### 2017.04.20 April 20, 2017 
 #### 기능 개선/변경 Feature Updates 
-* [썸네일 크기조절 방식 추가](./console-guide/#_10) 
-    * Option의 가로 세로에 맞게 Size 변경
-    * Option의 가로 기준 Size 변경
-    * Option의 세로 기준 Size 변경
-* [크롭 방식 추가](./console-guide/#_10)
-    * Slice Crop 추가
-* [Console] [Gif 애니메이션 유지 옵션 글로벌 설정으로 변경](./console-guide/#_10)
+* [Added Thumbnail Resizing Method 썸네일 크기조절 방식 추가](./console-guide/#_10) 
+    * Option의 가로 세로에 맞게 Size 변경 Changed size to meet the width and height of option 
+    * Option의 가로 기준 Size 변경 Changed standard size of the width of option
+    * Option의 세로 기준 Size 변경 Changed standard size of the height of option 
+* [Added the method of cropping 크롭 방식 추가](./console-guide/#_10)
+    * Added Slice Crop 추가
+* [Console] [Changed the option of maintaining Gif animation as global configuration 애니메이션 유지 옵션 글로벌 설정으로 변경](./console-guide/#_10)
 
 #### 버그 수정 Bug Fixes 
-* 물결(~) 문자가 포함된 폴더가 생성되지 않도록 수정 Modified not to create a folder including a tilde
+* 물결(~) 문자가 포함된 폴더가 생성되지 않도록 수정 Modified not to create a folder which includes a tilde
 
 ### 2017.03.23 March 23, 2017
 #### 버그 수정 Bug Fixes
-* [Console] macOS에서 업로드한 한글 파일 검색 불가 이슈 수정 
+* [Console] macOS에서 업로드한 한글 파일 검색 불가 이슈 수정 Fixed an issue in which Korean files uloaded on macOS were unable to be searched 
