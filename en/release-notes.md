@@ -6,13 +6,13 @@
 	* Folder and image file management is accessible from 'File View'
 	* Thumbnail option management is accessible from 'Operation Setting'
 * [Console] [Folder and Image File Management](./console-guide/#_1)
-	* Added the feature of moving folder paths on the existing page, and added the folder tree feature 
+	* Added the feature of moving folder paths on the existing page, as well as the folder tree feature 
 	* Added the feature of moving to a previous folder on the folder list
 
 #### Bug Fixes 
 * [API] Fixed bugs processing success with no regards to task, even when file (or operation) is incorrect for an operation-exec API request 
-	* Process as failed response when task (queues) is unavailable 
-	* Process as partial success when task (queues) count is not consistent with request count 
+	* Processed as failed response when task (queues) is unavailable 
+	* Processed as partial success when task (queues) count is not consistent with request count 
 
 ### December 21, 2017 
 #### Feature Updates
