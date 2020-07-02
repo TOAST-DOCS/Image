@@ -45,7 +45,7 @@
 	* Group 2 for Split Processing 분할 처리 : Slice Crop (width, heigh, grid 가로, 세로, 격자)
 	* Group 3 for Composite Processing 합성 처리 : Circle Crop
 	* Images are to be processed in the group sequence 이미지 처리는 Group 순서대로 처리 됨
-* [Console] [Changed Process for Product Closure 상품 종료 프로세스 변경](./console-guide/#_8)
+* [Console] [Changed Process of Product Closure 상품 종료 프로세스 변경](./console-guide/#_8)
 	* Unable to close when there is a file left after service is closed 상품 이용 종료 시 남아있는 파일이 있는 경우 이용 종료 불가능
 	* 전체 파일 삭제 기능이 추가되었고, 전체 삭제 후 상품 이용 종료 가능 With the feature of deleting the whole file added, service can be closed after all is deleted  
 
