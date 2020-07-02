@@ -21,12 +21,12 @@
 	* [Executing Image Operations 이미지 오퍼레이션 실행](./api-guide/#_37)
 * [Console] Changed UI design of the page 화면 UI 디자인 변경
 
-### 2017.11.30 November 30, 2017
-#### 기능 추가 More Features 
+### November 30, 2017
+#### More Features 
 * [API] 처리 결과 Callback 기능 추가 Added callback of processing results 
 	* API 호출 시 callbackUrl을 파라미터로 전달하면 처리 결과를 callbackUrl로 전송해주는 기능 추가 Added the feature of sending processing result to callbackUrl when it is sent to parameter for an API call
-		* [Uploading Multiple Images 다중 이미지 업로드](./api-guide/#_16)
-		* [Executing Image Operations 이미지 오퍼레이션 실행](./api-guide/#_37)
+		* [Uploading Multiple Images](./api-guide/#_16)
+		* [Executing Image Operations](./api-guide/#_37)
 
 #### 버그 수정 Bug Fixes 
  * [Console] 압축 파일이 포함된 폴더 업로드 시 하위 폴더 경로가 잘못 생성되던 버그 수정 Fixed bugs in which an invalid path of lower folder was created while uploading a folder including compression files 
@@ -37,9 +37,9 @@
 	* 이미지 분할 기능에 격자 분할 추가 Added 
 	* 워터마크 기능 추가 Added the watermark feature
 * [Console] [Added image processing option 이미지 처리 옵선 추가](./console-guide/#_10)
-	* 기존 Resize에서만 설정 가능했던 옵션을 공통 옵션으로 설정 가능하도록 수정
-		* 품질, 이미지 포맷, 결과 콜백 URL, 메타정보 유지 여부, Orientation 정보를 기준으로 회전 여부
-	* GIF 애니메이션 유지 옵션의 default 값 변경 : 유지하지 않음에서 유지 함으로 변경
+	* 기존 Resize에서만 설정 가능했던 옵션을 공통 옵션으로 설정 가능하도록 수정 Modified to 
+		* Quality, image format, callback URL for result, whether to maintain meta data, whether to rotate based on orientation data  품질, 이미지 포맷, 결과 콜백 URL, 메타정보 유지 여부, Orientation 정보를 기준으로 회전 여부
+	* GIF 애니메이션 유지 옵션의 default 값 변경 : Changed from 유지하지 않음에서 유지 함으로 변경
 * [Console] [이미지 처리 기능에 따라 Grouping](./console-guide/#_10)
 	* Group 1 기본 처리 : Resize, Gray, Rectangle Crop
 	* Group 2 분할 처리 : Slice Crop (가로, 세로, 격자)
