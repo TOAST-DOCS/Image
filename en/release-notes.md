@@ -2,12 +2,12 @@
 
 ### February 22, 2018
 #### Feature Updates
-* [Console] '섬네일 옵션 관리' 화면의 접근 방식을 '폴더 및 이미지 파일 관리' 화면 내부의 버튼에서 상위 메뉴로 변경 Changed the access of 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to top of the menu  
-	* 폴더 및 이미지 파일 관리는 'File View' 메뉴에서 접근 가능 Folder and image file management is accessible from 'File View'
-	* 섬네일 옵션 관리는 'Operation Setting' 메뉴에서 접근 가능 Thumbnail option management is accessible from 'Operation Setting'
-* [Console] [Folder and Image File Management 폴더 및 이미지 파일 관리](./console-guide/#_1)
-	* Added the feature of moving folder paths on the existing page, and added the folder tree feature 기존 화면에서 폴더 경로 이동 기능, 폴더 트리 기능 추가
-	* 폴더 목록에 이전 폴더로 이동 기능 추가 Added the feature of moving to a previous folder on the folder list
+* [Console] Changed the method of accessing 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to top of the menu  
+	* Folder and image file management is accessible from 'File View'
+	* Thumbnail option management is accessible from 'Operation Setting'
+* [Console] [Folder and Image File Management](./console-guide/#_1)
+	* Added the feature of moving folder paths on the existing page, and added the folder tree feature 
+	* Added the feature of moving to a previous folder on the folder list
 
 #### Bug Fixes 
 * [API] operation-exec API 요청 시 파일(또는 오퍼레이션)이 잘못된 경우 작업과 무관하게 성공 응답 처리하는 버그 수정 Fixed bugs processing success with no regards to task, even when file (or operation) is incorrect for the operation-exec API request 
