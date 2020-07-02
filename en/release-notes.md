@@ -2,7 +2,7 @@
 
 ### February 22, 2018
 #### Feature Updates 기능 개선/변경
-* [Console] '섬네일 옵션 관리' 화면의 접근 방식을 '폴더 및 이미지 파일 관리' 화면 내부의 버튼에서 상위 메뉴로 변경 Changed the access of 'Thumbnail Option Management' to top of the button within the 'Folder and Image File Management' menu 
+* [Console] '섬네일 옵션 관리' 화면의 접근 방식을 '폴더 및 이미지 파일 관리' 화면 내부의 버튼에서 상위 메뉴로 변경 Changed the access of 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to top of the menu  
 	* 폴더 및 이미지 파일 관리는 'File View' 메뉴에서 접근 가능 Folder and image file management is accessible from 'File View'
 	* 섬네일 옵션 관리는 'Operation Setting' 메뉴에서 접근 가능 Thumbnail option management is accessible from 'Operation Setting'
 * [Console] [Folder and Image File Management 폴더 및 이미지 파일 관리](./console-guide/#_1)
