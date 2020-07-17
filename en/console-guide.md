@@ -3,7 +3,7 @@
 본 문서에서는 콘솔을 이용하여 폴더 생성 및 파일 업로드, 썸네일 옵션을 관리하는 방법에 대해 설명합니다.
 
 ## 동영상 가이드
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Li992f-Wr5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vOZBS4FZHnM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 폴더 및 이미지 파일 관리
 
