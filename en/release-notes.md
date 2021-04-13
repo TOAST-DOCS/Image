@@ -1,5 +1,13 @@
 ## Content Delivery > Image > Release Notes
 
+### April 27, 2020
+#### Image
+* Added new image (Pyeongchon region)
+    * CentOS 7.8 for NAT(2021. 04. 27.)
+    * Ubuntu Server 18.04.4 LTS for NAT(2021. 04. 27.)
+* Image support ended
+    * Ubuntu Server 16.04.7 LTS(2020. 12. 22.)
+
 ### February 22, 2018
 #### Feature Updates
 * [Console] Changed the method of accessing 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to top of the menu  
