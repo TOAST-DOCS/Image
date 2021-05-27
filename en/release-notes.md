@@ -1,4 +1,8 @@
 ## Content Delivery > Image > Release Notes
+### 2021. 05. 25.
+#### Feature Updates
+* [Console] Added the page function
+    * The page function has been added to the Inquiry > URL screen.
 
 ### February 22, 2018
 #### Feature Updates
