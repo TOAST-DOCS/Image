@@ -1,4 +1,4 @@
-## Content Delivery > Image > エラーコード
+## Content Delivery > Image Manager > エラーコード
 
 | resultCode | resultKey | resultMessage |
 |---|---|----|

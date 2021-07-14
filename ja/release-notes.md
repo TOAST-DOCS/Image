@@ -1,4 +1,4 @@
-## Content Delivery > Image > リリースノート
+## Content Delivery > Image Manager > リリースノート
 
 ### 2018.02.22
 #### 機能改善/変更

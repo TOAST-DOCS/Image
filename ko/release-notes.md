@@ -1,4 +1,8 @@
-## Content Delivery > Image > 릴리스 노트
+## Content Delivery > Image Manager > 릴리스 노트
+
+### 2021.07.27
+#### 서비스명 변경
+* 서비스명을 Image Manager로 변경
 
 ### 2018.02.22
 #### 기능 개선/변경

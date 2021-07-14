@@ -1,4 +1,4 @@
-## Content Delivery > Image > 概要
+## Content Delivery > Image Manager > 概要
 
 お客様のサービスで使用する画像を保存、編集、送信まで一度に提供するシステムです。
 
@@ -10,9 +10,9 @@
 
 ## サポートしている画像ファイル
 
-- Imageサービスでサポートしている画像ファイルフォーマットは今の通りです。
+- Image Managerサービスでサポートしている画像ファイルフォーマットは今の通りです。
 	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png
-- Imageサービスでは最大12MBのイメージファイルをアップロードできます。
+- Image Managerサービスでは最大12MBのイメージファイルをアップロードできます。
 
 ## サービス用語
 

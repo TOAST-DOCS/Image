@@ -1,4 +1,4 @@
-## Content Delivery > Image > Release Notes
+## Content Delivery > Image Manager > Release Notes
 
 ### 2018.02.22
 #### 기능 개선/변경
