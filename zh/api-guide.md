@@ -1,6 +1,6 @@
-## Content Delivery > Image Manager > API 가이드
+## Content Delivery > Image > API 가이드
 
-Image Manager 서비스의 API를 설명합니다.
+Image 서비스의 API를 설명합니다.
 
 
 ## API 공통 정보
