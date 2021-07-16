@@ -1,4 +1,4 @@
-## Content Delivery > Image Manager > コンソール使用ガイド
+## Content Delivery > Image > コンソール使用ガイド
 
 本文書では、コンソールを利用して、フォルダの作成とファイルのアップロード、サムネイル オプションを管理する方法について説明します。
 
