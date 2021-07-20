@@ -9,15 +9,15 @@
 
 メニューの 'ファイル表示' 画面でフォルダと原本画像ファイル、生成されたサムネイル画像ファイルを管理することができます。
 
-![image_01_ja_20200610](https://static.toastoven.net/prod_img/image_01_ja_20200610.png)
+![image_01_ja_20210720](https://static.toastoven.net/prod_img/image_01_ja_20210720.png)
 
 ### ツールバーアイコンの説明
 
-![image_02_ja_20200610](https://static.toastoven.net/prod_img/image_02_ja_20200610.png)
+![image_02_ja_20210720](https://static.toastoven.net/prod_img/image_02_ja_20210720.png)
 
 ### フォルダの作成
 
-![image_03_ja_20200610](https://static.toastoven.net/prod_img/image_03_ja_20200610.png)
+![image_03_ja_20210720](https://static.toastoven.net/prod_img/image_03_ja_20210720.png)
 
 1. フォルダは画像を保存する基本の単位で、 **フォルダ作成** ボタンをクリックして作成します。
 
@@ -28,7 +28,7 @@
 
 ### 画像ファイルをアップロード
 
-![image_04_ja_20200610](https://static.toastoven.net/prod_img/image_04_ja_20200610.png)
+![image_04_ja_20210720](https://static.toastoven.net/prod_img/image_04_ja_20210720.png)
 
 1. アップロード先のフォルダを選択して、 **アップロード** ボタンをクリックします。
 
@@ -43,7 +43,7 @@
 
 ### ダウンロード
 
-![image_05_ja_20200610](https://static.toastoven.net/prod_img/image_05_ja_20200610.png)
+![image_05_ja_20210720](https://static.toastoven.net/prod_img/image_05_ja_20210720.png)
 
 1.ダウンロードするフォルダと画像ファイルを選択し **ダウンロード** ボタンをクリックします。
 
@@ -53,7 +53,7 @@
 
 ### ファイル/フォルダ削除
 
-![image_06_ja_20200610](https://static.toastoven.net/prod_img/image_06_ja_20200610.png)
+![image_06_ja_20210720](https://static.toastoven.net/prod_img/image_06_ja_20210720.png)
 
 1. 削除するフォルダまたは画像ファイルを選択し、 **削除** ボタンをクリックします。
 
@@ -64,7 +64,7 @@
 
 ### プロパティ表示
 
-![image_07_ja_20200610](https://static.toastoven.net/prod_img/image_07_ja_20200610.png)
+![image_07_ja_20210720](https://static.toastoven.net/prod_img/image_07_ja_20210720.png)
 
 フォルダまたは画像ファイルをひとつ選択し、 **プロパティ** ボタンをクリックします。  
 
@@ -73,7 +73,7 @@
 
 ### 照会とリスト表示
 
-![image_08_ja_20200610](https://static.toastoven.net/prod_img/image_08_ja_20200610.png)
+![image_08_ja_20210720](https://static.toastoven.net/prod_img/image_08_ja_20210720.png)
 
 1. '表示フィルター'を使うと画像ファイルのタイプを絞り込んで表示させることができます。
 
@@ -88,7 +88,7 @@
 
 ### 全ファイル削除
 
-![image_09_ja_20200610](https://static.toastoven.net/prod_img/image_09_ja_20200610.png)
+![image_09_ja_20210720](https://static.toastoven.net/prod_img/image_09_ja_20210720.png)
 
 1. **全てのファイルを削除** ボタンをクリックします。  
 
@@ -99,14 +99,14 @@
 
 ## サムネイルオプション管理
 
-![image_10_ja_20200610](https://static.toastoven.net/prod_img/image_10_ja_20200610.png)
+![image_10_ja_20210720](https://static.toastoven.net/prod_img/image_10_ja_20210720.png)
 
 メニューの '設定' 画面でサムネイルオプションを管理することができます。 
 さまざまなオプションを組み合わせて作ることができます。 
 
 ### サムネイル生成
 
-![image_11_ja_20200610](https://static.toastoven.net/prod_img/image_11_ja_20200610.png)
+![image_11_ja_20210720](https://static.toastoven.net/prod_img/image_11_ja_20210720.png)
 
 1. サムネイルオプションを追加するため **追加** ボタンをクリックします。  
 
@@ -130,7 +130,7 @@
 - シナリオはグループ別に行われ、同じオプションは重複して設定できません。
 - グループ内では右の矢印ボタン(▲▼)をクリックして、シナリオ順序を設定します。
 
-![image_12_ja_20200610](https://static.toastoven.net/prod_img/image_12_ja_20200610.png)
+![image_12_ja_20210720](https://static.toastoven.net/prod_img/image_12_ja_20210720.png)
 
 サムネイルサイズの調整方法の詳細説明
 ```
@@ -150,7 +150,7 @@
 
 ### サムネイル修正
 
-![image_13_ja_20200610](https://static.toastoven.net/prod_img/image_13_ja_20200610.png)
+![image_13_ja_20210720](https://static.toastoven.net/prod_img/image_13_ja_20210720.png)
 
 1. サムネイルを選択し **修正** ボタンをクリックします。  
 
@@ -161,7 +161,7 @@
 
 ### サムネイル削除
 
-![image_14__ja_20200610](https://static.toastoven.net/prod_img/image_14_ja_20200610.png)
+![image_14_ja_20210720](https://static.toastoven.net/prod_img/image_14_ja_20210720.png)
 
 サムネイルオプションを削除するため **削除** ボタンをクリックします。
 
@@ -170,7 +170,7 @@
 
 ### ユーザー設定
 
-![image_15_ja_20200610](https://static.toastoven.net/prod_img/image_15_ja_20200610.png)
+![image_15_ja_20210720](https://static.toastoven.net/prod_img/image_15_ja_20210720.png)
 
 1. **設定** ボタンをクリックします。
 
