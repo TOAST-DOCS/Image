@@ -1,5 +1,10 @@
 ## Content Delivery > Image > Release Notes
 
+### 2021. 07. 13.
+
+#### More Features
+* New mobile menu open: Retention   
+
 ### February 22, 2018
 #### Feature Updates
 * [Console] Changed the method of accessing 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to top of the menu  
