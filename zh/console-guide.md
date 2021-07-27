@@ -9,15 +9,15 @@
 
 메뉴의 '파일보기' 화면에서 폴더와 원본 이미지 파일, 생성된 썸네일 이미지 파일을 관리할 수 있습니다.
 
-![image_01_201812](https://static.toastoven.net/prod_img/image_01_201812.png)
+![image_01_20210720](https://static.toastoven.net/prod_img/image_01_20210720.png)
 
 ### 툴바 아이콘 설명
 
-![image_02_201812](https://static.toastoven.net/prod_img/image_02_201812.png)
+![image_02_20210720](https://static.toastoven.net/prod_img/image_02_20210720.png)
 
 ### 폴더 생성
 
-![image_03_201812](https://static.toastoven.net/prod_img/image_03_201812.png)
+![image_03_20210720](https://static.toastoven.net/prod_img/image_03_20210720.png)
 
 1.폴더는 이미지를 저장하는 기본 단위이며, **폴더 생성** 버튼을 클릭하여 생성합니다.
 
@@ -28,7 +28,7 @@
 
 ### 이미지 파일 업로드
 
-![image_04_201812](https://static.toastoven.net/prod_img/image_04_201812.png)
+![image_04_20210720](https://static.toastoven.net/prod_img/image_04_20210720.png)
 
 1.원하는 폴더를 선택하여 이동한 후, **업로드** 버튼을 클릭합니다.
 
@@ -43,17 +43,17 @@
 
 ### 다운로드
 
-![image_05_201812](https://static.toastoven.net/prod_img/image_05_201812.png)
+![image_05_20210720](https://static.toastoven.net/prod_img/image_05_20210720.png)
 
 1.다운로드할 폴더와 이미지 파일을 선택한 후, **다운로드** 버튼을 클릭합니다.  
 
-2.**확인** 버튼 클릭 후 한 개의 이미지 파일을 선택하면 바로 다운로드하며, 두 개 이상의 파일을 선택하면 압축파일 'toastcloud_image.zip'을 다운로드합니다.  
+2.**확인** 버튼 클릭 후 한 개의 이미지 파일을 선택하면 바로 다운로드하며, 두 개 이상의 파일을 선택하면 압축파일 'nhn_cloud_image_manager.zip'을 다운로드합니다.  
 
 - 한 번에 최대 10,000개의 이미지만 다운로드가 가능하며, 폴더 내 저장된 이미지를 다운로드할 경우에도 동일하게 10,000개의 이미지만 다운로드가 가능합니다.
 
 ### 파일/폴더 삭제
 
-![image_06_201812](https://static.toastoven.net/prod_img/image_06_201812.png)
+![image_06_20210720](https://static.toastoven.net/prod_img/image_06_20210720.png)
 
 1. 삭제할 폴더 또는 이미지 파일을 선택한 후, **삭제** 버튼을 클릭합니다.
 
@@ -63,7 +63,7 @@
 
 ### 속성 보기
 
-![image_07_201812](https://static.toastoven.net/prod_img/image_07_201812.png)
+![image_07_20210720](https://static.toastoven.net/prod_img/image_07_20210720.png)
 
 폴더 또는 이미지 파일을 한 개 선택하고, **속성** 버튼을 클릭합니다.  
 
@@ -72,7 +72,7 @@
 
 ### 조회 및 목록 보기
 
-![image_08_201812](https://static.toastoven.net/prod_img/image_08_201812.png)
+![image_08_20210720](https://static.toastoven.net/prod_img/image_08_20210720.png)
 
 1. '보기 필터'를 이용하여 이미지 파일의 유형을 필터링하여 볼 수 있습니다.  
 
@@ -87,7 +87,7 @@
 
 ### 전체 파일 삭제
 
-![image_09_201812](https://static.toastoven.net/prod_img/image_09_201812.png)
+![image_09_20210720](https://static.toastoven.net/prod_img/image_09_20210720.png)
 
 1. **전체 파일 삭제** 버튼을 클릭합니다.  
 
@@ -98,14 +98,14 @@
 
 ## 썸네일 옵션 관리
 
-![image_10_201812](https://static.toastoven.net/prod_img/image_10_201812.png)
+![image_10_20210720](https://static.toastoven.net/prod_img/image_10_20210720.png)
 
 메뉴의 '설정' 화면에서 썸네일 옵션을 관리할 수 있습니다.  
 여러 가지 옵션을 조합하여 만들 수 있습니다.  
 
 ### 썸네일 생성
 
-![image_11_201812](https://static.toastoven.net/prod_img/image_11_201812.png)
+![image_11_20210720](https://static.toastoven.net/prod_img/image_11_20210720.png)
 
 1.썸네일 옵션을 추가하기 위해 **추가** 버튼을 클릭합니다.  
 
@@ -129,7 +129,7 @@
 - 시나리오는 그룹별로 실행되며 동일한 옵션은 중복으로 설정할 수 없습니다.
 - 그룹 내에서는 오른쪽 화살표 버튼(▲▼)을 클릭해서 시나리오 순서를 설정합니다.
 
-![image_12_201812](https://static.toastoven.net/prod_img/image_12_201812.png)
+![image_12_20210720](https://static.toastoven.net/prod_img/image_12_20210720.png)
 
 썸네일의 크기 조절 방식 세부 설명
 ```
@@ -149,7 +149,7 @@
 
 ### 썸네일 수정
 
-![image_13_201812](https://static.toastoven.net/prod_img/image_13_201812.png)
+![image_13_20210720](https://static.toastoven.net/prod_img/image_13_20210720.png)
 
 1.썸네일을 선택하고 **수정** 버튼을 클릭합니다.  
 
@@ -160,7 +160,7 @@
 
 ### 썸네일 삭제
 
-![image_14_201812](https://static.toastoven.net/prod_img/image_14_201812.png)
+![image_14_20210720](https://static.toastoven.net/prod_img/image_14_20210720.png)
 
 썸네일 옵션을 삭제하기 위해 **삭제** 버튼을 클릭합니다.
 
@@ -169,7 +169,7 @@
 
 ### 사용자 설정
 
-![image_15_201812](https://static.toastoven.net/prod_img/image_15_201812.png)
+![image_15_20210720](https://static.toastoven.net/prod_img/image_15_20210720.png)
 
 1.'**설정** 버튼을 클릭합니다.
 
