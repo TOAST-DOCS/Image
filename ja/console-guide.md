@@ -2,9 +2,6 @@
 
 本文書では、コンソールを利用して、フォルダの作成とファイルのアップロード、サムネイル オプションを管理する方法について説明します。
 
-## 動画ガイド　(韓国語) 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vOZBS4FZHnM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## フォルダと画像ファイルの管理
 
 メニューの 'ファイル表示' 画面でフォルダと原本画像ファイル、生成されたサムネイル画像ファイルを管理することができます。
