@@ -1,26 +1,27 @@
-## Content Delivery > Image > 개요
+## Content Delivery > Image > Overview
 
-고객님의 서비스에서 사용하는 이미지를 저장, 편집 그리고 전송까지 한번에 제공하는 시스템입니다.
+Image is a service that provides comprehensive functions for storing, editing, and transferring images used in the customer's service.
 
-## 주요 기능
+## Main Features
 
-- 어플리케이션에서 사용 가능한 RESTful API를 제공합니다.
-- 다중 폴더 생성, 다중 이미지 업로드, 다중 파일 다운로드, 다중 파일 삭제 기능을 제공합니다.
-- 원본 이미지 파일 URL에 파라메타만 추가하면 실시간으로 원하는 사이즈의 섬네일을 생성할 수 있습니다.
+- Provides a RESTful API that can be used by applications.
+- Provides functions to create multiple folders, upload multiple images, download multiple files, and delete multiple files.
+- Allows you to create thumbnails of the desired size in real time simply by adding parameters to the original image file URL.
+- HTTP and HTTPS protocols can be used for the image file URL.
 
-## 지원 가능한 이미지
+## Supported Images 
 
-- Image 서비스에서 지원하는 이미지 파일 포맷은 다음과 같습니다.
+- The image file formats supported by the Image service are as follows:
 	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png
-- Image 서비스에서는 최대 12MB의 이미지 파일을 업로드할 수 있습니다.
+- The Image service allows you to upload image files of up to 12 MB.
 
-## 서비스 용어
+## Glossary
 
-| 용어 | 설명 |
+| Term | Description |
 |---|---|
-| AppKey | NHN Cloud 사용자의 프로젝트와 상품이 1:1로 매칭이 되는 키이며, 프로젝트당 하나의 이미지용 앱 키가 발급됩니다. |
-| Secret Key | 앱 키와 함께 발급되는 보안 키입니다. HTTP 요청의 헤더에 'Authorization' 키로 값을 전송해야 인증이 됩니다. <br/>보안 키는 외부 사용자에게는 노출되지 않게 웹 페이지와 모바일 앱 소스에 포함하지 않고, 서버에서 처리해야 합니다. <br/>콘솔에서 보안 키를 재 생성하면, 이전에 사용했던 보안 키는 사용할 수 없습니다. |
-| 폴더 | 폴더는 이미지를 저장하는 단위이며, 윈도우 폴더나 리눅스의 디렉터리와 유사합니다. |
-| 원본 이미지 | 콘솔 또는 API를 통해 직접 업로드한 이미지 파일을 말합니다. |
-| 생성된 섬네일 | 동적으로 이미지 URL에 오퍼레이션 파라미터를 추가 또는 오퍼레이션 실행 API를 통해 생성된 섬네일을 말합니다. |
-| 이미지 오퍼레이션 | 섬네일을 생성하기위한 옵션을 말합니다. 미리 정의된 오퍼레이션을 이용하여 섬네일을 생성할 수 있습니다. |
+| AppKey | A key for which the NHN Cloud user's project and the product are matched one-to-one, and one appkey for Image is issued per project. |
+| Secret Key | A security key issued along with the appkey. Authentication requires sending this value as the 'Authorization' key in the header of the HTTP request. <br/>The security key must be processed on the server and must not be included in the web page and mobile app source code, so that it is not exposed to external users. <br/>If you regenerate a security key in the console, the previously used security key cannot be used. |
+| Folder | A folder is a unit for storing images, and is similar to a folder in Windows or a directory in Linux. |
+| Original image | An image file uploaded directly through the console or API. |
+| Generated thumbnail | A thumbnail created by dynamically adding operation parameters to the image URL or through operation execution APIs. |
+| Image operations | Options for creating thumbnails. You can create thumbnails using predefined operations. |
