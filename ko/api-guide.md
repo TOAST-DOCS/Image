@@ -7,19 +7,19 @@ Image 서비스의 API를 설명합니다.
 
 ### 사전 준비
 
-- API 사용을 위해서는 앱 키와 보안 키가 필요합니다.
-- 앱 키와 보안 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
+- API 사용을 위해서는 앱 키와 비밀 키가 필요합니다.
+- 앱 키와 비밀 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
 
 ### 요청 공통 정보
 
-- API를 사용하기 위해서는 보안 키 인증 처리가 필요합니다.
-- 모든 API 요청 헤더에 'Authorization'에 보안 키를 넣어서 요청해야 합니다.
+- API를 사용하기 위해서는 비밀 키 인증 처리가 필요합니다.
+- 모든 API 요청 헤더의 'Authorization'에 비밀 키를 넣어서 요청해야 합니다.
 
 [요청 헤더]
 
 | 이름 | 값 | 설명 |
 |---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
+| Authorization | {secretKey} | 콘솔에서 발급받은 비밀 키 |
 
 ### 응답 공통 정보
 
@@ -144,7 +144,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 | name | String | 최소 2글자, 최대 255Byte | 선택 |  | 검색할 이미지 이름 |
 | page | int | 최소 1 | 선택 | 1 | 페이지 번호 |
 | rows | int | 최소 1, 최대 10,000 | 선택 | 100 | 조회 개수 |
-| sort | String | | 선택 | name:asc | 정렬 방식 (정렬대상 : name or date, 정렬방식 : asc or desc) |
+| sort | String | | 선택 | name:asc | 정렬 방식 (정렬 대상: name or date, 정렬 방식: asc or desc) |
 
 #### 응답
 
@@ -216,11 +216,11 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 | files[0].id | String | 고유 ID |
 | files[0].url | String | 이미지 서비스 Url |
 | files[0].name | String | 이미지 이름 |
-| files[0].path | String | 이이미지 절대 경로 |
+| files[0].path | String | 이미지 절대 경로 |
 | files[0].bytes | long | 이미지 파일 크기 |
 | files[0].createdBy | String | 이미지 구분 (U: 사용자 업로드 이미지, P: 오퍼레이션 이미지) |
 | files[0].updatedAt | DateTime | 최종 수정일 |
-| files[0].operationId | String | createdBy === P 의 경우 참조 된 오퍼레이션 ID |
+| files[0].operationId | String | createdBy === P의 경우 참조된 오퍼레이션 ID |
 | files[0].queues | List | 작업 정보 목록 (해당 API에서는 사용되지 않음) |
 | files[0].imageProperty | Object | 이미지 속성 |
 | files[0].imageProperty.width | int | 가로 크기 |
@@ -301,7 +301,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 
 ### 단일 파일 업로드
 
-- 이미지 파일 한 개를 업로드 합니다.
+- 이미지 파일 한 개를 업로드합니다.
 
 #### 요청
 
@@ -313,7 +313,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 
 [요청 본문]
 
-- /myfolder 폴더에 sample.png 이미지를 업로드 합니다.
+- /myfolder 폴더에 sample.png 이미지를 업로드합니다.
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 - 이미지 파일의 Binary Data를 넣습니다.
 
@@ -392,7 +392,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 | file.bytes | long | 이미지 파일 크기 |
 | file.createdBy | String | 이미지 구분 (U: 사용자 업로드 이미지, P: 오퍼레이션 이미지) |
 | file.updatedAt | DateTime | 최종 수정일 |
-| file.operationId | String | createdBy === P 의 경우 참조 된 오퍼레이션 ID |
+| file.operationId | String | createdBy === P의 경우 참조된 오퍼레이션 ID |
 | file.imageProperty | Object | 이미지 속성 |
 | file.imageProperty.width | int | 가로 크기 |
 | file.imageProperty.height | int | 세로 크기 |
@@ -404,17 +404,17 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 | file.queues[0].queueId | String | 작업 고유 ID |
 | file.queues[0].queueType | String | 작업 구분 (image: 오퍼레이션, delete: 파일 및 폴더 삭제) |
 | file.queues[0].status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| file.queues[0].tryCount | int | 다시 시도 횟수 |
+| file.queues[0].tryCount | int | 재시도 횟수 |
 | file.queues[0].queuedAt | DateTime | 작업 등록일 |
 | file.queues[0].operationId | String | 참조되는 오퍼레이션 ID |
-| file.queues[0].url | String | 서비스 될 이미지 서비스 URL |
-| file.queues[0].name | String | 생성 될 이미지 이름 |
-| file.queues[0].path | String | 생성 될 이미지 절대 경로 |
+| file.queues[0].url | String | 서비스될 이미지 서비스 URL |
+| file.queues[0].name | String | 생성될 이미지 이름 |
+| file.queues[0].path | String | 생성될 이미지 절대 경로 |
 
 
 ### 다중 파일 업로드
 
-- 여러개의 이미지 파일을 업로드 합니다.
+- 여러 개의 이미지 파일을 업로드합니다.
 - 압축 파일 업로드도 가능합니다.
 
 #### 요청
@@ -427,7 +427,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 
 [요청 본문]
 
-- /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.
+- /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드합니다.
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 - multipart/form–data 형식으로 전달합니다.
 
@@ -551,7 +551,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 | successes[0].bytes | long | 이미지 파일 크기 |
 | successes[0].createdBy | String | 이미지 구분 (U: 사용자 업로드 이미지, P: 오퍼레이션 이미지) |
 | successes[0].updatedAt | DateTime | 최종 수정일 |
-| successes[0].operationId | String | createdBy === P 의 경우 참조 된 오퍼레이션 ID |
+| successes[0].operationId | String | createdBy === P의 경우 참조된 오퍼레이션 ID |
 | successes[0].imageProperty | Object | 이미지 속성 |
 | successes[0].imageProperty.width | int | 가로 크기 |
 | successes[0].imageProperty.height | int | 세로 크기 |
@@ -563,12 +563,12 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 | successes[0].queues[0].queueId | String | 작업 고유 ID |
 | successes[0].queues[0].queueType | String | 작업 구분 (image: 오퍼레이션, delete: 파일 및 폴더 삭제) |
 | successes[0].queues[0].status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| successes[0].queues[0].tryCount | int | 다시 시도 횟수 |
+| successes[0].queues[0].tryCount | int | 재시도 횟수 |
 | successes[0].queues[0].queuedAt | DateTime | 작업 등록일 |
 | successes[0].queues[0].operationId | String | 참조되는 오퍼레이션 ID |
-| successes[0].queues[0].url | String | 서비스 될 이미지 서비스 Url |
-| successes[0].queues[0].name | String | 생성 될 이미지 이름 |
-| successes[0].queues[0].path | String | 생성 될 이미지 절대 경로 |
+| successes[0].queues[0].url | String | 서비스될 이미지 서비스 Url |
+| successes[0].queues[0].name | String | 생성될 이미지 이름 |
+| successes[0].queues[0].path | String | 생성될 이미지 절대 경로 |
 
 [요청 결과 콜백 본문]
 
@@ -696,8 +696,8 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| folderIds | String | ID 하나 당 최대 50글자 |  |  | 삭제할 폴더의 ID 리스트 (콤마로 구분됨) |
-| fileIds | String | ID 하나 당 최대 50글자 |  |  | 삭제할 파일의 ID 리스트 (콤마로 구분됨) |
+| folderIds | String | ID 하나당 최대 50글자 |  |  | 삭제할 폴더의 ID 리스트 (콤마로 구분됨) |
+| fileIds | String | ID 하나당 최대 50글자 |  |  | 삭제할 파일의 ID 리스트 (콤마로 구분됨) |
 | includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
 
 #### 응답
@@ -731,18 +731,18 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 | queue.queueId | String | 작업 고유 ID |
 | queue.queueType | String | 작업 구분 (delete: 파일 및 폴더 삭제) |
 | queue.status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| queue.tryCount | int | 다시 시도 횟수 |
+| queue.tryCount | int | 재시도 횟수 |
 | queue.queuedAt | DateTime | 작업 등록일 |
 | queue.operationId | String | 참조되는 오퍼레이션 ID |
-| queue.url | String | 서비스 될 이미지 서비스 URL |
-| queue.name | String | 생성 될 이미지 이름 |
-| queue.path | String | 생성 될 이미지 절대 경로 |
+| queue.url | String | 서비스될 이미지 서비스 URL |
+| queue.name | String | 생성될 이미지 이름 |
+| queue.path | String | 생성될 이미지 절대 경로 |
 
 
 ## 이미지 오퍼레이션 API
 
-- 이미지 오퍼레이션 API를 통해 다양한 썸네일을 생성할 수 있습니다.
-- 썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice), 워터마크 제공
+- 이미지 오퍼레이션 API를 통해 다양한 섬네일을 생성할 수 있습니다.
+- 섬네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice), 워터마크 제공
 
 ### 이미지 오퍼레이션 생성 및 수정
 
@@ -777,12 +777,12 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 | operationId | String | 최소 1글자, 최대 20글자, <br>영문 또는 숫자 | 필수 |  | 생성 및 수정할 오퍼레이션 이름 |
 | description | String | 최대 30글자 | 선택 |  | 오퍼레이션 설명 |
 | realtimeService | boolean |  | 선택 | true | 실시간 서비스 제공 여부 |
-| deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 썸네일을 삭제할지 여부 |
+| deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 섬네일을 삭제할지 여부 |
 | data | List |  | 선택 |  | 오퍼레이션 작업 목록 |
 
 [data 옵션]
 
-- 썸네일 크기
+- 섬네일 크기
 
 ```
 {
@@ -847,7 +847,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 }
 ```
 
-- Slice 크롭 : 가로, 세로 분할
+- Slice 크롭: 가로, 세로 분할
 
 ```
 {
@@ -861,7 +861,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 }
 ```
 
-- Slice 크롭 : 격자 분할
+- Slice 크롭: 격자 분할
 
 ```
 {
@@ -870,7 +870,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 		"countX": int, 					// (Required) 가로 분할 갯수
 		"countY": int, 					// (Required) 세로 분할 갯수
 										// 원본 사이즈에 따라서 분할 개수로 나누었을때 조각 사이즈가 정수가 아닌
-										// 경우에는 설정한 분할 개수 보다 적은 수로 분할 될 수 있습니다.
+										// 경우에는 설정한 분할 개수 보다 적은 수로 분할될 수 있습니다.
 		"callbackUrl": string 			// (optional) 처리 결과를 통보받을 Url 경로. 포트는 80, 443만 지원
 	}
 }
@@ -969,10 +969,10 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| name | String | 최대 20글자, <br>영문 또는 숫자 | 선택 |  | 검색할 오퍼레이션 이름 (입력 값으로 시작하는) |
+| name | String | 최대 20글자, <br>영문 또는 숫자 | 선택 |  | 검색할 오퍼레이션 이름 (입력 값으로 시작) |
 | page | int | 최소 1 | 선택 | 1 | 페이지 번호 |
 | rows | int | 최대 10,000 | 선택 | 20 | 조회 개수 |
-| sort | String |  | 선택 | date:desc | 정렬 방식 (정렬대상 : name or date, 정렬방식 : asc or desc) |
+| sort | String |  | 선택 | date:desc | 정렬 방식 (정렬 대상: name or date, 정렬 방식: asc or desc) |
 | template | boolean |  | 선택 | false | 목록 조회 대상 (true: 기본 오퍼레이션, false: 사용자 생성 오퍼레이션) |
 
 #### 응답
@@ -1136,7 +1136,7 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 썸네일을 삭제할지 여부 |
+| deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 섬네일을 삭제할지 여부 |
 
 #### 응답
 
@@ -1154,7 +1154,7 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 
 ### 이미지 오퍼레이션 실행 (비동기)
 
-- 지정된 파일에 오퍼레이션을 실행하여 썸네일을 생성합니다.
+- 지정된 파일에 오퍼레이션을 실행하여 섬네일을 생성합니다.
 - 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
 
 #### 요청
@@ -1261,12 +1261,12 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 | queues[0].queueId | String | 작업 고유 ID |
 | queues[0].queueType | String | 작업 구분 (image: 오퍼레이션, delete: 파일 및 폴더 삭제) |
 | queues[0].status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| queues[0].tryCount | int | 다시 시도 횟수 |
+| queues[0].tryCount | int | 재시도 횟수 |
 | queues[0].queuedAt | DateTime | 작업 등록일 |
 | queues[0].operationId | String | 참조되는 오퍼레이션 ID |
-| queues[0].url | String | 서비스 될 이미지 서비스 URL |
-| queues[0].name | String | 생성 될 이미지 이름 |
-| queues[0].path | String | 생성 될 이미지 절대 경로 |
+| queues[0].url | String | 서비스될 이미지 서비스 URL |
+| queues[0].name | String | 생성될 이미지 이름 |
+| queues[0].path | String | 생성될 이미지 절대 경로 |
 
 [요청 결과 콜백 본문]
 
@@ -1478,9 +1478,9 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queue
 | queue.queueId | String | 작업 고유 ID |
 | queue.queueType | String | 작업 구분 (image: 오퍼레이션, delete: 파일 및 폴더 삭제) |
 | queue.status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| queue.tryCount | int | 다시 시도 횟수 |
+| queue.tryCount | int | 재시도 횟수 |
 | queue.queuedAt | DateTime | 작업 시작일 |
 | queue.operationId | String | 참조되는 오퍼레이션 ID |
-| queue.url | String | 서비스 될(되는) 이미지 서비스 URL |
-| queue.name | String | 생성 될(된) 이미지 이름 |
-| queue.path | String | 생성 될(된) 이미지 절대 경로 |
+| queue.url | String | 서비스될(되는) 이미지 서비스 URL |
+| queue.name | String | 생성될(된) 이미지 이름 |
+| queue.path | String | 생성될(된) 이미지 절대 경로 |
