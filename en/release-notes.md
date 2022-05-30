@@ -2,7 +2,7 @@
 
 ### February 22, 2018
 #### Feature Updates
-* [Console] Changed the method of accessing 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to top of the menu  
+* [Console] Changed the method of accessing 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to a top menu  
 	* Folder and image file management is accessible from 'File View'
 	* Thumbnail option management is accessible from 'Operation Setting'
 * [Console] [Folder and Image File Management](./console-guide/#_1)
@@ -10,26 +10,26 @@
 	* Added the feature of moving to a previous folder on the folder list
 
 #### Bug Fixes 
-* [API] Fixed bugs processing success with no regards to task, even when file (or operation) is incorrect for an operation-exec API request 
-	* Processed as failed response when task (queues) is unavailable 
-	* Processed as partial success when task (queues) count is not consistent with request count 
+* [API] Fixed a bug where, when sending a request with operation-exec API, the request is handled as a success response regardless of the task if the file (or operation) is invalid
+	* Processed as a failed response when task items (queues) are unavailable 
+	* Processed as a partial success response when task items (queues) count is not consistent with the request count 
 
 ### December 21, 2017 
 #### Feature Updates
-* [API] Added the display whether processing result has been overwritten to callback 
+* [API] Added the display of whether the files have been overwritten to the processing result callback 
 	* [Uploading Multiple Images](./api-guide/#_16)
 	* [Executing Image Operations](./api-guide/#_37)
 * [Console] Changed UI design of the page 
 
 ### November 30, 2017
 #### More Features 
-* [API] Added callback for processing results 
-	* Added the feature of sending processing result to callbackUrl when it is sent to parameter for an API call
+* [API] Added the processing result callback feature
+	* Added the feature of sending processing result to callbackUrl when callbackUrl is sent as a parameter for an API call
 		* [Uploading Multiple Images](./api-guide/#_16)
 		* [Executing Image Operations](./api-guide/#_37)
 
 #### Bug Fixes 
- * [Console] Fixed bugs in which an invalid path of lower folder was created while uploading a folder including compression files 
+ * [Console] Fixed bugs in which an invalid subfolder path was created while uploading a folder including compression files 
 
 ### November 23, 2017
 #### Feature Updates 
@@ -39,15 +39,15 @@
 * [Console] [Added Image Processing Option](./console-guide/#_10)
 	* The option was available only for resizing but now is configurable as a common option  
 		* Quality, image format, callback URL for result, whether to maintain meta data, whether to rotate based on orientation data  
-	* Changed default value for the option of maintaining GIF animation: Changed from Not Maintain to Maintain  
-* [Console] [To be grouped by image processing features](./console-guide/#_10)
+	* Changed the default value for the option of maintaining GIF animation: Changed from Not Maintain to Maintain  
+* [Console] [Grouping by image processing features](./console-guide/#_10)
 	* Group 1 for Basic Processing: Resize, Gray, or Rectangle Crop
 	* Group 2 for Split Processing: Slice Crop (width, height, grid)
 	* Group 3 for Composite Processing : Circle Crop
 	* Images are to be processed in the group sequence 
 * [Console] [Changed Process of Product Closure](./console-guide/#_8)
-	* Unable to close when there is a file left after service is closed 
-	* With the feature of deleting the whole file added, service can be closed after all is deleted  
+	* Unable to close when there is a file left when stopping the use of the service
+	* Added the feature to delete the whole files, and service use can be stopped after all files are deleted  
 
 ### May 25, 2017
 #### Bug Fixes
