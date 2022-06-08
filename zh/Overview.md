@@ -15,7 +15,7 @@
 	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png
 - Image 서비스에서는 최대 12MB의 이미지 파일을 업로드할 수 있습니다.
 
-## 서비스 용어
+## 서비스용어
 
 | 용어 | 설명 |
 |---|---|
