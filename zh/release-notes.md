@@ -1,71 +1,71 @@
 ## Content Delivery > Image > Release Notes
 
-### 2018.02.22
-#### 기능 개선/변경
-* [Console] '섬네일 옵션 관리' 화면의 접근 방식을 '폴더 및 이미지 파일 관리' 화면 내부의 버튼에서 상위 메뉴로 변경
-	* 폴더 및 이미지 파일 관리는 'File View' 메뉴에서 접근 가능
-	* 섬네일 옵션 관리는 'Operation Setting' 메뉴에서 접근 가능
-* [Console] [폴더 및 이미지 파일 관리](./console-guide/#_1)
-	* 기존 화면에서 폴더 경로 이동 기능, 폴더 트리 기능 추가
-	* 폴더 목록에 이전 폴더로 이동 기능 추가
+### February 22, 2018
+#### Feature Updates
+* [Console] Changed the method of accessing 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to a top menu  
+	* Folder and image file management is accessible from 'File View'
+	* Thumbnail option management is accessible from 'Operation Setting'
+* [Console] [Folder and Image File Management](./console-guide/#_1)
+	* Added the feature of moving folder paths on the existing page, as well as the folder tree feature 
+	* Added the feature of moving to a previous folder on the folder list
 
-#### 버그 수정
-* [API] operation-exec API 요청 시 파일(또는 오퍼레이션)이 잘못된 경우 작업과 무관하게 성공 응답 처리하는 버그 수정
-	* 작업 내용(queues)이 없는 경우 실패 응답으로 처리
-	* 작업 내용(queues) 개수가 요청 수와 맞지 않은 경우 부분 성공 응답으로 처리
+#### Bug Fixes 
+* [API] Fixed a bug where, when sending a request with operation-exec API, the request is handled as a success response regardless of the task if the file (or operation) is invalid
+	* Processed as a failed response when task items (queues) are unavailable 
+	* Processed as a partial success response when task items (queues) count is not consistent with the request count 
 
-### 2017.12.21
-#### 기능 개선/변경
-* [API] 처리 결과 Callback에 덮어쓰기 되었는지 여부 표시 추가
-	* [다중 이미지 업로드](./api-guide/#_16)
-	* [이미지 오퍼레이션 실행](./api-guide/#_37)
-* [Console] 화면 UI 디자인 변경
+### December 21, 2017 
+#### Feature Updates
+* [API] Added the display of whether the files have been overwritten to the processing result callback 
+	* [Uploading Multiple Images](./api-guide/#_16)
+	* [Executing Image Operations](./api-guide/#_37)
+* [Console] Changed UI design of the page 
 
-### 2017.11.30
-#### 기능 추가
-* [API] 처리 결과 Callback 기능 추가
-	* API 호출 시 callbackUrl을 파라미터로 전달하면 처리 결과를 callbackUrl로 전송해주는 기능 추가
-		* [다중 이미지 업로드](./api-guide/#_16)
-		* [이미지 오퍼레이션 실행](./api-guide/#_37)
+### November 30, 2017
+#### More Features 
+* [API] Added the processing result callback feature
+	* Added the feature of sending processing result to callbackUrl when callbackUrl is sent as a parameter for an API call
+		* [Uploading Multiple Images](./api-guide/#_16)
+		* [Executing Image Operations](./api-guide/#_37)
 
-#### 버그 수정
- * [Console] 압축 파일이 포함된 폴더 업로드 시 하위 폴더 경로가 잘못 생성되던 버그 수정
+#### Bug Fixes 
+ * [Console] Fixed bugs in which an invalid subfolder path was created while uploading a folder including compression files 
 
-### 2017.11.23
-#### 기능 개선/변경
-* [이미지 처리 기능 추가](./api-guide/#_25)
-	* 이미지 분할 기능에 격자 분할 추가
-	* 워터마크 기능 추가
-* [Console] [이미지 처리 옵선 추가](./console-guide/#_10)
-	* 기존 Resize에서만 설정 가능했던 옵션을 공통 옵션으로 설정 가능하도록 수정
-		* 품질, 이미지 포맷, 결과 콜백 URL, 메타정보 유지 여부, Orientation 정보를 기준으로 회전 여부
-	* GIF 애니메이션 유지 옵션의 default 값 변경 : 유지하지 않음에서 유지 함으로 변경
-* [Console] [이미지 처리 기능에 따라 Grouping](./console-guide/#_10)
-	* Group 1 기본 처리 : Resize, Gray, Rectangle Crop
-	* Group 2 분할 처리 : Slice Crop (가로, 세로, 격자)
-	* Group 3 합성 처리 : Circle Crop
-	* 이미지 처리는 Group 순서대로 처리 됨
-* [Console] [상품 종료 프로세스 변경](./console-guide/#_8)
-	* 상품 이용 종료 시 남아있는 파일이 있는 경우 이용 종료 불가능
-	* 전체 파일 삭제 기능이 추가되었고, 전체 삭제 후 상품 이용 종료 가능
+### November 23, 2017
+#### Feature Updates 
+* [Added Features of Image Processing](./api-guide/#_25)
+	* Added grid-split as part of splitting images
+	* Added the watermark feature
+* [Console] [Added Image Processing Option](./console-guide/#_10)
+	* The option was available only for resizing but now is configurable as a common option  
+		* Quality, image format, callback URL for result, whether to maintain meta data, whether to rotate based on orientation data  
+	* Changed the default value for the option of maintaining GIF animation: Changed from Not Maintain to Maintain  
+* [Console] [Grouping by image processing features](./console-guide/#_10)
+	* Group 1 for Basic Processing: Resize, Gray, or Rectangle Crop
+	* Group 2 for Split Processing: Slice Crop (width, height, grid)
+	* Group 3 for Composite Processing : Circle Crop
+	* Images are to be processed in the group sequence 
+* [Console] [Changed Process of Product Closure](./console-guide/#_8)
+	* Unable to close when there is a file left when stopping the use of the service
+	* Added the feature to delete the whole files, and service use can be stopped after all files are deleted  
 
-### 2017.05.25
-#### 버그 수정
-* Image Meta 정보 파싱 에러 수정
+### May 25, 2017
+#### Bug Fixes
+* Fixed an error of parsing image meta information 
 
-### 2017.04.20
-#### 기능 개선/변경
-* [썸네일 크기조절 방식 추가](./console-guide/#_10)
-    * Option의 가로 세로에 맞게 Size 변경
-    * Option의 가로 기준 Size 변경
-    * Option의 세로 기준 Size 변경
-* [크롭 방식 추가](./console-guide/#_10)
-    * Slice Crop 추가
-* [Console] [Gif 애니메이션 유지 옵션 글로벌 설정으로 변경](./console-guide/#_10)
+### April 20, 2017 
+#### Feature Updates 
+* [Added Thumbnail Resizing Method](./console-guide/#_10) 
+    * Changed size to meet the width and height of option 
+    * Changed standard size of the width of option
+    * Changed standard size of the height of option 
+* [Added the method of cropping](./console-guide/#_10)
+    * Added Slice Crop 
+* [Console] [Changed the option of maintaining Gif animation as global configuration](./console-guide/#_10)
 
-#### 버그 수정
-* 물결(~) 문자가 포함된 폴더가 생성되지 않도록 수정
+#### Bug Fixes 
+* Modified not to create a folder which includes a tilde
 
-### 2017.03.23
-#### 버그 수정
-* [Console] macOS에서 업로드한 한글 파일 검색 불가 이슈 수정
+### March 23, 2017
+#### Bug Fixes
+* [Console] Fixed an issue in which Korean files uploaded on macOS were unable to be searched 
