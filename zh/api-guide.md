@@ -1,31 +1,31 @@
-## Content Delivery > Image > API 가이드
+## Content Delivery > Image > API Guide
 
-Image 서비스의 API를 설명합니다.
+The guide describes APIs of the Image service.
 
 
-## API 공통 정보
+## Common API Information
 
-### 사전 준비
+### Prerequisites
 
-- API 사용을 위해서는 앱 키와 보안 키가 필요합니다.
-- 앱 키와 보안 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
+- To use the API, you need AppKey and Secret Key.
+- AppKey and Secret Key can be found in the "URL & Appkey" menu on the top of the console.
 
-### 요청 공통 정보
+### Common Request Information
 
-- API를 사용하기 위해서는 보안 키 인증 처리가 필요합니다.
-- 모든 API 요청 헤더에 'Authorization'에 보안 키를 넣어서 요청해야 합니다.
+- To use the APIs, security key authentication is required.
+- You must send requests by including the Secret Key in 'Authorization' of all API request headers.
 
-[요청 헤더]
+[Request Header]
 
-| 이름 | 값 | 설명 |
+| Name | Value | Description |
 |---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
+| Authorization | {secretKey} | Security key issued from the console |
 
-### 응답 공통 정보
+### Common Response Information
 
-- 모든 API 요청에 "200 OK"로 응답합니다. 자세한 응답 결과는 응답 본문의 헤더를 참고합니다.
+- The API responds with "200 OK" to all API requests. For more information on the response results, see Response Body Header.
 
-[성공 응답 본문]
+[Success response body]
 
 ```
 {
@@ -37,7 +37,7 @@ Image 서비스의 API를 설명합니다.
 }
 ```
 
-[실패 응답 본문]
+[Failure response body]
 
 ```
 {
@@ -50,24 +50,24 @@ Image 서비스의 API를 설명합니다.
 ```
 
 
-## 폴더 API
+## Folder API
 
-### 폴더 생성
+### Create Folder
 
-- 지정된 경로에 폴더를 생성합니다.
+- Creates a folder in the specified path.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
 
-[요청 본문]
+[Request Body]
 
-- myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Creates a folder named myfolder under the root folder.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders' \
@@ -76,20 +76,20 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 --data '{"path": "/myfolder"}'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성할 폴더의 절대 경로, 상위 폴더 자동 생성 |
+| path | String | Min. 2 characters, Max. 255 Bytes | Required |  | The absolute path of the folder to be created, and a parent folder is automatically created |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"folder": {
 		"id": "c337256d-b17e-42ce-9f63-a792a05ae0ef",
@@ -101,59 +101,59 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| folder | Object | 폴더 정보 |
-| folder.isFolder | boolean | 폴더 여부 |
-| folder.id | String | 고유 ID |
-| folder.name | String | 폴더 이름 |
-| folder.path | String | 폴더 절대 경로 |
-| folder.updatedAt | DateTime | 최종 수정일 |
+| folder | Object | Folder information |
+| folder.isFolder | boolean | Whether it is a folder or not |
+| folder.id | String | Unique ID |
+| folder.name | String | Folder name |
+| folder.path | String | Absolute path of a folder |
+| folder.updatedAt | DateTime | Last modified date |
 
 
-### 폴더 내 파일 목록 조회
+### List Files in a Folder
 
-- 지정된 경로 하위의 목록을 조회하거나 이름에 특정 문자를 포함한 목록을 조회합니다.
+- Retrieves a list of items under the specified path or a list including specific characters in the name.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
 
-[요청 본문]
+[Request Body]
 
-- /myfolder 하위의 폴더와 파일을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Retrieves the folders and files under /myfolder.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
-[옵션]
+[Options]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 전체 경로 |
-| createdBy | String | 1글자 | 선택 |  | 목록 조회 대상 <br>(공백: 전체, <br>U: 사용자 업로드 이미지, <br>P: 오퍼레이션 이미지) |
-| name | String | 최소 2글자, 최대 255Byte | 선택 |  | 검색할 이미지 이름 |
-| page | int | 최소 1 | 선택 | 1 | 페이지 번호 |
-| rows | int | 최소 1, 최대 10,000 | 선택 | 100 | 조회 개수 |
-| sort | String | | 선택 | name:asc | 정렬 방식 (정렬대상 : name or date, 정렬방식 : asc or desc) |
+| basepath | String | Min. 2 characters, Max. 255 Bytes | Required |  | The entire path of a folder to retrieve |
+| createdBy | String | 1 character | Optional |  | Target of the list query <br>(Space: all, <br>U: user uploaded image, <br>P: operation image) |
+| name | String | Min. 2 characters, Max. 255 Bytes | Optional |  | Image name to search for |
+| page | int | Min. 1 | Optional | 1 | Page number |
+| rows | int | Min. 1, Max. 10,000 | Optional | 100 | Query count |
+| sort | String | | Optional | name:asc | Sorting method (Sort criteria: name or date, sorting method: asc or desc) |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"paging": {
 		"page": 1,
@@ -196,77 +196,77 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| paging | Object | 페이징 정보 |
-| paging.page | int | 요청 페이지 번호 |
-| paging.rows | int | 요청 조회 개수 |
-| paging.totalFolderCount | long | 전체 폴더 개수 |
-| paging.totalFileCount | long | 전체 폴더 개수 |
-| folders | List | 폴더 목록 |
-| folders[0].isFolder | boolean | 폴더 여부 |
-| folders[0].id | String | 고유 ID |
-| folders[0].name | String | 폴더 이름 |
-| folders[0].path | String | 폴더 절대 경로 |
-| folders[0].updatedAt | DateTime | 최종 수정일 |
-| files | List | 이미지 파일 목록 |
-| files[0].isFolder | boolean | 폴더 여부 |
-| files[0].id | String | 고유 ID |
-| files[0].url | String | 이미지 서비스 Url |
-| files[0].name | String | 이미지 이름 |
-| files[0].path | String | 이이미지 절대 경로 |
-| files[0].bytes | long | 이미지 파일 크기 |
-| files[0].createdBy | String | 이미지 구분 (U: 사용자 업로드 이미지, P: 오퍼레이션 이미지) |
-| files[0].updatedAt | DateTime | 최종 수정일 |
-| files[0].operationId | String | createdBy === P 의 경우 참조 된 오퍼레이션 ID |
-| files[0].queues | List | 작업 정보 목록 (해당 API에서는 사용되지 않음) |
-| files[0].imageProperty | Object | 이미지 속성 |
-| files[0].imageProperty.width | int | 가로 크기 |
-| files[0].imageProperty.height | int | 세로 크기 |
-| files[0].imageProperty.coordinate | Object | GPS 정보 |
-| files[0].imageProperty.createdAt | DateTime | 촬영일 또는 생성일 |
-| files[0].imageProperty.coordinate.lat | double | 위도 |
-| files[0].imageProperty.coordinate.lng | double | 경도 |
+| paging | Object | Paging information |
+| paging.page | int | Requested page number |
+| paging.rows | int | Requested query count |
+| paging.totalFolderCount | long | Total number of folders |
+| paging.totalFileCount | long | Total number of folders |
+| folders | List | Folder list |
+| folders[0].isFolder | boolean | Whether it is a folder or not |
+| folders[0].id | String | Unique ID |
+| folders[0].name | String | Folder name |
+| folders[0].path | String | Absolute path of a folder |
+| folders[0].updatedAt | DateTime | Last modified date |
+| files | List | List of image files |
+| files[0].isFolder | boolean | Whether it is a folder or not |
+| files[0].id | String | Unique ID |
+| files[0].url | String | URL of image service |
+| files[0].name | String | Image Name |
+| files[0].path | String | Absolute path of a folder |
+| files[0].bytes | long | Image file size |
+| files[0].createdBy | String | Image classification (U: user uploaded image, P: operation image) |
+| files[0].updatedAt | DateTime | Last modified date |
+| files[0].operationId | String | If createdBy === P, a referenced operation ID |
+| files[0].queues | List | List of task information (not used in this API) |
+| files[0].imageProperty | Object | Image properties |
+| files[0].imageProperty.width | int | Horizontal size |
+| files[0].imageProperty.height | int | Vertical size |
+| files[0].imageProperty.coordinate | Object | GPS information |
+| files[0].imageProperty.createdAt | DateTime | Date of shooting or creation |
+| files[0].imageProperty.coordinate.lat | double | Latitude |
+| files[0].imageProperty.coordinate.lng | double | Longitude |
 
 
-### 폴더 속성 조회
+### List Folder Properties
 
-- 폴더의 ID, 용량, 파일 개수 등의 속성을 조회합니다.
+- Retrieves properties such as the folder ID, capacity, and number of files.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/properties |
 
-[요청 본문]
+[Request Body]
 
-- myfolder의 폴더의 속성을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Retrieves the folder properties of myfolder.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
-[옵션]
+[Options]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 절대 경로 |
+| path | String | Min. 2 characters, Max. 255 Bytes | Required |  | Absolute path of the folder to retrieve |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"folder": {
 		"isFolder": true,
@@ -281,41 +281,41 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| folder | Object | 폴더 정보 |
-| folder.isFolder | boolean | 폴더 여부 |
-| folder.id | String | 고유 ID |
-| folder.name | String | 폴더 이름 |
-| folder.path | String | 폴더 절대 경로 |
-| folder.bytes | long | 폴더 크기 (byte) |
-| folder.totalFolderCount | long | 하위 폴더 개수 |
-| folder.totalFileCount | long | 하위 파일 개수 |
-| folder.updatedAt | DateTime | 최종 수정일 |
+| folder | Object | Folder information |
+| folder.isFolder | boolean | Whether it is a folder or not |
+| folder.id | String | Unique ID |
+| folder.name | String | Folder name |
+| folder.path | String | Absolute path of a folder |
+| folder.bytes | long | Folder size (byte) |
+| folder.totalFolderCount | long | Total number of subfolders |
+| folder.totalFileCount | long | Total number of subfiles |
+| folder.updatedAt | DateTime | Last modified date |
 
 
 
-## 업로드 API
+## Upload API
 
-### 단일 파일 업로드
+### Upload a File
 
-- 이미지 파일 한 개를 업로드 합니다.
+- Uploads a single image file.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
 
-[요청 본문]
+[Request Body]
 
-- /myfolder 폴더에 sample.png 이미지를 업로드 합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
-- 이미지 파일의 Binary Data를 넣습니다.
+- Uploads the sample.png image to the /myfolder folder.
+- You must change {appKey} and {secretKey} to the values found in the console.
+- Input the binary data of the image file.
 
 ```
 curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
@@ -324,26 +324,26 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 --data-binary 'path/to/imageFile/@sample.png'
 ```
 
-[옵션]
+[Options]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성할 절대 경로의 파일명 |
-| overwrite | boolean |  | 선택 | false | 같은 이름이 있을 경우 덮어쓰기 여부 |
-| autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 <br>"이름(1).확장자" 형식으로 파일명 변경 여부 |
-| operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트 (콤마로 구분됨) |
+| path | String | Min. 2 characters, Max. 255 Bytes | Required |  | File name of the absolute path to be created |
+| overwrite | boolean |  | Optional | false | Whether to overwrite if the same name exists |
+| autorename | boolean |  | Optional | false | If the same name exists, <br>whether to change the file name to "name(1).extension" format |
+| operationIds | String List |  | Optional |  | List of image operation IDs (separated by commas) |
 
-- 이미지 오퍼레이션 ID를 추가해서 요청할 경우, 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성할 수 있습니다.
-- [이미지 오퍼레이션 API](./api-guide/#api_4)를 참고합니다.
+- If you request by adding an image operation ID, you can create an operation file with the options you want when uploading.
+- Refer to [Image Operation API](./api-guide/#image-operation-api).
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"file": {
 		"isFolder": false,
@@ -379,57 +379,57 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| file | Object | 이미지 파일 정보 |
-| file.isFolder | boolean | 폴더 여부 |
-| file.id | String | 고유 ID |
-| file.url | String | 이미지 서비스 Url |
-| file.name | String | 이미지 이름 |
-| file.path | String | 이미지 절대 경로 |
-| file.bytes | long | 이미지 파일 크기 |
-| file.createdBy | String | 이미지 구분 (U: 사용자 업로드 이미지, P: 오퍼레이션 이미지) |
-| file.updatedAt | DateTime | 최종 수정일 |
-| file.operationId | String | createdBy === P 의 경우 참조 된 오퍼레이션 ID |
-| file.imageProperty | Object | 이미지 속성 |
-| file.imageProperty.width | int | 가로 크기 |
-| file.imageProperty.height | int | 세로 크기 |
-| file.imageProperty.createdAt | DateTime | 촬영일 또는 생성일 |
-| file.imageProperty.coordinate | Object | GPS 정보 |
-| file.imageProperty.coordinate.lat | double | 위도 |
-| file.imageProperty.coordinate.lng | double | 경도 |
-| file.queues | List | operationIds 요청에 의한 작업 정보 목록 |
-| file.queues[0].queueId | String | 작업 고유 ID |
-| file.queues[0].queueType | String | 작업 구분 (image: 오퍼레이션, delete: 파일 및 폴더 삭제) |
-| file.queues[0].status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| file.queues[0].tryCount | int | 다시 시도 횟수 |
-| file.queues[0].queuedAt | DateTime | 작업 등록일 |
-| file.queues[0].operationId | String | 참조되는 오퍼레이션 ID |
-| file.queues[0].url | String | 서비스 될 이미지 서비스 URL |
-| file.queues[0].name | String | 생성 될 이미지 이름 |
-| file.queues[0].path | String | 생성 될 이미지 절대 경로 |
+| file | Object | Image file information |
+| file.isFolder | boolean | Whether it is a folder or not |
+| file.id | String | Unique ID |
+| file.url | String | URL of image service |
+| file.name | String | Image Name |
+| file.path | String | Absolute path of an image |
+| file.bytes | long | Image file size |
+| file.createdBy | String | Image classification (U: user uploaded image, P: operation image) |
+| file.updatedAt | DateTime | Last modified date |
+| file.operationId | String | If createdBy === P, a referenced operation ID |
+| file.imageProperty | Object | Image properties |
+| file.imageProperty.width | int | Horizontal size |
+| file.imageProperty.height | int | Vertical size |
+| file.imageProperty.createdAt | DateTime | Date of shooting or creation |
+| file.imageProperty.coordinate | Object | GPS information |
+| file.imageProperty.coordinate.lat | double | Latitude |
+| file.imageProperty.coordinate.lng | double | Longitude |
+| file.queues | List | List of task information requested by operationIds |
+| file.queues[0].queueId | String | Task unique ID |
+| file.queues[0].queueType | String | Task classification (image: operation, delete: delete files and folders) |
+| file.queues[0].status | String | Task status (W: Waiting, D: Completed, P: In-progress, F: Failed) |
+| file.queues[0].tryCount | int | Number of retries |
+| file.queues[0].queuedAt | DateTime | Task registration date |
+| file.queues[0].operationId | String | Referenced operation ID |
+| file.queues[0].url | String | URL of image service to be provided |
+| file.queues[0].name | String | Name of the image to be created |
+| file.queues[0].path | String | Absolute path of the image to be created |
 
 
-### 다중 파일 업로드
+### Upload Multiple Files
 
-- 여러개의 이미지 파일을 업로드 합니다.
-- 압축 파일 업로드도 가능합니다.
+- Uploads multiple image files.
+- You can also upload compressed files.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
 
-[요청 본문]
+[Request Body]
 
-- /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
-- multipart/form–data 형식으로 전달합니다.
+- Uploads the left.png and right.png images to the /myfolder/banner folder.
+- You must change {appKey} and {secretKey} to the values found in the console.
+- Delivers the files in the multipart/form-data format.
 
 ```
 curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images' \
@@ -439,26 +439,26 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 -F 'files=@right.png'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| files | multipart/form–data |  | 필수 |  | 이미지 파일 리스트 |
-| params | String | json 형태의 문자열 | 필수 |  | 업로드 옵션 |
-| params.basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 업로드할 절대 경로 |
-| params.overwrite | boolean |  | 선택 | false | 같은 이름이 있을 경우 덮어쓰기 여부 |
-| params.autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 <br>"이름(1).확장자" 형식으로 파일명 변경 여부 |
-| params.operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트. <br>업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성. <br>이미지 오퍼레이션 관련 API 참고 |
-| params.callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 콜백 Url 경로. <br>query string 형식으로 id를 적으면 콜백 전송 시 같이 전달됨. <br>포트는 80, 443만 지원 |
+| files | multipart/form–data |  | Required |  | List of image files |
+| params | String | A string in a json format | Required |  | Upload options |
+| params.basepath | String | Min. 2 characters, Max. 255 Bytes | Required |  | Absolute path to upload |
+| params.overwrite | boolean |  | Optional | false | Whether to overwrite if the same name exists |
+| params.autorename | boolean |  | Optional | false | If the same name exists, <br>whether to change the file name to "name(1).extension" format |
+| params.operationIds | String List |  | Optional |  | List of image operation IDs. <br>Creates an operation file with the option you want when uploading. <br>Refer to the API related to image operation |
+| params.callbackUrl | String |  | Optional |  | Callback URL path to receive processing result. <br>If you write the id in a query string format, it will be delivered together when sending a callback. <br>Only supports port 80 and port 443 |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"errors": [],
 	"successes": [
@@ -532,45 +532,45 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| errors | List | 업로드 실패 목록 |
-| errors[0].path | String | 파일 절대 경로 |
-| errors[0].bytes | long | 파일 크기 |
-| errors[0].error | Object | 에러 정보 |
-| errors[0].error.resultCode | int | 에러 코드 |
-| errors[0].error.resultMessage | String | 에러 메시지 |
-| successes | List | 업로드 성공 목록 |
-| successes[0].isFolder | boolean | 폴더 여부 |
-| successes[0].id | String | 고유 ID |
-| successes[0].url | String | 이미지 서비스 URL |
-| successes[0].name | String | 이미지 이름 |
-| successes[0].path | String | 이미지 절대 경로 |
-| successes[0].bytes | long | 이미지 파일 크기 |
-| successes[0].createdBy | String | 이미지 구분 (U: 사용자 업로드 이미지, P: 오퍼레이션 이미지) |
-| successes[0].updatedAt | DateTime | 최종 수정일 |
-| successes[0].operationId | String | createdBy === P 의 경우 참조 된 오퍼레이션 ID |
-| successes[0].imageProperty | Object | 이미지 속성 |
-| successes[0].imageProperty.width | int | 가로 크기 |
-| successes[0].imageProperty.height | int | 세로 크기 |
-| successes[0].imageProperty.createdAt | DateTime | 촬영일 또는 생성일 |
-| successes[0].imageProperty.coordinate | Object | GPS 정보 |
-| successes[0].imageProperty.coordinate.lat | double | 위도 |
-| successes[0].imageProperty.coordinate.lng | double | 경도 |
-| successes[0].queues | List | operationIds 요청에 의한 작업 정보 목록 |
-| successes[0].queues[0].queueId | String | 작업 고유 ID |
-| successes[0].queues[0].queueType | String | 작업 구분 (image: 오퍼레이션, delete: 파일 및 폴더 삭제) |
-| successes[0].queues[0].status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| successes[0].queues[0].tryCount | int | 다시 시도 횟수 |
-| successes[0].queues[0].queuedAt | DateTime | 작업 등록일 |
-| successes[0].queues[0].operationId | String | 참조되는 오퍼레이션 ID |
-| successes[0].queues[0].url | String | 서비스 될 이미지 서비스 Url |
-| successes[0].queues[0].name | String | 생성 될 이미지 이름 |
-| successes[0].queues[0].path | String | 생성 될 이미지 절대 경로 |
+| errors | List | List of upload errors |
+| errors[0].path | String | Absolute path of a file |
+| errors[0].bytes | long | File size |
+| errors[0].error | Object | Error information |
+| errors[0].error.resultCode | int | Error Code |
+| errors[0].error.resultMessage | String | Error message |
+| successes | List | List of upload successes |
+| successes[0].isFolder | boolean | Whether it is a folder or not |
+| successes[0].id | String | Unique ID |
+| successes[0].url | String | URL of image service |
+| successes[0].name | String | Image Name |
+| successes[0].path | String | Absolute path of an image |
+| successes[0].bytes | long | Image file size |
+| successes[0].createdBy | String | Image classification (U: user uploaded image, P: operation image) |
+| successes[0].updatedAt | DateTime | Last modified date |
+| successes[0].operationId | String | If createdBy === P, a referenced operation ID |
+| successes[0].imageProperty | Object | Image properties |
+| successes[0].imageProperty.width | int | Horizontal size |
+| successes[0].imageProperty.height | int | Vertical size |
+| successes[0].imageProperty.createdAt | DateTime | Date of shooting or creation |
+| successes[0].imageProperty.coordinate | Object | GPS information |
+| successes[0].imageProperty.coordinate.lat | double | Latitude |
+| successes[0].imageProperty.coordinate.lng | double | Longitude |
+| successes[0].queues | List | List of task information requested by operationIds |
+| successes[0].queues[0].queueId | String | Task unique ID |
+| successes[0].queues[0].queueType | String | Task classification (image: operation, delete: delete files and folders) |
+| successes[0].queues[0].status | String | Task status (W: Waiting, D: Completed, P: In-progress, F: Failed) |
+| successes[0].queues[0].tryCount | int | Number of retries |
+| successes[0].queues[0].queuedAt | DateTime | Task registration date |
+| successes[0].queues[0].operationId | String | Referenced operation ID |
+| successes[0].queues[0].url | String | URL of image service to be provided |
+| successes[0].queues[0].name | String | Name of the image to be created |
+| successes[0].queues[0].path | String | Absolute path of the image to be created |
 
-[요청 결과 콜백 본문]
+[Request Result Callback Body]
 
 ```
 {
@@ -614,25 +614,25 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 
 
 
-## 삭제 API
+## Deletion API
 
-### 단일 삭제 (동기)
+### Single Deletion (synchronous)
 
-- 폴더 또는 파일 한 개를 삭제합니다.
+- Deletes a single folder or file.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/sync |
 
-[요청 본문]
+[Request Body]
 
-- /myfolder/sample.png의 파일을 삭제합니다.
-- /myfolder/sample.png의 ID는 우측 메뉴의 "폴더 내 파일 목록 조회" API를 통해서 알 수 있습니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Deletes the file /myfolder/sample.png.
+- You can check the ID of /myfolder/sample.png through "List Files in a Folder" API on the right menu.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
@@ -640,19 +640,19 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 -H 'Authorization: {secretKey}'
 ```
 
-[필드]
+[Field]
 
-- "folderId" 또는 "fileId"는 최소 하나를 필수로 사용해야 합니다.
+- At least one of "folderId" and "fileId" must be used.
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| folderId | String | 최대 50글자 |  |  | 삭제할 폴더의 ID |
-| fileId | String | 최대 50글자 |  |  | 삭제할 파일의 ID |
-| includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
+| folderId | String | Max. 50 characters |  |  | ID of the folder to be deleted |
+| fileId | String | Max. 50 characters |  |  | ID of the file to be deleted |
+| includeThumbnail | boolean |  | Optional | false | Also deletes the operation file created by the file to be deleted |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
@@ -664,25 +664,25 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 }
 ```
 
-### 다중 삭제 (비동기)
+### Multiple Deletion (asynchronous)
 
-- 여러 개의 폴더와 파일을 삭제합니다.
-- 실제 데이터 삭제는 비동기로 처리됩니다.
-- 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
+- Deletes multiple folders and files.
+- Actual deletion of data is processed asynchronously.
+- The processing result can be checked through the [Query a Task](./api-guide/#query-a-task) API with the "queueId" received as a response.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/async |
 
-[요청 본문]
+[Request Body]
 
-- /myfolder/banner/left.png, /myfolder/banner/right.png의 파일을 삭제합니다.
-- 파일 및 폴더 ID는 [폴더 내 파일 목록 조회](./api-guide/#_7)를 통해서 알 수 있습니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Deletes the files /myfolder/banner/left.png and /myfolder/banner/right.png.
+- The file and folder ID can be found through [List Files in a Folder](./api-guide/#list-files-in-a-folder).
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
@@ -690,24 +690,24 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 -H 'Authorization: {secretKey}'
 ```
 
-[필드]
+[Field]
 
-- "folderIds" 또는 "fileIds"는 최소 하나 필수 파라미터로 사용해야 합니다.
+- At least one of "folderIds" or "fileIds" must be used as a required parameter.
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| folderIds | String | ID 하나 당 최대 50글자 |  |  | 삭제할 폴더의 ID 리스트 (콤마로 구분됨) |
-| fileIds | String | ID 하나 당 최대 50글자 |  |  | 삭제할 파일의 ID 리스트 (콤마로 구분됨) |
-| includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
+| folderIds | String | Max. 50 characters per ID |  |  | List of IDs of folders to be deleted (separated by commas) |
+| fileIds | String | Max. 50 characters per ID |  |  | List of IDs of files to be deleted (separated by commas) |
+| includeThumbnail | boolean |  | Optional | false | Also deletes the operation file created by the file to be deleted |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"queue": {
 		"tryCount": 0,
@@ -723,43 +723,43 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| queue | Object | 작업 정보 |
-| queue.queueId | String | 작업 고유 ID |
-| queue.queueType | String | 작업 구분 (delete: 파일 및 폴더 삭제) |
-| queue.status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| queue.tryCount | int | 다시 시도 횟수 |
-| queue.queuedAt | DateTime | 작업 등록일 |
-| queue.operationId | String | 참조되는 오퍼레이션 ID |
-| queue.url | String | 서비스 될 이미지 서비스 URL |
-| queue.name | String | 생성 될 이미지 이름 |
-| queue.path | String | 생성 될 이미지 절대 경로 |
+| queue | Object | Task information |
+| queue.queueId | String | Task unique ID |
+| queue.queueType | String | Task type (delete: Deletes a file or folder) |
+| queue.status | String | Task status (W: Waiting, D: Completed, P: In-progress, F: Failed) |
+| queue.tryCount | int | Number of retries |
+| queue.queuedAt | DateTime | Task registration date |
+| queue.operationId | String | Referenced operation ID |
+| queue.url | String | URL of image service to be provided |
+| queue.name | String | Name of the image to be created |
+| queue.path | String | Absolute path of the image to be created |
 
 
-## 이미지 오퍼레이션 API
+## Image Operation API
 
-- 이미지 오퍼레이션 API를 통해 다양한 썸네일을 생성할 수 있습니다.
-- 썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice), 워터마크 제공
+- You can create various thumbnails with Image Operation API.
+- Provides the thumbnail size, black and white filter, crop (Rectangle, Circle, and Slice), and watermark.
 
-### 이미지 오퍼레이션 생성 및 수정
+### Create and Modify an Image Operation
 
-- 이미지 처리를 위한 오퍼레이션을 생성 또는 수정합니다.
+- Creates or modifies an operation for image processing.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
-[요청 본문]
+[Request Body]
 
-- 이미지의 가로 세로 중 긴 축 길이를 기준으로 사이즈를 100x100으로 줄이는 작업을 100x100이라는 이름으로 생성 또는 수정합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Creates or modifies a task named 100x100 that reduces the image size to 100x100 based on the length of the longer axis between width and height.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
@@ -770,137 +770,137 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 "upDownSizeType": "downOnly"}}]}'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| operationId | String | 최소 1글자, 최대 20글자, <br>영문 또는 숫자 | 필수 |  | 생성 및 수정할 오퍼레이션 이름 |
-| description | String | 최대 30글자 | 선택 |  | 오퍼레이션 설명 |
-| realtimeService | boolean |  | 선택 | true | 실시간 서비스 제공 여부 |
-| deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 썸네일을 삭제할지 여부 |
-| data | List |  | 선택 |  | 오퍼레이션 작업 목록 |
+| operationId | String | Min.1 character, Max. 20 characters, <br>English letter or number | Required |  | Name of the operation to be created or modified |
+| description | String | Max. 30 characters | Optional |  | Operation description |
+| realtimeService | boolean |  | Optional | true | Whether to provide a real-time service |
+| deleteThumbnail | boolean |  | Optional | false | Whether to delete the thumbnails previously created by the operation |
+| data | List |  | Optional |  | List of operation tasks |
 
-[data 옵션]
+[Data Option]
 
-- 썸네일 크기
+- Thumbnail size
 
 ```
 {
 	"templateOperationId": "resize_max_fit", 	// (required, value: resize_fixed / resize_min_fit / resize_max_fit)
-												// 기반이 되는 템플릿 ID
+												// Underlying template ID
 	"option": {
-		"width": int, 							// (required) 가로 사이즈
-		"height": int, 							// (required) 세로 사이즈
-		"quality": double, 						// (optional, default: 75, value: 1~100) 품질
+		"width": int, 							// (required) Horizontal size
+		"height": int, 							// (required) Vertical size
+		"quality": double, 						// (optional, default: 75, value: 1~100) quality
 		"upDownSizeType": String, 				// (optional, default: downOnly, value: downOnly / upOnly / upDownAll)
-												// 원본 이상으로 확대/축소 불가 여부
-		"keepAnimation": boolean, 				// (optional, default: true) GIF 애니메이션 유지 여부
-		"keepExi"f: boolean, 					// (optional, default: true) 메타정보 유지 여부
-		"autoOrient": boolean, 					// (optional, default: false) Orientation 정보를 기준으로 회전 여부
-		"targetExtension": String 				// (optional, default: null) 출력 포맷(확장자)
+												// Whether it is unable to enlarge and reduce beyond the original size
+		"keepAnimation": boolean, 				// (optional, default: true) Whether to maintain the GIF animation
+		"keepExi"f: boolean, 					// (optional, default: true) Whether to maintain the meta information
+		"autoOrient": boolean, 					// (optional, default: false) Whether to rotate based on the orientation information
+		"targetExtension": String 				// (optional, default: null) The output format (extension)
 	}
 }
 ```
 
-- 흑백 필터
+- Black and white filter
 
 ```
 {
-	"templateOperationId": "gray", 		// (required) 기반이 되는 템플릿 ID
-	"option": {  						// (required) 옵션 없음
-		"keepAnimation": boolean 		// (optional, default: true) GIF 애니메이션 유지 여부
+	"templateOperationId": "gray", 		// (required) Underlying template ID
+	"option": {  						// (required) No option
+		"keepAnimation": boolean 		// (optional, default: true) Whether to maintain the GIF animation
 	}
 }
 ```
 
-- Rectangle 크롭
+- Rectangle crop
 
 ```
 {
-	"templateOperationId": "rectangle",	// (required) 기반이 되는 템플릿 ID
+	"templateOperationId": "rectangle",	// (required) Underlying template ID
 	"option": {
 		"gravity": String, 				// (optional, default: Center, value: NorthWest / North / NorthEast /
 										// West / Center / East / SouthWest / South / SouthEast)
-										// 기준 위치
-		"offsetX": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"offsetY": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"width": int, 					// (required) 가로 사이즈
-		"height": int, 					// (required) 세로 사이즈
-		"keepAnimation": boolean 		// (optional, default: false) GIF 애니메이션 유지 여부
+										// Base position
+		"offsetX": int,					// (optional, default: 0) Base position is moved. Negative numbers indicate moving in the opposite direction
+		"offsetY": int,					// (optional, default: 0) Base position is moved. Negative numbers indicate moving in the opposite direction
+		"width": int, 					// (required) Horizontal size
+		"height": int, 					// (required) Vertical size
+		"keepAnimation": boolean 		// (optional, default: false) Whether to maintain the GIF animation
 	}
 }
 ```
 
-- Circle 크롭
+- Circle crop
 
 ```
 {
-	"templateOperationId": "circle", 	// (required) 기반이 되는 템플릿 ID
+	"templateOperationId": "circle", 	// (required) Underlying template ID
 	"option": {
 		"gravity": String, 				// (optional, default: Center, value: NorthWest / North / NorthEast /
 										// West / Center / East / SouthWest / South / SouthEast)
-										// 기준 위치
-		"offsetX": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"offsetY": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"radius": int 					// (required) 반지름
+										// Base position
+		"offsetX": int,					// (optional, default: 0) Base position is moved. Negative numbers indicate moving in the opposite direction
+		"offsetY": int,					// (optional, default: 0) Base position is moved. Negative numbers indicate moving in the opposite direction
+		"radius": int 					// (required) Radius
 	}
 }
 ```
 
-- Slice 크롭 : 가로, 세로 분할
+- Slice crop: Horizontal and vertical split
 
 ```
 {
-	"templateOperationId": "slice",		// (required) 기반이 되는 템플릿 ID
+	"templateOperationId": "slice",		// (required) Underlying template ID
 	"option": {
-		"sliceCropType": String, 		// (optional, default: "vertical") 분할 방식 (vertical, horizontal)
-		"sliceSize": int, 				// (optional, default: 0) 분할 크기
-		"keepAnimation": boolean, 		// (optional, default: true) GIF 애니메이션 유지 여부
-		"callbackUrl": string 			// (optional) 처리 결과를 통보받을 Url 경로. 포트는 80, 443만 지원
+		"sliceCropType": String, 		// (optional, default: "vertical") Slice method (vertical, horizontal)
+		"sliceSize": int, 				// (optional, default: 0) Slice size
+		"keepAnimation": boolean, 		// (optional, default: true) Whether to maintain the GIF animation
+		"callbackUrl": string 			// (optional) The URL path to receive the processing result. Only supports port 80 and port 443
 	}
 }
 ```
 
-- Slice 크롭 : 격자 분할
+- Slice crop: Grid split
 
 ```
 {
-	"templateOperationId": "grid", 		// (required) 기반이 되는 템플릿 ID
+	"templateOperationId": "grid", 		// (required) Underlying template ID
 	"option": {
-		"countX": int, 					// (Required) 가로 분할 갯수
-		"countY": int, 					// (Required) 세로 분할 갯수
-										// 원본 사이즈에 따라서 분할 개수로 나누었을때 조각 사이즈가 정수가 아닌
-										// 경우에는 설정한 분할 개수 보다 적은 수로 분할 될 수 있습니다.
-		"callbackUrl": string 			// (optional) 처리 결과를 통보받을 Url 경로. 포트는 80, 443만 지원
+		"countX": int, 					// (Required) Number of horizontal splits
+		"countY": int, 					// (Required) Number of vertical splits
+										// When the split piece size is not an integer after the original size is divided by the number of splits,
+										// the image can be divided by a number of splits that is lower than the previously set number of splits.
+		"callbackUrl": string 			// (optional) The URL path to receive the processing result. Only supports port 80 and port 443
 	}
 }
 ```
 
-- 워터마크
+- Watermark
 
 ```
 {
-	"templateOperationId": "watermark", // (required) 기반이 되는 템플릿 ID
+	"templateOperationId": "watermark", // (required) Underlying template ID
 	"option": {
 		"gravity": String, 				// (optional, default: Center, value: NorthWest / North / NorthEast /
 										// West / Center / East / SouthWest / South / SouthEast)
-										// 기준 위치
-		"offsetX": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"offsetY": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"watermarkImagePath": String 	// (Required) 합성할 이미지 파일의 경로
+										// Base position
+		"offsetX": int,					// (optional, default: 0) Base position is moved. Negative numbers indicate moving in the opposite direction
+		"offsetY": int,					// (optional, default: 0) Base position is moved. Negative numbers indicate moving in the opposite direction
+		"watermarkImagePath": String 	// (Required) The path of an image file to be synthesized
 	}
 }
 ```
 
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"operation": {
 	"appKey": {appKey},
@@ -928,61 +928,61 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| operation | Object | 오퍼레이션 정보 |
-| operation.appKey | String | 사용자 앱 키 |
-| operation.operationId | String | 오퍼레이션 이름 |
-| operation.description | String | 오퍼레이션 설명 |
-| operation.realtimeService | boolean | 실시간 서비스 제공 여부 |
-| operation.updatedAt | DateTime | 최종 수정일 |
-| operation.jobTemplate | List | 오퍼레이션 작업 목록 |
-| operation.jobTemplate[0].templateOperationId | String | 기반이 되는 템플릿 ID |
-| operation.jobTemplate[0].jobType | String | 오퍼레이션 작업 타입 |
-| operation.jobTemplate[0].option | Object | 오퍼레이션 작업 내용 |
+| operation | Object | Operation information |
+| operation.appKey | String | User AppKey |
+| operation.operationId | String | Operation name |
+| operation.description | String | Operation description |
+| operation.realtimeService | boolean | Whether to provide a real-time service |
+| operation.updatedAt | DateTime | Last modified date |
+| operation.jobTemplate | List | List of operation tasks |
+| operation.jobTemplate[0].templateOperationId | String | Underlying template ID |
+| operation.jobTemplate[0].jobType | String | Operation task type |
+| operation.jobTemplate[0].option | Object | Operation task content |
 
-### 이미지 오퍼레이션 목록 조회
+### List Image Operations
 
-- 이미지 오퍼레이션 목록을 조회합니다.
+- Retrieves a list of image operations.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations |
 
-[요청 본문]
+[Request Body]
 
-- 사용자의 오퍼레이션 목록을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Retrieves a list of user's operations.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations' \
 -H 'Authorization: {secretKey}'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| name | String | 최대 20글자, <br>영문 또는 숫자 | 선택 |  | 검색할 오퍼레이션 이름 (입력 값으로 시작하는) |
-| page | int | 최소 1 | 선택 | 1 | 페이지 번호 |
-| rows | int | 최대 10,000 | 선택 | 20 | 조회 개수 |
-| sort | String |  | 선택 | date:desc | 정렬 방식 (정렬대상 : name or date, 정렬방식 : asc or desc) |
-| template | boolean |  | 선택 | false | 목록 조회 대상 (true: 기본 오퍼레이션, false: 사용자 생성 오퍼레이션) |
+| name | String | Max. 20 characters, <br>English letter or number | Optional |  | Operation name to search for (starting with a input value) |
+| page | int | Min. 1 | Optional | 1 | Page number |
+| rows | int | Max. 10,000 | Optional | 20 | Query count |
+| sort | String |  | Optional | date:desc | Sorting method (Sort criteria: name or date, sorting method: asc or desc) |
+| template | boolean |  | Optional | false | Target of the list query (true: default operation, false: user-created operation) |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"paging": {
 		"page": 1,
@@ -1018,55 +1018,55 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| paging | Object | 페이징 정보 |
-| paging.page | int | 요청 페이지 번호 |
-| paging.rows | int | 요청 조회 개수 |
-| paging.totalCount | long | 전체 개수 |
-| operations | List | 오퍼레이션 목록 |
-| operations[0].appKey | String | 사용자 앱 키 |
-| operations[0].operationId | String | 오퍼레이션 이름 |
-| operations[0].description | String | 오퍼레이션 설명 |
-| operations[0].realtimeService | boolean | 실시간 서비스 사용 여부 |
-| operations[0].updatedAt | DateTime | 최종 수정일 |
-| operations[0].jobTemplate | List | 오퍼레이션 작업 목록 |
-| operations[0].jobTemplate[0].templateOperationId | String | 기반이 되는 템플릿 ID |
-| operations[0].jobTemplate[0].jobType | String | 오퍼레이션 작업 타입 |
-| operations[0].jobTemplate[0].option | Object | 오퍼레이션 작업 내용 |
+| paging | Object | Paging information |
+| paging.page | int | Requested page number |
+| paging.rows | int | Requested query count |
+| paging.totalCount | long | Total number |
+| operations | List | List of operations |
+| operations[0].appKey | String | User AppKey |
+| operations[0].operationId | String | Operation name |
+| operations[0].description | String | Operation description |
+| operations[0].realtimeService | boolean | Whether to use a real-time service |
+| operations[0].updatedAt | DateTime | Last modified date |
+| operations[0].jobTemplate | List | List of operation tasks |
+| operations[0].jobTemplate[0].templateOperationId | String | Underlying template ID |
+| operations[0].jobTemplate[0].jobType | String | Operation task type |
+| operations[0].jobTemplate[0].option | Object | Operation task content |
 
-### 이미지 오퍼레이션 상세 조회
+### Detailed Query of Image Operations
 
-- 특정 이미지 오퍼레이션 상세 내용을 조회합니다.
+- Retrieves the details of a specific image operation.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
-[요청 본문]
+[Request Body]
 
-- 100x100 오퍼레이션을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Retrieves the 100x100 operation.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"operation": {
 		"appKey": {appKey},
@@ -1095,52 +1095,52 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| operation | Object | 오퍼레이션 정보 |
-| operation.appKey | String | 사용자 앱 키 |
-| operation.operationId | String | 오퍼레이션 이름 |
-| operation.description | String | 오퍼레이션 설명 |
-| operation.realtimeService | boolean | 실시간 서비스 제공 여부 |
-| operation.updatedAt | DateTime | 최종 수정일 |
-| operation.jobTemplate | List | 오퍼레이션 작업 목록 |
-| operation.jobTemplate[0].templateOperationId | String | 기반이 되는 템플릿 ID |
-| operation.jobTemplate[0].jobType | String | 오퍼레이션 작업 타입 |
-| operation.jobTemplate[0].option | Object | 오퍼레이션 작업 내용 |
+| operation | Object | Operation information |
+| operation.appKey | String | User AppKey |
+| operation.operationId | String | Operation name |
+| operation.description | String | Operation description |
+| operation.realtimeService | boolean | Whether to provide a real-time service |
+| operation.updatedAt | DateTime | Last modified date |
+| operation.jobTemplate | List | List of operation tasks |
+| operation.jobTemplate[0].templateOperationId | String | Underlying template ID |
+| operation.jobTemplate[0].jobType | String | Operation task type |
+| operation.jobTemplate[0].option | Object | Operation task content |
 
-### 이미지 오퍼레이션 삭제
+### Delete an Image Operation
 
-- 특정 이미지 오퍼레이션을 삭제합니다.
+- Deletes a specific image operation.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
-[요청 본문]
+[Request Body]
 
-- 100x100 오퍼레이션을 삭제합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Deletes the 100x100 operation.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
-[옵션]
+[Options]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 썸네일을 삭제할지 여부 |
+| deleteThumbnail | boolean |  | Optional | false | Whether to delete the thumbnails previously created by the operation |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
@@ -1152,23 +1152,23 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 }
 ```
 
-### 이미지 오퍼레이션 실행 (비동기)
+### Execute Image Operations (asynchronous)
 
-- 지정된 파일에 오퍼레이션을 실행하여 썸네일을 생성합니다.
-- 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
+- Executes operations on the specified file to generate thumbnails.
+- The processing result can be checked through the [Query a Task](./api-guide/#query-a-task) API with the "queueId" received as a response.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations-exec |
 
-[요청 본문]
+[Request Body]
 
-- /myfolder/left.png, /myfolder/right.png 원본 파일로 100x100 오퍼레이션 옵션이 적용된 파일을 생성합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Creates files to which the 100x100 operation option is applied with the original files /myfolder/left.png, /myfolder/right.png.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations-exec' \
@@ -1178,23 +1178,23 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 "filepaths": ["/myfolder/left.png", "/myfolder/right.jpg"]}'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 기준이 되는 폴더의 절대 경로 |
-| filepaths | String List |  | 필수 |  | 실행할 절대 경로의 폴더 및 파일 리스트 |
-| operationIds | String List |  | 필수 |  | 실행할 오퍼레이션 ID 리스트 |
-| callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 URL 경로. <br>query string 형식으로 id를 적으면 callback 전송 시 같이 전달됨. <br>포트는 80, 443만 지원 |
+| basepath | String | Min. 2 characters, Max. 255 Bytes | Required |  | Absolute path of a folder that serves as a base |
+| filepaths | String List |  | Required |  | List of folders and files in the absolute path to execute the operations on |
+| operationIds | String List |  | Required |  | List of operation IDs to execute |
+| callbackUrl | String |  | Optional |  | The URL path to receive the processing result. <br>If you write an id in a query string format, it is delivered together when sending the callback. <br>Only supports port 80 and port 443 |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"paging": {
 		"page": 1,
@@ -1243,32 +1243,32 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| operations | List | 실행 오퍼레이션 목록 |
-| operations[0].appKey | String | 사용자 앱 키 |
-| operations[0].operationId | String | 오퍼레이션 이름 |
-| operations[0].description | String | 오퍼레이션 설명 |
-| operations[0].realtimeService | boolean | 실시간 서비스 제공 여부 |
-| operations[0].updatedAt | DateTime | 최종 수정일 |
-| operations[0].jobTemplate | List | 오퍼레이션 작업 목록 |
-| operations[0].jobTemplate[0].templateOperationId | String | 기반이 되는 템플릿 ID |
-| operations[0].jobTemplate[0].jobType | String | 작업 구분 |
-| operations[0].jobTemplate[0].option | Object | 작업 내용 |
-| queues | List | 작업 정보 목록 |
-| queues[0].queueId | String | 작업 고유 ID |
-| queues[0].queueType | String | 작업 구분 (image: 오퍼레이션, delete: 파일 및 폴더 삭제) |
-| queues[0].status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| queues[0].tryCount | int | 다시 시도 횟수 |
-| queues[0].queuedAt | DateTime | 작업 등록일 |
-| queues[0].operationId | String | 참조되는 오퍼레이션 ID |
-| queues[0].url | String | 서비스 될 이미지 서비스 URL |
-| queues[0].name | String | 생성 될 이미지 이름 |
-| queues[0].path | String | 생성 될 이미지 절대 경로 |
+| operations | List | List of operations to execute |
+| operations[0].appKey | String | User AppKey |
+| operations[0].operationId | String | Operation name |
+| operations[0].description | String | Operation description |
+| operations[0].realtimeService | boolean | Whether to provide a real-time service |
+| operations[0].updatedAt | DateTime | Last modified date |
+| operations[0].jobTemplate | List | List of operation tasks |
+| operations[0].jobTemplate[0].templateOperationId | String | Underlying template ID |
+| operations[0].jobTemplate[0].jobType | String | Task type |
+| operations[0].jobTemplate[0].option | Object | Task content |
+| queues | List | List of task information |
+| queues[0].queueId | String | Task unique ID |
+| queues[0].queueType | String | Task classification (image: operation, delete: delete files and folders) |
+| queues[0].status | String | Task status (W: Waiting, D: Completed, P: In-progress, F: Failed) |
+| queues[0].tryCount | int | Number of retries |
+| queues[0].queuedAt | DateTime | Task registration date |
+| queues[0].operationId | String | Referenced operation ID |
+| queues[0].url | String | URL of image service to be provided |
+| queues[0].name | String | Name of the image to be created |
+| queues[0].path | String | Absolute path of the image to be created |
 
-[요청 결과 콜백 본문]
+[Request Result Callback Body]
 
 ```
 // fail sample
@@ -1319,38 +1319,38 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 ```
 
 
-## 실시간 서비스 API
+## Real-time Service API
 
-### 실시간 서비스 조회
+### Query a Real-time Service
 
-- 사용자의 이미지 오퍼레이션 실시간 서비스 사용 여부를 조회합니다.
+- Retrieves whether a user used the image operation real-time service.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
 
-[요청 본문]
+[Request Body]
 
-- 사용자의 실시간 서비스를 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Retrieves a user’s real-time service.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}'
 ```
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"user": {
 		"appKey": {appkey},
@@ -1360,32 +1360,32 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 값 | 설명 |
+| Name | Value | Description |
 |---|---|---|
-| user | Object | 사용자 정보 |
-| user.appKey | String | 사용자 앱 키 |
-| user.containerName | String | 사용자의 컨테이너 정보 |
-| user.realtimeService | boolean | 실시간 서비스 제공 여부 |
+| user | Object | User Information |
+| user.appKey | String | User AppKey |
+| user.containerName | String | User’s container information |
+| user.realtimeService | boolean | Whether to provide a real-time service |
 
 
-### 실시간 서비스 변경
+### Change a Real-time Service
 
-- 사용자의 이미지 오퍼레이션 실시간 서비스 사용 여부를 변경합니다.
+- Changes whether a user used the image operation real-time service.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
 
-[요청 본문]
+[Request Body]
 
-- 사용자의 실시간 서비스를 변경합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Changes a user’s real-time service.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
@@ -1394,15 +1394,15 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 --data '{"realtimeService": false}'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| realtimeService | boolean |  | 필수 |  | 실시간 서비스 제공 여부 |
+| realtimeService | boolean |  | Required |  | Whether to provide a real-time service |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
@@ -1415,39 +1415,39 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 ```
 
 
-## 작업 API
+## Task API
 
-### 작업 조회
+### Query Task
 
-- 이미지 오퍼레이션 처리 또는 삭제 작업을 조회합니다.
+- Retrieves the tasks of processing or deleting image operations.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
 
-[요청 본문]
+[Request Body]
 
-- 오퍼레이션 요청에 대한 현재 상태를 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Retrieves the current status of an operation request.
+- You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
 -H 'Authorization: {secretKey}'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| queueId | String | 최대 64글자 | 필수 |  | 조회할 작업 고유 ID |
+| queueId | String | Max. 64 characters | Required |  | Task unique ID to search for |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
@@ -1470,17 +1470,17 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queue
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| queue | Object | 작업 정보 |
-| queue.queueId | String | 작업 고유 ID |
-| queue.queueType | String | 작업 구분 (image: 오퍼레이션, delete: 파일 및 폴더 삭제) |
-| queue.status | String | 작업 상태 (W: 대기중, D: 완료, P: 작업중, F: 실패) |
-| queue.tryCount | int | 다시 시도 횟수 |
-| queue.queuedAt | DateTime | 작업 시작일 |
-| queue.operationId | String | 참조되는 오퍼레이션 ID |
-| queue.url | String | 서비스 될(되는) 이미지 서비스 URL |
-| queue.name | String | 생성 될(된) 이미지 이름 |
-| queue.path | String | 생성 될(된) 이미지 절대 경로 |
+| queue | Object | Task information |
+| queue.queueId | String | Task unique ID |
+| queue.queueType | String | Task classification (image: operation, delete: delete files and folders) |
+| queue.status | String | Task status (W: Waiting, D: Completed, P: In-progress, F: Failed) |
+| queue.tryCount | int | Number of retries |
+| queue.queuedAt | DateTime | Task start date |
+| queue.operationId | String | Referenced operation ID |
+| queue.url | String | URL of image service that will be provided or has been provided |
+| queue.name | String | Name of an image to be created (was created) |
+| queue.path | String | Absolute path to the image that will be created or has been created |

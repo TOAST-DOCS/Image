@@ -1,173 +1,173 @@
-## Content Delivery > Image > 콘솔 사용 가이드
+## Content Delivery > Image > Console User Guide
 
-본 문서에서는 콘솔을 이용하여 폴더 생성 및 파일 업로드, 썸네일 옵션을 관리하는 방법에 대해 설명합니다.
+This document explains how to create folders, upload files, and manage thumbnail options using the console.
 
-## 폴더 및 이미지 파일 관리
+## Manage Folders and Image Files
 
-메뉴의 '파일보기' 화면에서 폴더와 원본 이미지 파일, 생성된 썸네일 이미지 파일을 관리할 수 있습니다.
+You can manage folders, original image files, and created thumbnail image files on the **File View** screen of the menu.
 
 ![image_01_20210720](https://static.toastoven.net/prod_img/image_01_20210720.png)
 
-### 툴바 아이콘 설명
+### Toolbar Icon Description
 
 ![image_02_20210720](https://static.toastoven.net/prod_img/image_02_20210720.png)
 
-### 폴더 생성
+### Create a Folder
 
 ![image_03_20210720](https://static.toastoven.net/prod_img/image_03_20210720.png)
 
-1.폴더는 이미지를 저장하는 기본 단위이며, **폴더 생성** 버튼을 클릭하여 생성합니다.
+1. A folder is the basic unit for storing images, and it is created by clicking the **Create Folder** button.
 
-2.폴더 이름을 입력하고 **확인** 버튼을 클릭합니다.  
+2. Enter a folder name and click **OK**.
 
-- 폴더의 이름 수정 기능은 제공하지 않습니다.  
-- 이름 수정이 필요할 경우 폴더를 삭제하고 다시 생성해야 합니다.  
+    - A function to edit the name of a folder is not provided.
+    - If you need to modify the name, you must delete the folder and re-create a folder.
 
-### 이미지 파일 업로드
+### Upload Image Files
 
 ![image_04_20210720](https://static.toastoven.net/prod_img/image_04_20210720.png)
 
-1.원하는 폴더를 선택하여 이동한 후, **업로드** 버튼을 클릭합니다.
+1. Select the desired folder to move into it, and click the **Upload** button.
 
-- 여러 개의 이미지를 한 번에 업로드할 수 있으며, 폴더와 압축 파일도 업로드가 가능합니다.
-- 압축파일을 업로드할 때, 압축파일 내의 폴더의 이름은 두 글자 이상이어야 합니다.
+    - You can upload multiple images at once, and you can also upload folders and compressed files.
+    - When uploading a compressed file, the name of the folder within the compressed file must be at least two letters long.
 
-2.이미지 파일을 끌어다 놓거나, **파일 추가** 버튼을 클릭하여 업로드할 파일을 선택합니다.  
+2. Drag and drop image files, or click **Add Files** to select files to upload.
 
-3. 같은 이름의 파일의 처리를 위해 '덮어쓰기' 또는 '이름 바꾸기'를 선택하고, **업로드** 버튼을 클릭합니다.  
+3. Select 'Overwrite' or 'Change Name' to handle files with the same name, and click **Upload**.
 
-- 정상적으로 업로드가 완료되면, 화면이 갱신되어 파일 목록을 확인할 수 있습니다.  
+    - When the upload is completed normally, the screen is updated and you can check the file list.
 
-### 다운로드
+### Download
 
 ![image_05_20210720](https://static.toastoven.net/prod_img/image_05_20210720.png)
 
-1.다운로드할 폴더와 이미지 파일을 선택한 후, **다운로드** 버튼을 클릭합니다.  
+1. After selecting a folder or image files to download, click the **Download** button.
 
-2.**확인** 버튼 클릭 후 한 개의 이미지 파일을 선택하면 바로 다운로드하며, 두 개 이상의 파일을 선택하면 압축파일 'nhn_cloud_image_manager.zip'을 다운로드합니다.  
+2. If you select one image file after clicking the **OK** button, it will be downloaded immediately. If you select two or more files, the compressed file `nhn_cloud_image_manager.zip` will be downloaded.
 
-- 한 번에 최대 10,000개의 이미지만 다운로드가 가능하며, 폴더 내 저장된 이미지를 다운로드할 경우에도 동일하게 10,000개의 이미지만 다운로드가 가능합니다.
+    - You can only download up to 10,000 images at a time, and even if you download images stored in a folder, only 10,000 images can be downloaded in the same way.
 
-### 파일/폴더 삭제
+### Delete Files or a Folder
 
 ![image_06_20210720](https://static.toastoven.net/prod_img/image_06_20210720.png)
 
-1. 삭제할 폴더 또는 이미지 파일을 선택한 후, **삭제** 버튼을 클릭합니다.
+1. After selecting the folder or image files to delete, click the **Delete** button.
 
-2. **확인** 버튼을 클릭합니다.
+2. Click **Confirm**.
 
-- 폴더 내 파일도 모두 삭제가 됩니다.
+    - If you select a folder, all files in that folder are also deleted.
 
-### 속성 보기
+### View Properties
 
 ![image_07_20210720](https://static.toastoven.net/prod_img/image_07_20210720.png)
 
-폴더 또는 이미지 파일을 한 개 선택하고, **속성** 버튼을 클릭합니다.  
+Select one folder or image file and click the **Properties** button.
 
-- 폴더를 선택한 경우에는 생성된 폴더와 이미지 파일 개수를 확인할 수 있습니다.  
-- 이미지 파일을 선택한 경우에는 이미지의 가로 세로 길이, 다운로드 URL과 메타정보를 확인할 수 있습니다.  
+- If you select a folder, you can check the number of created folders and image files.
+- If you select an image file, you can check the image's width and height, download URL, and meta information.
 
-### 조회 및 목록 보기
+### Query and View the List
 
 ![image_08_20210720](https://static.toastoven.net/prod_img/image_08_20210720.png)
 
-1. '보기 필터'를 이용하여 이미지 파일의 유형을 필터링하여 볼 수 있습니다.  
+1. You can view files after filtering by the type of image file using 'View Filter'.
 
-- '원본 이미지'는 콘솔 또는 API를 통해 직접 업로드한 이미지 파일을 의미하며, '생성된 썸네일'은 원본 이미지를 오퍼레이션하여 생성된 이미지를 의미합니다.
+    - 'Original Image' means an image file uploaded directly through the console or API, and 'Created Thumbnail' means an image created by applying an operation to the original image.
 
-2.현재 위치 또는 전체 위치에서 이미지 파일 이름을 검색합니다.  
+2. Search for the image file name from the current location or from the entire location.
 
-- 데이터베이스에서의 like '%검색어%'와 같이 검색어를 포함하는 모든 결과 값들을 검색합니다.
-- 대소문자를 구별하여 검색 됩니다.
-	- 입력 예) sample
-	- 결과 예) sample.gif, sample_2.gif, sample 3.gif, 샘플_sample_100x100.png
+    - All results that contain a search term are retrieved, similar to `like '%search term%'` in the database.
+    - Searches are case-sensitive.
+        - Input example: sample
+        - Example results: sample.gif, sample_2.gif, sample 3.gif, sample_sample_100x100.png
 
-### 전체 파일 삭제
+### Delete All Files
 
 ![image_09_20210720](https://static.toastoven.net/prod_img/image_09_20210720.png)
 
-1. **전체 파일 삭제** 버튼을 클릭합니다.  
+1. Click **Delete All Files**.
 
-- 상품 이용 종료를 위해서는 전체 파일을 삭제해야 합니다.  
-- 한번 삭제된 파일은 다시 복구할 수 없으니 신중하게 사용해야 합니다.  
+    - To terminate the use of the service, all files must be deleted.
+    - A deleted file cannot be recovered, so use it with caution.
 
-2. **확인** 버튼을 클릭합니다.
+2. Click **Confirm**.
 
-## 썸네일 옵션 관리
+## Manage Thumbnail Options
 
 ![image_10_20210720](https://static.toastoven.net/prod_img/image_10_20210720.png)
 
-메뉴의 '설정' 화면에서 썸네일 옵션을 관리할 수 있습니다.  
-여러 가지 옵션을 조합하여 만들 수 있습니다.  
+Thumbnail options can be managed from the **Settings** screen of the menu.
 
-### 썸네일 생성
+You can generate thumbnails by a combination of several options.
+
+### Create Thumbnails
 
 ![image_11_20210720](https://static.toastoven.net/prod_img/image_11_20210720.png)
 
-1.썸네일 옵션을 추가하기 위해 **추가** 버튼을 클릭합니다.  
+1. Click **Add** to add thumbnail options.
 
-2.이름과 설명 설정  
+2. Set name and description
 
-- 이름과 설명을 입력합니다.
-- 동일한 옵션 이름이 있을 때는 뒤에 구분자를 덧붙여서 사용하길 권장합니다.
-- 설명은 사용자가 알아보기 쉽게 해당 썸네일 옵션에 대한 간단한 설명을 입력합니다.
+    - Enter a name and description.
+    - When there is the same option name, it is recommended to add a identifier after it.
+    - For the description, enter a brief description of the thumbnail option for easy identification by users.
 
-3.이미지 처리 옵션 설정  
+3. Set image processing options
 
-- 이미지 처리 옵션을 설정합니다.
-- 이미지 생성 품질과 포맷을 선택합니다.
-- '콜백 URL'에 썸네일 생성 결과를 통보받을 주소를 적습니다.
-- '실시간 처리 활성', '이미지 메타정보 유지', 'Orientation 정보를 기준으로 이미지 회전', 'GIF 애니메이션 유지' 옵션을 선택/선택해제합니다.
-- 이미지 합성에 해당하는 Circle 크롭과 워터마크는 GIF 애니메이션 효과가 유지되지 않습니다.
+    - Set image processing options.
+    - Select the image generation quality and format.
+    - In 'Callback URL', enter the address to be notified of the thumbnail generation result.
+    - Select or clear the options 'Enable Real-time Processing', 'Maintain Image Meta Information', 'Rotate by Orientation', and 'Maintain GIF Animation'.
+    - Circle Crop and Watermark, which are image composition, do not maintain the GIF animation effect.
 
-4.이미지 오퍼레이션 시나리오 추가  
+4. Add image operation scenario
 
-- **+추가**를 클릭하여 이미지 오퍼레이션 옵션을 선택합니다.
-- 시나리오는 그룹별로 실행되며 동일한 옵션은 중복으로 설정할 수 없습니다.
-- 그룹 내에서는 오른쪽 화살표 버튼(▲▼)을 클릭해서 시나리오 순서를 설정합니다.
+    - Click **+Add** to select image operation options.
+    - Scenarios are run by group and the same option cannot be configured in duplicate.
+    - Within the group, click the arrow button (▲▼) on the right side to set the scenario order.
 
 ![image_12_20210720](https://static.toastoven.net/prod_img/image_12_20210720.png)
 
-썸네일의 크기 조절 방식 세부 설명
-```
- - Option의 긴 변 기준 Size 변경 : 비율을 유지하면서 리사이징 합니다.
- 예) 400x300 크기의 이미지를 썸네일 크기 옵션 200x100으로 리사이징 하면 200x150 크기를 가진 이미지로 리사이징 됩니다.
- - Option의 짧은 변 기준 Size 변경 : 비율을 유지하면서 리사이징 합니다.
- 예) 400x300 크기의 이미지를 썸네일 크기 옵션 200x100으로 리사이징 하면 133x100 크기를 가진 이미지로 리사이징 됩니다.
- - Option의 가로 세로에 맞게 Size 변경 : 비율을 유지하지 않고 설정한 사이즈로 리사이징 합니다.
- 예) 400x300 크기의 이미지를 썸네일 크기 옵션 200x100으로 리사이징 하면 200x100 크기를 가진 이미지로 리사이징 됩니다.
- - Option의 가로 기준 Size 변경 : 비율을 유지하면서 리사이징 합니다.
- 예) 400x300 크기의 이미지를 썸네일 크기 옵션 200x100으로 리사이징 하면 200x150 크기를 가진 이미지로 리사이징 됩니다.
- - Option의 세로 기준 Size 변경 : 비율을 유지하면서 리사이징 합니다.
- 예) 400x300 크기의 이미지를 썸네일 크기 옵션 200x100으로 리사이징 하면 133x100 크기를 가진 이미지로 리사이징 됩니다.
-```
+The resizing of thumbnails are performed as follows.
 
-시나리오 설정 완료 후 **저장** 버튼을 클릭합니다.  
+- Change the size based on the longer side of Option: Perform resize while maintaining the ratio.
+    - Example: If you resize a 400x300 image with the thumbnail size option 200x100, it will be resized to a 200x150 image.
+- Change the size based on the shorter side of Option: Perform resize while maintaining the ratio.
+    - Example: If you resize a 400x300 image with the thumbnail size option 200x100, it will be resized to a 133x100 image.
+- Change the size to fit the width and height of Option: Perform resize to the configured size without maintaining the ratio.
+    - Example: If you resize a 400x300 image with the thumbnail size option 200x100, it will be resized to a 200x100 image.
+- Change the size based on the width of Option: Perform resize while maintaining the ratio.
+    - Example: If you resize a 400x300 image with the thumbnail size option 200x100, it will be resized to a 200x150 image.
+- Change the size based on the height of Option: Perform resize while maintaining the proportions.
+    - Example: If you resize a 400x300 image with the thumbnail size option 200x100, it will be resized to a 133x100 image.
 
-### 썸네일 수정
+After completing the scenario settings, click **Save**.
+
+### Edit Thumbnails
 
 ![image_13_20210720](https://static.toastoven.net/prod_img/image_13_20210720.png)
 
-1.썸네일을 선택하고 **수정** 버튼을 클릭합니다.  
+1. Select a thumbnail and click **Edit**.
 
-2.썸네일 옵션을 수정하고 **수정** 버튼을 클릭합니다.
+2. Edit the thumbnail options and click **Edit**.
 
-- 옵션을 수정하더라도 수정하기 전의 설정으로 생성된 썸네일은 수정되지 않습니다.  
-- 대화상자에서 '오퍼레이션 이미지 삭제' 체크박스를 체크하면, 수정 전의 설정으로 생성된 썸네일을 일괄 삭제할 수 있습니다.
+    - Even if you modify the options, the thumbnails created with the settings before modification are not modified.
+    - If you check the 'Delete Operation Image' checkbox in the dialog box, you can bulk delete thumbnails created with the settings before modification.
 
-### 썸네일 삭제
+### Delete Thumbnails
 
 ![image_14_20210720](https://static.toastoven.net/prod_img/image_14_20210720.png)
 
-썸네일 옵션을 삭제하기 위해 **삭제** 버튼을 클릭합니다.
+Click **Delete** to delete the thumbnail option.
 
-- 삭제 버튼으로 선택한 썸네일 옵션을 삭제할 수 있습니다.
-- 대화상자에서 '오퍼레이션 이미지 삭제' 체크박스를 체크하면, 해당 오퍼레이션으로 생성된 썸네일을 일괄 삭제할 수 있습니다.
+- You can delete the selected thumbnail option with the Delete button.
+- If you check the 'Delete Operation Image' checkbox in the dialog box, you can bulk delete thumbnails created with the operation.
 
-### 사용자 설정
+### User Settings
 
 ![image_15_20210720](https://static.toastoven.net/prod_img/image_15_20210720.png)
 
-1.'**설정** 버튼을 클릭합니다.
+1. Click **Setting**.
 
-2. 실시간 처리 활성/비활성을 선택합니다.
+2. Choose to enable/disable real-time processing.
