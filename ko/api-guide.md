@@ -62,7 +62,7 @@ Image 서비스의 API를 설명합니다.
 
 | 메서드 | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
 
 [요청 본문]
 
@@ -70,7 +70,7 @@ Image 서비스의 API를 설명합니다.
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"path": "/myfolder"}'
@@ -123,7 +123,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
 
 [요청 본문]
 
@@ -131,7 +131,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -241,7 +241,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/properties |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties |
 
 [요청 본문]
 
@@ -249,7 +249,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -309,7 +309,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 
 | 메서드 | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
 
 [요청 본문]
 
@@ -318,7 +318,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 - 이미지 파일의 Binary Data를 넣습니다.
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type:application/octet-stream' \
 --data-binary 'path/to/imageFile/@sample.png'
@@ -423,7 +423,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 
 | 메서드 | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
 
 [요청 본문]
 
@@ -432,7 +432,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 - multipart/form–data 형식으로 전달합니다.
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images' \
 -H 'Authorization: {secretKey}' \
 -F 'params={"basepath": "/myfolder/banner", "overwrite": true, "operationIds":["100x100"]}' \
 -F 'files=@left.png' \
@@ -626,7 +626,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 
 | 메서드 | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/sync |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/sync |
 
 [요청 본문]
 
@@ -635,7 +635,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/sync?
 fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 -H 'Authorization: {secretKey}'
 ```
@@ -676,7 +676,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 | 메서드 | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/async |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/async |
 
 [요청 본문]
 
@@ -685,7 +685,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/async?
 fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8' \
 -H 'Authorization: {secretKey}'
 ```
@@ -754,7 +754,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 | 메서드 | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [요청 본문]
 
@@ -762,7 +762,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"description": "", "realtimeService": true, "data": [{"templateOperationId": "resize_max_fit",
@@ -953,7 +953,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations |
 
 [요청 본문]
 
@@ -961,7 +961,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1047,7 +1047,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [요청 본문]
 
@@ -1055,7 +1055,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1120,7 +1120,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | 메서드 | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [요청 본문]
 
@@ -1128,7 +1128,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1163,7 +1163,7 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 
 | 메서드 | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations-exec |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations-exec |
 
 [요청 본문]
 
@@ -1171,7 +1171,7 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations-exec' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations-exec' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"basepath": "/myfolder", "operationIds": ["100x100"],
@@ -1331,7 +1331,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
 
 [요청 본문]
 
@@ -1339,7 +1339,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1380,7 +1380,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 
 | 메서드 | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
 
 [요청 본문]
 
@@ -1388,7 +1388,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"realtimeService": false}'
@@ -1427,7 +1427,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
 
 [요청 본문]
 
@@ -1435,7 +1435,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
 -H 'Authorization: {secretKey}'
 ```
 

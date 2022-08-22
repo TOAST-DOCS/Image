@@ -62,7 +62,7 @@ Imageサービスの APIを説明します。
 
 | メソッド | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
 
 [リクエスト内容]
 
@@ -70,7 +70,7 @@ Imageサービスの APIを説明します。
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"path": "/myfolder"}'
@@ -123,7 +123,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 
 | メソッド | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
 
 [リクエスト例]
 
@@ -131,7 +131,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 - {appKey}と {secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -241,7 +241,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 
 | メソッド | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/properties |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties |
 
 [リクエスト例]
 
@@ -249,7 +249,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 - {appKey}と{secretKey}はコンソールで確認した値に変更してください。
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -309,7 +309,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 
 | メソッド | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
 
 [リクエスト例]
 
@@ -318,7 +318,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 - 画像ファイルのBinary Dataを転送します。
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type:application/octet-stream' \
 --data-binary 'path/to/imageFile/@sample.png'
@@ -423,7 +423,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 
 | メソッド | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
 
 [リクエスト例]
 
@@ -432,7 +432,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 - multipart/form–data 形式で転送します。
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images' \
 -H 'Authorization: {secretKey}' \
 -F 'params={"basepath": "/myfolder/banner", "overwrite": true, "operationIds":["100x100"]}' \
 -F 'files=@left.png' \
@@ -626,7 +626,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 
 | メソッド | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/sync |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/sync |
 
 [リクエスト例]
 
@@ -635,7 +635,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/sync?
 fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 -H 'Authorization: {secretKey}'
 ```
@@ -676,7 +676,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 | メソッド | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/async |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/async |
 
 [リクエスト例]
 
@@ -685,7 +685,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。 
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/async?
 fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8' \
 -H 'Authorization: {secretKey}'
 ```
@@ -754,7 +754,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 | メソッド | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [リクエスト例]
 
@@ -762,7 +762,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"description": "", "realtimeService": true, "data": [{"templateOperationId": "resize_max_fit",
@@ -953,7 +953,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | メソッド | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations |
 
 [リクエスト例]
 
@@ -961,7 +961,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1047,7 +1047,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | メソッド | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [リクエスト例]
 
@@ -1055,7 +1055,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1120,7 +1120,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | メソッド | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [リクエスト例]
 
@@ -1128,7 +1128,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}と{secretKey}はコンソールで確認した値を変更します。
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1163,7 +1163,7 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 
 | メソッド | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations-exec |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations-exec |
 
 [リクエスト例]
 
@@ -1171,7 +1171,7 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations-exec' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations-exec' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"basepath": "/myfolder", "operationIds": ["100x100"],
@@ -1331,7 +1331,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 
 | メソッド | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
 
 [リクエスト例]
 
@@ -1339,7 +1339,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1380,7 +1380,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 
 | メソッド | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
 
 [リクエスト例]
 
@@ -1388,7 +1388,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"realtimeService": false}'
@@ -1427,7 +1427,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 
 | メソッド | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
 
 [リクエスト例]
 
@@ -1435,7 +1435,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 - {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
 -H 'Authorization: {secretKey}'
 ```
 

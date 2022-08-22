@@ -62,7 +62,7 @@ The guide describes APIs of the Image service.
 
 | Method | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
 
 [Request Body]
 
@@ -70,7 +70,7 @@ The guide describes APIs of the Image service.
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"path": "/myfolder"}'
@@ -123,7 +123,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
 
 [Request Body]
 
@@ -131,7 +131,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -241,7 +241,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/properties |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties |
 
 [Request Body]
 
@@ -249,7 +249,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -309,7 +309,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 
 | Method | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
 
 [Request Body]
 
@@ -318,7 +318,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 - Input the binary data of the image file.
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type:application/octet-stream' \
 --data-binary 'path/to/imageFile/@sample.png'
@@ -423,7 +423,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 
 | Method | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
 
 [Request Body]
 
@@ -432,7 +432,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 - Delivers the files in the multipart/form-data format.
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images' \
 -H 'Authorization: {secretKey}' \
 -F 'params={"basepath": "/myfolder/banner", "overwrite": true, "operationIds":["100x100"]}' \
 -F 'files=@left.png' \
@@ -626,7 +626,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 
 | Method | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/sync |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/sync |
 
 [Request Body]
 
@@ -635,7 +635,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/sync?
 fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 -H 'Authorization: {secretKey}'
 ```
@@ -676,7 +676,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 | Method | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/async |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/async |
 
 [Request Body]
 
@@ -685,7 +685,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/async?
 fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8' \
 -H 'Authorization: {secretKey}'
 ```
@@ -754,7 +754,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 | Method | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [Request Body]
 
@@ -762,7 +762,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"description": "", "realtimeService": true, "data": [{"templateOperationId": "resize_max_fit",
@@ -953,7 +953,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations |
 
 [Request Body]
 
@@ -961,7 +961,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1047,7 +1047,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [Request Body]
 
@@ -1055,7 +1055,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1120,7 +1120,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | Method | URI |
 |---|---|
-| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 [Request Body]
 
@@ -1128,7 +1128,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1163,7 +1163,7 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 
 | Method | URI |
 |---|---|
-| POST | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations-exec |
+| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations-exec |
 
 [Request Body]
 
@@ -1171,7 +1171,7 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations-exec' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations-exec' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"basepath": "/myfolder", "operationIds": ["100x100"],
@@ -1331,7 +1331,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
 
 [Request Body]
 
@@ -1339,7 +1339,7 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1380,7 +1380,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 
 | Method | URI |
 |---|---|
-| PUT | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
+| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
 
 [Request Body]
 
@@ -1388,7 +1388,7 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"realtimeService": false}'
@@ -1427,7 +1427,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
 
 [Request Body]
 
@@ -1435,7 +1435,7 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 - You must change {appKey} and {secretKey} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
 -H 'Authorization: {secretKey}'
 ```
 
