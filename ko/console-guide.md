@@ -1,4 +1,4 @@
-## Content Delivery > Image > 콘솔 사용 가이드
+## Content Delivery > Image Manager > 콘솔 사용 가이드
 
 본 문서에서는 콘솔을 이용하여 폴더 생성 및 파일 업로드, 섬네일 옵션을 관리하는 방법에 대해 설명합니다.
 

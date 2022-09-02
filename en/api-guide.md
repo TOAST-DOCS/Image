@@ -1,6 +1,6 @@
-## Content Delivery > Image > API Guide
+## Content Delivery > Image Manager > API Guide
 
-The guide describes APIs of the Image service.
+The guide describes APIs of the Image Manager service.
 
 
 ## Common API Information
