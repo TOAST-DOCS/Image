@@ -1,6 +1,6 @@
 ## Content Delivery > Image Manager > 릴리스 노트
 
-### 2022.09.27
+### 2022.09.27.
 #### 서비스명 변경
 * 서비스명을 Image Manager로 변경
 
