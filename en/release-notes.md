@@ -1,4 +1,4 @@
-## Content Delivery > Image > Release Notes
+## Content Delivery > Image Manager > Release Notes
 
 ### February 22, 2018
 #### Feature Updates

@@ -1,4 +1,4 @@
-## Content Delivery > Image > 概要
+## Content Delivery > Image Manager > 概要
 
 お客様のサービスで使用する画像を保存、編集、送信まで一度に提供するシステムです。
 

@@ -1,4 +1,4 @@
-## Content Delivery > Image > Console User Guide
+## Content Delivery > Image Manager > Console User Guide
 
 This document explains how to create folders, upload files, and manage thumbnail options using the console.
 
