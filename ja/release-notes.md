@@ -1,4 +1,8 @@
-## Content Delivery > Image > リリースノート
+## Content Delivery > Image Manager > リリースノート
+
+### 2022.09.27.
+#### サービス名変更
+* サービス名をImage Managerに変更
 
 ### 2018. 02. 22.
 #### 機能改善/変更

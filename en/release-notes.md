@@ -1,4 +1,8 @@
-## Content Delivery > Image > Release Notes
+## Content Delivery > Image Manager > Release Notes
+
+### September 27, 2022
+#### Service Name Change
+* Changed the service name to Image Manager
 
 ### February 22, 2018
 #### Feature Updates
