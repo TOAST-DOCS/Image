@@ -1,5 +1,9 @@
 ## Content Delivery > Image Manager > Release Notes
 
+### September 27, 2022
+#### Service Name Change
+* Changed the service name to Image Manager
+
 ### February 22, 2018
 #### Feature Updates
 * [Console] Changed the method of accessing 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to a top menu  
