@@ -6,15 +6,15 @@ This document explains how to create folders, upload files, and manage thumbnail
 
 You can manage folders, original image files, and created thumbnail image files on the **File View** screen of the menu.
 
-![image_01_20210720](https://static.toastoven.net/prod_img/image_01_20210720.png)
+![image_01_20220929](https://static.toastoven.net/prod_img/image_01_20220929.png)
 
 ### Toolbar Icon Description
 
-![image_02_20210720](https://static.toastoven.net/prod_img/image_02_20210720.png)
+![image_02_20220929](https://static.toastoven.net/prod_img/image_02_20220929.png)
 
 ### Create a Folder
 
-![image_03_20210720](https://static.toastoven.net/prod_img/image_03_20210720.png)
+![image_03_20220929](https://static.toastoven.net/prod_img/image_03_20220929.png)
 
 1. A folder is the basic unit for storing images, and it is created by clicking the **Create Folder** button.
 
@@ -25,7 +25,7 @@ You can manage folders, original image files, and created thumbnail image files 
 
 ### Upload Image Files
 
-![image_04_20210720](https://static.toastoven.net/prod_img/image_04_20210720.png)
+![image_04_20220929](https://static.toastoven.net/prod_img/image_04_20220929.png)
 
 1. Select the desired folder to move into it, and click the **Upload** button.
 
@@ -40,7 +40,7 @@ You can manage folders, original image files, and created thumbnail image files 
 
 ### Download
 
-![image_05_20210720](https://static.toastoven.net/prod_img/image_05_20210720.png)
+![image_05_20220929](https://static.toastoven.net/prod_img/image_05_20220929.png)
 
 1. After selecting a folder or image files to download, click the **Download** button.
 
@@ -50,7 +50,7 @@ You can manage folders, original image files, and created thumbnail image files 
 
 ### Delete Files or a Folder
 
-![image_06_20210720](https://static.toastoven.net/prod_img/image_06_20210720.png)
+![image_06_20220929](https://static.toastoven.net/prod_img/image_06_20220929.png)
 
 1. After selecting the folder or image files to delete, click the **Delete** button.
 
@@ -60,7 +60,7 @@ You can manage folders, original image files, and created thumbnail image files 
 
 ### View Properties
 
-![image_07_20210720](https://static.toastoven.net/prod_img/image_07_20210720.png)
+![image_07_20220929](https://static.toastoven.net/prod_img/image_07_20220929.png)
 
 Select one folder or image file and click the **Properties** button.
 
@@ -69,7 +69,7 @@ Select one folder or image file and click the **Properties** button.
 
 ### Query and View the List
 
-![image_08_20210720](https://static.toastoven.net/prod_img/image_08_20210720.png)
+![image_08_20220929](https://static.toastoven.net/prod_img/image_08_20220929.png)
 
 1. You can view files after filtering by the type of image file using 'View Filter'.
 
@@ -84,7 +84,7 @@ Select one folder or image file and click the **Properties** button.
 
 ### Delete All Files
 
-![image_09_20210720](https://static.toastoven.net/prod_img/image_09_20210720.png)
+![image_09_20220929](https://static.toastoven.net/prod_img/image_09_20220929.png)
 
 1. Click **Delete All Files**.
 
@@ -95,7 +95,7 @@ Select one folder or image file and click the **Properties** button.
 
 ## Manage Thumbnail Options
 
-![image_10_20210720](https://static.toastoven.net/prod_img/image_10_20210720.png)
+![image_10_20220929](https://static.toastoven.net/prod_img/image_10_20220929.png)
 
 Thumbnail options can be managed from the **Settings** screen of the menu.
 
@@ -103,7 +103,7 @@ You can generate thumbnails by a combination of several options.
 
 ### Create Thumbnails
 
-![image_11_20210720](https://static.toastoven.net/prod_img/image_11_20210720.png)
+![image_11_20220929](https://static.toastoven.net/prod_img/image_11_20220929.png)
 
 1. Click **Add** to add thumbnail options.
 
@@ -127,7 +127,7 @@ You can generate thumbnails by a combination of several options.
     - Scenarios are run by group and the same option cannot be configured in duplicate.
     - Within the group, click the arrow button (▲▼) on the right side to set the scenario order.
 
-![image_12_20210720](https://static.toastoven.net/prod_img/image_12_20210720.png)
+![image_12_20220929](https://static.toastoven.net/prod_img/image_12_20220929.png)
 
 The resizing of thumbnails are performed as follows.
 
@@ -146,7 +146,7 @@ After completing the scenario settings, click **Save**.
 
 ### Edit Thumbnails
 
-![image_13_20210720](https://static.toastoven.net/prod_img/image_13_20210720.png)
+![image_13_20220929](https://static.toastoven.net/prod_img/image_13_20220929.png)
 
 1. Select a thumbnail and click **Edit**.
 
@@ -157,7 +157,7 @@ After completing the scenario settings, click **Save**.
 
 ### Delete Thumbnails
 
-![image_14_20210720](https://static.toastoven.net/prod_img/image_14_20210720.png)
+![image_14_20220929](https://static.toastoven.net/prod_img/image_14_20220929.png)
 
 Click **Delete** to delete the thumbnail option.
 
@@ -166,7 +166,7 @@ Click **Delete** to delete the thumbnail option.
 
 ### User Settings
 
-![image_15_20210720](https://static.toastoven.net/prod_img/image_15_20210720.png)
+![image_15_20220929](https://static.toastoven.net/prod_img/image_15_20220929.png)
 
 1. Click **Setting**.
 
