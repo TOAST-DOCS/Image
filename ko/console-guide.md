@@ -1,4 +1,4 @@
-## Content Delivery > Image > 콘솔 사용 가이드
+## Content Delivery > Image Manager > 콘솔 사용 가이드
 
 본 문서에서는 콘솔을 이용하여 폴더 생성 및 파일 업로드, 섬네일 옵션을 관리하는 방법에 대해 설명합니다.
 
@@ -6,15 +6,15 @@
 
 메뉴의 **파일 보기** 화면에서 폴더와 원본 이미지 파일, 생성된 섬네일 이미지 파일을 관리할 수 있습니다.
 
-![image_01_20210720](https://static.toastoven.net/prod_img/image_01_20210720.png)
+![image_01_20220929](https://static.toastoven.net/prod_img/image_01_20220929.png)
 
 ### 툴바 아이콘 설명
 
-![image_02_20210720](https://static.toastoven.net/prod_img/image_02_20210720.png)
+![image_02_20220929](https://static.toastoven.net/prod_img/image_02_20220929.png)
 
 ### 폴더 생성
 
-![image_03_20210720](https://static.toastoven.net/prod_img/image_03_20210720.png)
+![image_03_20220929](https://static.toastoven.net/prod_img/image_03_20220929.png)
 
 1. 폴더는 이미지를 저장하는 기본 단위이며, **폴더 생성** 버튼을 클릭하여 생성합니다.
 
@@ -25,7 +25,7 @@
 
 ### 이미지 파일 업로드
 
-![image_04_20210720](https://static.toastoven.net/prod_img/image_04_20210720.png)
+![image_04_20220929](https://static.toastoven.net/prod_img/image_04_20220929.png)
 
 1. 원하는 폴더를 선택하여 이동한 후, **업로드** 버튼을 클릭합니다.
 
@@ -40,7 +40,7 @@
 
 ### 다운로드
 
-![image_05_20210720](https://static.toastoven.net/prod_img/image_05_20210720.png)
+![image_05_20220929](https://static.toastoven.net/prod_img/image_05_20220929.png)
 
 1. 다운로드할 폴더와 이미지 파일을 선택한 후, **다운로드** 버튼을 클릭합니다.
 
@@ -50,7 +50,7 @@
 
 ### 파일/폴더 삭제
 
-![image_06_20210720](https://static.toastoven.net/prod_img/image_06_20210720.png)
+![image_06_20220929](https://static.toastoven.net/prod_img/image_06_20220929.png)
 
 1. 삭제할 폴더 또는 이미지 파일을 선택한 후, **삭제** 버튼을 클릭합니다.
 
@@ -60,7 +60,7 @@
 
 ### 속성 보기
 
-![image_07_20210720](https://static.toastoven.net/prod_img/image_07_20210720.png)
+![image_07_20220929](https://static.toastoven.net/prod_img/image_07_20220929.png)
 
 폴더 또는 이미지 파일을 한 개 선택하고, **속성** 버튼을 클릭합니다.
 
@@ -69,7 +69,7 @@
 
 ### 조회 및 목록 보기
 
-![image_08_20210720](https://static.toastoven.net/prod_img/image_08_20210720.png)
+![image_08_20220929](https://static.toastoven.net/prod_img/image_08_20220929.png)
 
 1. '보기 필터'를 이용하여 이미지 파일의 유형을 필터링하여 볼 수 있습니다.
 
@@ -84,7 +84,7 @@
 
 ### 전체 파일 삭제
 
-![image_09_20210720](https://static.toastoven.net/prod_img/image_09_20210720.png)
+![image_09_20220929](https://static.toastoven.net/prod_img/image_09_20220929.png)
 
 1. **전체 파일 삭제** 버튼을 클릭합니다.
 
@@ -95,7 +95,7 @@
 
 ## 섬네일 옵션 관리
 
-![image_10_20210720](https://static.toastoven.net/prod_img/image_10_20210720.png)
+![image_10_20220929](https://static.toastoven.net/prod_img/image_10_20220929.png)
 
 메뉴의 **설정** 화면에서 섬네일 옵션을 관리할 수 있습니다.
 
@@ -103,7 +103,7 @@
 
 ### 섬네일 생성
 
-![image_11_20210720](https://static.toastoven.net/prod_img/image_11_20210720.png)
+![image_11_20220929](https://static.toastoven.net/prod_img/image_11_20220929.png)
 
 1. 섬네일 옵션을 추가하기 위해 **추가** 버튼을 클릭합니다.
 
@@ -127,7 +127,7 @@
     - 시나리오는 그룹별로 실행되며 동일한 옵션은 중복으로 설정할 수 없습니다.
     - 그룹 내에서는 오른쪽 화살표 버튼(▲▼)을 클릭해서 시나리오 순서를 설정합니다.
 
-![image_12_20210720](https://static.toastoven.net/prod_img/image_12_20210720.png)
+![image_12_20220929](https://static.toastoven.net/prod_img/image_12_20220929.png)
 
 섬네일의 크기 조절 방식은 다음과 같습니다.
 
@@ -146,7 +146,7 @@
 
 ### 섬네일 수정
 
-![image_13_20210720](https://static.toastoven.net/prod_img/image_13_20210720.png)
+![image_13_20220929](https://static.toastoven.net/prod_img/image_13_20220929.png)
 
 1. 섬네일을 선택하고 **수정** 버튼을 클릭합니다.
 
@@ -157,7 +157,7 @@
 
 ### 섬네일 삭제
 
-![image_14_20210720](https://static.toastoven.net/prod_img/image_14_20210720.png)
+![image_14_20220929](https://static.toastoven.net/prod_img/image_14_20220929.png)
 
 섬네일 옵션을 삭제하기 위해 **삭제** 버튼을 클릭합니다.
 
@@ -166,7 +166,7 @@
 
 ### 사용자 설정
 
-![image_15_20210720](https://static.toastoven.net/prod_img/image_15_20210720.png)
+![image_15_20220929](https://static.toastoven.net/prod_img/image_15_20220929.png)
 
 1. **설정** 버튼을 클릭합니다.
 
