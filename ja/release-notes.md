@@ -1,5 +1,11 @@
 ## Content Delivery > Image Manager > リリースノート
 
+### 2022. 10. 25
+#### Image
+* イメージサポート終了
+    * CentOS 7.8 with MySQL 5.6.38(2021. 12. 21.)
+    * CentOS 7.8 with MySQL 5.6.50(2021. 12. 21.)
+
 ### 2022.09.27.
 #### サービス名変更
 * サービス名をImage Managerに変更
