@@ -12,7 +12,7 @@
 ## サポートしている画像ファイル
 
 - Imageサービスでサポートしている画像ファイルフォーマットは今の通りです。
-	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png
+	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png, webp
 - Imageサービスでは最大12MBのイメージファイルをアップロードできます。
 
 ## サービス用語

@@ -12,7 +12,7 @@
 ## 지원 가능한 이미지 
 
 - 지원하는 이미지 파일 형식은 다음과 같습니다.
-	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png
+	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png, webp
 - 이미지 파일은 최대 12MB까지 업로드할 수 있습니다.
 
 ## 서비스 용어
