@@ -1,10 +1,10 @@
 ## Content Delivery > Image Manager > Release Notes
 
-### 2023. 09. 12.
-#### 기능 개선/변경
-* [API] 지원 파일 포맷 추가(.webp)
-* [API] 업로드 이미지 크기 제한 변경(12MB > 50MB로 증가)
-* [API] 응답에 원본 url 경로 추가
+### September 12, 2023
+#### Feature Updates
+* [API] Added supported file format (.webp)
+* [API] Changed uploaded image size limit (12 MB > 50 MB)
+* [API] Added the origial URL path to responses
 
 ### September 27, 2022
 #### Service Name Change
