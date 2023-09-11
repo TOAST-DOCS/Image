@@ -9,11 +9,11 @@ Image is a service that provides comprehensive functions for storing, editing, a
 - Allows you to create thumbnails of the desired size in real time simply by adding parameters to the original image file URL.
 - HTTP and HTTPS protocols can be used for the image file URL.
 
-## Supported Images
+## Supported Images 
 
 - The image file formats supported by the Image Manager service are as follows:
-	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png, webp
-- The Image Manager service allows you to upload image files of up to 50 MB.
+	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png
+- The Image Manager service allows you to upload image files of up to 12 MB.
 
 ## Glossary
 
