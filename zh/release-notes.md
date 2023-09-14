@@ -1,6 +1,6 @@
 ## Content Delivery > Image Manager > Release Notes
 
-### September 12, 2023
+### September 14, 2023
 #### Feature Updates
 * [API] Added supported file format (.webp)
 * [API] Changed uploaded image size limit (12 MB > 50 MB)
