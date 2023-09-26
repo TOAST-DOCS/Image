@@ -786,7 +786,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 ```
 {
-	"templateOperationId": "resize_max_fit", 	// (required, value: resize_fixed / resize_min_fit / resize_max_fit)
+	"templateOperationId": "resize_max_fit", 	// (required, value: resize_max_fit, resize_min_fit, resize_fix, resize_width_fit, resize_height_fit)
 												// Underlying template ID
 	"option": {
 		"width": int, 							// (required) Horizontal size
@@ -795,7 +795,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 		"upDownSizeType": String, 				// (optional, default: downOnly, value: downOnly / upOnly / upDownAll)
 												// Whether it is unable to enlarge and reduce beyond the original size
 		"keepAnimation": boolean, 				// (optional, default: true) Whether to maintain the GIF animation
-		"keepExi"f: boolean, 					// (optional, default: true) Whether to maintain the meta information
+		"keepExif": boolean, 					// (optional, default: true) Whether to maintain the meta information
 		"autoOrient": boolean, 					// (optional, default: false) Whether to rotate based on the orientation information
 		"targetExtension": String 				// (optional, default: null) The output format (extension)
 	}
