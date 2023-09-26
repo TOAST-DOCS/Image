@@ -786,7 +786,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 ```
 {
-	"templateOperationId": "resize_max_fit", 	// (required, value: resize_fixed / resize_min_fit / resize_max_fit)
+	"templateOperationId": "resize_max_fit", 	// (required, value: resize_max_fit, resize_min_fit, resize_fix, resize_width_fit, resize_height_fit)
 												// ベースとなるテンプレートID
 	"option": {
 		"width": int, 							// (required) 横のサイズ
@@ -795,7 +795,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 		"upDownSizeType": String, 				// (optional, default: downOnly, value: downOnly / upOnly / upDownAll)
 												// 原本以上に拡大/縮小させるか
 		"keepAnimation": boolean, 				// (optional, default: true) GIFアニメーションを維持するかどうか
-		"keepExi"f: boolean, 					// (optional, default: true) メタ情報を維持するかどうか
+		"keepExif": boolean, 					// (optional, default: true) メタ情報を維持するかどうか
 		"autoOrient": boolean, 					// (optional, default: false) Orientation情報を基準に回転するかどうか
 		"targetExtension": String 				// (optional, default: null) 出力フォーマット(拡張子)
 	}

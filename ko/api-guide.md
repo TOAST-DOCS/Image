@@ -786,7 +786,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 ```
 {
-	"templateOperationId": "resize_max_fit", 	// (required, value: resize_fixed / resize_min_fit / resize_max_fit)
+	"templateOperationId": "resize_max_fit", 	// (required, value: resize_max_fit, resize_min_fit, resize_fix, resize_width_fit, resize_height_fit)
 												// 기반이 되는 템플릿 ID
 	"option": {
 		"width": int, 							// (required) 가로 사이즈
@@ -795,7 +795,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 		"upDownSizeType": String, 				// (optional, default: downOnly, value: downOnly / upOnly / upDownAll)
 												// 원본 이상으로 확대/축소 불가 여부
 		"keepAnimation": boolean, 				// (optional, default: true) GIF 애니메이션 유지 여부
-		"keepExi"f: boolean, 					// (optional, default: true) 메타정보 유지 여부
+		"keepExif": boolean, 					// (optional, default: true) 메타정보 유지 여부
 		"autoOrient": boolean, 					// (optional, default: false) Orientation 정보를 기준으로 회전 여부
 		"targetExtension": String 				// (optional, default: null) 출력 포맷(확장자)
 	}
