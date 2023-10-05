@@ -61,7 +61,7 @@
 
 ### プロパティ表示
 
-![image_07_ja_20220929](https://static.toastoven.net/prod_img/image_07_ja_20220929.png)
+![image_07_ja_20231031](https://static.toastoven.net/prod_img/image_07_ja_20231031.png)
 
 フォルダまたは画像ファイルをひとつ選択し、 **プロパティ** ボタンをクリックします。  
 

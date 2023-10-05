@@ -60,7 +60,7 @@ You can manage folders, original image files, and created thumbnail image files 
 
 ### View Properties
 
-![image_07_20220929](https://static.toastoven.net/prod_img/image_07_20220929.png)
+![image_07_20231031](https://static.toastoven.net/prod_img/image_07_20231031.png)
 
 Select one folder or image file and click the **Properties** button.
 

@@ -60,7 +60,7 @@
 
 ### 속성 보기
 
-![image_07_20220929](https://static.toastoven.net/prod_img/image_07_20220929.png)
+![image_07_20231031](https://static.toastoven.net/prod_img/image_07_20231031.png)
 
 폴더 또는 이미지 파일을 한 개 선택하고, **속성** 버튼을 클릭합니다.
 
