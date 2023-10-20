@@ -234,6 +234,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 ### 폴더 속성 조회
 
 - 폴더의 ID, 용량, 파일 개수 등의 속성을 조회합니다.
+- 폴더에 저장된 파일의 개수에 따라 시간이 많이 소요될 수 있습니다. 폴더 내 파일 개수 및 전체 용량 조회가 필요하지 않을 경우 **폴더 기본 속성 조회** API를 사용하십시오..
 
 #### 요청
 
@@ -295,7 +296,63 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.totalFileCount | long | 하위 파일 개수 |
 | folder.updatedAt | DateTime | 최종 수정일 |
 
+### 폴더 기본 속성 조회
 
+- 폴더 속성 조회 API에서 용량, 파일 개수, 폴더 개수를 제외한 속성을 조회합니다.
+
+#### 요청
+
+[URI]
+
+| 메서드 | URI                                                                                 |
+|---|-------------------------------------------------------------------------------------|
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties/simple |
+
+[요청 본문]
+
+- myfolder의 폴더의 속성을 조회합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+
+```
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
+-H 'Authorization: {secretKey}'
+```
+
+[옵션]
+
+| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+|---|---|---|---|---|---|
+| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 절대 경로 |
+
+#### 응답
+
+[응답 본문]
+
+```
+{
+	"header": {
+		// 생략
+	},
+	"folder": {
+		"isFolder": true,
+		"id": "996dd430-5172-4178-86c9-0704e88b28e3",
+		"name": "myfolder",
+		"path": "/myfolder",
+		"updatedAt": "2016-02-26T15:57:06+0900"
+	}
+}
+```
+
+[필드]
+
+| 이름 | 타입 | 설명 |
+|---|---|---|
+| folder | Object | 폴더 정보 |
+| folder.isFolder | boolean | 폴더 여부 |
+| folder.id | String | 고유 ID |
+| folder.name | String | 폴더 이름 |
+| folder.path | String | 폴더 절대 경로 |
+| folder.updatedAt | DateTime | 최종 수정일 |
 
 ## 업로드 API
 
