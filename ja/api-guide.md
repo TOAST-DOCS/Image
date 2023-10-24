@@ -234,6 +234,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 ### フォルダのプロパティー照会
 
 - フォルダのID、容量、ファイル数などのプロパティーを照会します。
+- フォルダに保存されたファイルの数によっては、時間がかなりかかる場合があります。フォルダ内のファイル数および全体容量の照会が必要でない場合は、**フォルダ基本属性照会**APIを使用してください。
 
 #### リクエスト
 
@@ -295,7 +296,63 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.totalFileCount | long | 配下のファイル数 |
 | folder.updatedAt | DateTime | 最終更新日 |
 
+### フォルダ基本属性照会
 
+- フォルダ属性照会APIで容量、ファイル数、フォルダ数を除外した属性を照会します。
+
+#### リクエスト
+
+[URI]
+
+| メソッド | URI                                                                                 |
+|---|-------------------------------------------------------------------------------------|
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties/simple |
+
+[リクエスト本文]
+
+- myfolderのフォルダの属性を照会します。
+- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+
+```
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
+-H 'Authorization: {secretKey}'
+```
+
+[オプション]
+
+| 名前 | タイプ | 有効範囲 | 必須かどうか | デフォルト値 | 説明 |
+|---|---|---|---|---|---|
+| path | String | 最低2文字、最大255Byte | 必須 |  | 照会するフォルダの絶対パス |
+
+#### レスポンス
+
+[レスポンス本文]
+
+```
+{
+	"header": {
+		// 省略
+	},
+	"folder": {
+		"isFolder": true,
+		"id": "996dd430-5172-4178-86c9-0704e88b28e3",
+		"name": "myfolder",
+		"path": "/myfolder",
+		"updatedAt": "2016-02-26T15:57:06+0900"
+	}
+}
+```
+
+[フィールド]
+
+| 名前 | タイプ | 説明 |
+|---|---|---|
+| folder | Object | フォルダ情報 |
+| folder.isFolder | boolean | フォルダの有無 |
+| folder.id | String | 固有ID |
+| folder.name | String | フォルダ名 |
+| folder.path | String | フォルダ絶対パス |
+| folder.updatedAt | DateTime | 最終修正日 |
 
 ## アップロードAPI
 
