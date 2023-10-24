@@ -234,7 +234,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 ### フォルダのプロパティー照会
 
 - フォルダのID、容量、ファイル数などのプロパティーを照会します。
-- 폴더에 저장된 파일의 개수에 따라 시간이 많이 소요될 수 있습니다. 폴더 내 파일 개수 및 전체 용량 조회가 필요하지 않을 경우 **폴더 기본 속성 조회** API를 사용하십시오..
+- フォルダに保存されたファイルの数によっては、時間がかなりかかる場合があります。フォルダ内のファイル数および全体容量の照会が必要でない場合は、**フォルダ基本属性照会**APIを使用してください。
 
 #### リクエスト
 
@@ -296,42 +296,42 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.totalFileCount | long | 配下のファイル数 |
 | folder.updatedAt | DateTime | 最終更新日 |
 
-### 폴더 기본 속성 조회
+### フォルダ基本属性照会
 
-- 폴더 속성 조회 API에서 용량, 파일 개수, 폴더 개수를 제외한 속성을 조회합니다.
+- フォルダ属性照会APIで容量、ファイル数、フォルダ数を除外した属性を照会します。
 
-#### 요청
+#### リクエスト
 
 [URI]
 
-| 메서드 | URI                                                                                 |
+| メソッド | URI                                                                                 |
 |---|-------------------------------------------------------------------------------------|
 | GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties/simple |
 
-[요청 본문]
+[リクエスト本文]
 
-- myfolder의 폴더의 속성을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- myfolderのフォルダの属性を照会します。
+- {appKey}と{secretKey}はコンソールで確認した値に変更します。
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
-[옵션]
+[オプション]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| 名前 | タイプ | 有効範囲 | 必須かどうか | デフォルト値 | 説明 |
 |---|---|---|---|---|---|
-| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 절대 경로 |
+| path | String | 最低2文字、最大255Byte | 必須 |  | 照会するフォルダの絶対パス |
 
-#### 응답
+#### レスポンス
 
-[응답 본문]
+[レスポンス本文]
 
 ```
 {
 	"header": {
-		// 생략
+		// 省略
 	},
 	"folder": {
 		"isFolder": true,
@@ -343,16 +343,16 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 }
 ```
 
-[필드]
+[フィールド]
 
-| 이름 | 타입 | 설명 |
+| 名前 | タイプ | 説明 |
 |---|---|---|
-| folder | Object | 폴더 정보 |
-| folder.isFolder | boolean | 폴더 여부 |
-| folder.id | String | 고유 ID |
-| folder.name | String | 폴더 이름 |
-| folder.path | String | 폴더 절대 경로 |
-| folder.updatedAt | DateTime | 최종 수정일 |
+| folder | Object | フォルダ情報 |
+| folder.isFolder | boolean | フォルダの有無 |
+| folder.id | String | 固有ID |
+| folder.name | String | フォルダ名 |
+| folder.path | String | フォルダ絶対パス |
+| folder.updatedAt | DateTime | 最終修正日 |
 
 ## アップロードAPI
 
