@@ -1,12 +1,12 @@
 ## Content Delivery > Image Manager > Release Notes
 
-### 2023. 10. 31.
-#### 기능 개선/변경
-* [API] 폴더 속성 조회 신규 API 추가
-* [Console] 폴더 속성 정보에서 폴더 크기, 파일 수 정보 제거
-#### 버그 수정
-* [API] webp 파일에 대한 오퍼레이션 오류 수정
-* [Console] 허용된 확장자임에도 파일이 업로드되지 않는 오류 수정
+### October 31, 2023
+#### Feature Updates
+* [API] Added List Folder Default Properties API
+* [Console] Removed folder size and number files from the folder properties
+#### Bug Fixes
+* [API] Fixed operation error for webp files
+* [Console] Fixed an error where files are not uploaded even though they are an allowed extensions
 
 ### September 14, 2023
 #### Feature Updates

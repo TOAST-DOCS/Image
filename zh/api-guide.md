@@ -234,7 +234,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 ### List Folder Properties
 
 - Retrieves properties such as the folder ID, capacity, and number of files.
-- 폴더에 저장된 파일의 개수에 따라 시간이 많이 소요될 수 있습니다. 폴더 내 파일 개수 및 전체 용량 조회가 필요하지 않을 경우 **폴더 기본 속성 조회** API를 사용하십시오..
+- Retrieving properties can be time consuming depending on the number of files in the folder. If you don't need to retrieve the number of files in a folder and their total size, use the **List Folder Default Properties**.
 
 #### Request
 
@@ -296,42 +296,42 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.totalFileCount | long | Total number of subfiles |
 | folder.updatedAt | DateTime | Last modified date |
 
-### 폴더 기본 속성 조회
+### List Folder Default Properties
 
-- 폴더 속성 조회 API에서 용량, 파일 개수, 폴더 개수를 제외한 속성을 조회합니다.
+- Retrieves folder properties from the List Folder Properties API, excluding the size, number of files, and number folders.
 
-#### 요청
+#### Request
 
 [URI]
 
-| 메서드 | URI                                                                                 |
+| Method | URI                                                                                 |
 |---|-------------------------------------------------------------------------------------|
 | GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties/simple |
 
-[요청 본문]
+[Request Body]
 
-- myfolder의 폴더의 속성을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- Retrieves the folder properties of myfolder.
+- Changes {appKey} and {secretKey} to the values found in the console.
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
-[옵션]
+[Option]
 
-| 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
+| Name | Type | Valid Range | Required | Default | Description |
 |---|---|---|---|---|---|
-| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 절대 경로 |
+| path | String | Min. 2 characters, Max. 255 bytes | Required |  | Absolute path to the folder to be retrieved  |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
 	"header": {
-		// 생략
+		// Omitted
 	},
 	"folder": {
 		"isFolder": true,
@@ -343,16 +343,16 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 }
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| folder | Object | 폴더 정보 |
-| folder.isFolder | boolean | 폴더 여부 |
-| folder.id | String | 고유 ID |
-| folder.name | String | 폴더 이름 |
-| folder.path | String | 폴더 절대 경로 |
-| folder.updatedAt | DateTime | 최종 수정일 |
+| folder | Object |  |
+| folder.isFolder | boolean | Whether it is a folder or not |
+| folder.id | String | Unique ID |
+| folder.name | String | Folder name |
+| folder.path | String | Absolute path to the folder |
+| folder.updatedAt | DateTime | Last modified date |
 
 ## Upload API
 
