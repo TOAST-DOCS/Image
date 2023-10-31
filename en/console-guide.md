@@ -60,10 +60,11 @@ You can manage folders, original image files, and created thumbnail image files 
 
 ### View Properties
 
-![image_07_20231031](https://static.toastoven.net/prod_img/image_07_20231031.png)
+![image_07_20220929](https://static.toastoven.net/prod_img/image_07_20220929.png)
 
 Select one folder or image file and click the **Properties** button.
 
+- If you select a folder, you can check the number of created folders and image files.
 - If you select an image file, you can check the image's width and height, download URL, and meta information.
 
 ### Query and View the List
