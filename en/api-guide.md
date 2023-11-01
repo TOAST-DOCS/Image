@@ -234,6 +234,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 ### List Folder Properties
 
 - Retrieves properties such as the folder ID, capacity, and number of files.
+- Retrieving properties can be time consuming depending on the number of files in the folder. If you don't need to retrieve the number of files in a folder and their total size, use the **List Folder Default Properties**.
 
 #### Request
 
@@ -295,7 +296,63 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.totalFileCount | long | Total number of subfiles |
 | folder.updatedAt | DateTime | Last modified date |
 
+### List Folder Default Properties
 
+- Retrieves folder properties from the List Folder Properties API, excluding the size, number of files, and number folders.
+
+#### Request
+
+[URI]
+
+| Method | URI                                                                                 |
+|---|-------------------------------------------------------------------------------------|
+| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties/simple |
+
+[Request Body]
+
+- Retrieves the folder properties of myfolder.
+- Changes {appKey} and {secretKey} to the values found in the console.
+
+```
+curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
+-H 'Authorization: {secretKey}'
+```
+
+[Option]
+
+| Name | Type | Valid Range | Required | Default | Description |
+|---|---|---|---|---|---|
+| path | String | Min. 2 characters, Max. 255 bytes | Required |  | Absolute path to the folder to be retrieved  |
+
+#### Response
+
+[Response Body]
+
+```
+{
+	"header": {
+		// Omitted
+	},
+	"folder": {
+		"isFolder": true,
+		"id": "996dd430-5172-4178-86c9-0704e88b28e3",
+		"name": "myfolder",
+		"path": "/myfolder",
+		"updatedAt": "2016-02-26T15:57:06+0900"
+	}
+}
+```
+
+[Field]
+
+| Name | Type | Description |
+|---|---|---|
+| folder | Object |  |
+| folder.isFolder | boolean | Whether it is a folder or not |
+| folder.id | String | Unique ID |
+| folder.name | String | Folder name |
+| folder.path | String | Absolute path to the folder |
+| folder.updatedAt | DateTime | Last modified date |
 
 ## Upload API
 
