@@ -1,6 +1,6 @@
 ## Content Delivery > Image Manager > Release Notes
 
-### October 31, 2023
+### November 1, 2023
 #### Feature Updates
 * [API] Added List Folder Default Properties API
 * [Console] Removed folder size and number files from the folder properties
