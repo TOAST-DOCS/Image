@@ -38,10 +38,11 @@
 | 21030 | FAIL_TO_DELETE | It occurred some problem while deleting. |
 | 22001 | FAIL_TO_CREATE_FOLDER | It occurred some problem while creating folder. |
 | 23002 | FAIL_TO_META_IMAGES | It could not extract the image attribute. |
-| 24001 | FAIL_TO_SWIFT | The storage access was denied. |
+| 24001 | FAIL_TO_SWIFT_UPLOAD | The storage upload failed. |
 | 24002 | FAIL_TO_SWIFT_DELETE_OBJECT | It occurred some proble while storage deleting |
 | 24003 | FAIL_TO_SWIFT_CREATE_CONTAINER | Failed to create new swift container. |
 | 24004 | FAIL_TO_SWIFT_SET_PRIVATE | Failed to set private swift container. |
+| 24005 | FAIL_TO_SWIFT | The storage access was denied. |
 | 30004 | INVALID_APPKEY | The authentication is invalid. |
 | 30005 | INVALID_USER | The user is invalid. |
 | 40000 | OPERATION_NOT_ALLOWED | You have no operation authority. |
