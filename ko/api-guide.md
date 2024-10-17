@@ -960,28 +960,30 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 		// 생략
 	},
 	"operation": {
-	"appKey": {appKey},
-	"operationId": "100x100",
-	"description": "",
-	"realtimeService": true,
-	"updatedAt": "2016-02-26T17:42:27+0900",
-	"jobTemplate": [
-		{
-			"templateOperationId": "resize_max_fit",
-			"jobType": "ResizeJob",
-			"option": {
-				"resizeType": "max_fit",
-				"width": 100,
-				"height": 100,
-				"quality": 80,
-				"shrinkLargerOnly": false,
-				"upDownSizeType": "downOnly",
-				"keepAnimation": false,
-				"keepExif": true,
-				"autoOrient": true
+		"appKey": {appKey},
+		"operationId": "100x100",
+		"description": "",
+		"realtimeService": true,
+ 		"updatedAt": "2016-02-26T17:42:27+0900",
+		"jobTemplate": [
+			{
+				"templateOperationId": "resize_max_fit",
+				"jobType": "ResizeJob",
+				"option": {
+					"resizeType": "max_fit",
+					"width": 100,
+					"height": 100,
+					"quality": 80,
+					"shrinkLargerOnly": false,
+					"upDownSizeType": "downOnly",
+					"keepAnimation": false,
+					"keepExif": true,
+					"autoOrient": true,
+					"targetExtension": ""
+				}
 			}
-		}
-	]
+		]
+	}
 }
 ```
 
@@ -1066,7 +1068,8 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 						"upDownSizeType": "downOnly",
 						"keepAnimation": false,
 						"keepExif": true,
-						"autoOrient": true
+						"autoOrient": true,
+						"targetExtension": ""
 					}
 				}
 			]
@@ -1144,7 +1147,8 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 					"upDownSizeType": "downOnly",
 					"keepAnimation": false,
 					"keepExif": true,
-					"autoOrient": true
+					"autoOrient": true,
+					"targetExtension": ""
 				}
 			}
 		]
@@ -1278,7 +1282,8 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 						"upDownSizeType": "downOnly",
 						"keepAnimation": false,
 						"keepExif": true,
-						"autoOrient": true
+						"autoOrient": true,
+						"targetExtension": ""
 					}
 				}
 			]
