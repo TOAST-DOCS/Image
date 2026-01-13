@@ -2,24 +2,23 @@
 
 Image Manager 서비스의 API를 설명합니다.
 
-
 ## API 공통 정보
 
 ### 사전 준비
 
-- API 사용을 위해서는 앱 키와 비밀 키가 필요합니다.
-- 앱 키와 비밀 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
+- API 사용을 위해서는 앱 키가 필요합니다.
+- 앱 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
 
 ### 요청 공통 정보
 
-- API를 사용하기 위해서는 비밀 키 인증 처리가 필요합니다.
-- 모든 API 요청 헤더의 'Authorization'에 비밀 키를 넣어서 요청해야 합니다.
+- API를 사용하려면 [Public API > API 호출 및 인증](/nhncloud/ko/public-api/api-authentication/)을 통해 발급 받은 Bearer 유형의 토큰이 필요합니다.
+- 모든 API 요청 헤더의 'X-NHN-AUTHORIZATION'에 토큰을 넣어서 요청해야 합니다.
 
 [요청 헤더]
 
-| 이름 | 값 | 설명 |
-|---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 비밀 키 |
+| 이름 | 값       | 설명 |
+|---|---------|---|
+| X-NHN-AUTHORIZATION | {token} | Bearer 유형의 토큰 |
 
 ### 응답 공통 정보
 
@@ -62,7 +61,7 @@ Image Manager 서비스의 API를 설명합니다.
 
 | 메서드 | URI |
 |---|---|
-| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
+| POST | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/folders |
 
 [요청 본문]
 
@@ -70,7 +69,7 @@ Image Manager 서비스의 API를 설명합니다.
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/folders' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"path": "/myfolder"}'
@@ -123,7 +122,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/folders |
 
 [요청 본문]
 
@@ -131,7 +130,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/folders?basepath=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -242,7 +241,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/properties |
 
 [요청 본문]
 
@@ -250,7 +249,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/properties?path=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -306,7 +305,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 
 | 메서드 | URI                                                                                 |
 |---|-------------------------------------------------------------------------------------|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties/simple |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/properties/simple |
 
 [요청 본문]
 
@@ -314,7 +313,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -366,7 +365,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 
 | 메서드 | URI |
 |---|---|
-| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
+| PUT | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/images |
 
 [요청 본문]
 
@@ -375,7 +374,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 - 이미지 파일의 Binary Data를 넣습니다.
 
 ```
-curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type:application/octet-stream' \
 --data-binary 'path/to/imageFile/@sample.png'
@@ -480,7 +479,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/i
 
 | 메서드 | URI |
 |---|---|
-| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
+| POST | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/images |
 
 [요청 본문]
 
@@ -489,7 +488,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/i
 - multipart/form–data 형식으로 전달합니다.
 
 ```
-curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images' \
 -H 'Authorization: {secretKey}' \
 -F 'params={"basepath": "/myfolder/banner", "overwrite": true, "operationIds":["100x100"]}' \
 -F 'files=@left.png' \
@@ -683,7 +682,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 
 | 메서드 | URI |
 |---|---|
-| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/sync |
+| DELETE | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/images/sync |
 
 [요청 본문]
 
@@ -692,7 +691,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/sync?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images/sync?
 fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 -H 'Authorization: {secretKey}'
 ```
@@ -733,7 +732,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 | 메서드 | URI |
 |---|---|
-| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/async |
+| DELETE | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/images/async |
 
 [요청 본문]
 
@@ -742,7 +741,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/async?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images/async?
 fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8' \
 -H 'Authorization: {secretKey}'
 ```
@@ -811,7 +810,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 | 메서드 | URI |
 |---|---|
-| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| PUT | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations/{operationId} |
 
 [요청 본문]
 
@@ -819,7 +818,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"description": "", "realtimeService": true, "data": [{"templateOperationId": "resize_max_fit",
@@ -1012,7 +1011,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations |
 
 [요청 본문]
 
@@ -1020,7 +1019,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1107,7 +1106,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations/{operationId} |
 
 [요청 본문]
 
@@ -1115,7 +1114,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1181,7 +1180,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 | 메서드 | URI |
 |---|---|
-| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| DELETE | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations/{operationId} |
 
 [요청 본문]
 
@@ -1189,7 +1188,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1224,7 +1223,7 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey
 
 | 메서드 | URI |
 |---|---|
-| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations-exec |
+| POST | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations-exec |
 
 [요청 본문]
 
@@ -1232,7 +1231,7 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations-exec' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations-exec' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"basepath": "/myfolder", "operationIds": ["100x100"],
@@ -1393,7 +1392,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/users |
 
 [요청 본문]
 
@@ -1401,7 +1400,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}'
 ```
 
@@ -1442,7 +1441,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 
 | 메서드 | URI |
 |---|---|
-| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
+| PUT | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/users |
 
 [요청 본문]
 
@@ -1450,7 +1449,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/users' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"realtimeService": false}'
@@ -1489,7 +1488,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 
 | 메서드 | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/queues/{queueId} |
 
 [요청 본문]
 
@@ -1497,7 +1496,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
 -H 'Authorization: {secretKey}'
 ```
 
