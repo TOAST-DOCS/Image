@@ -11,14 +11,14 @@ Image Manager 서비스의 API를 설명합니다.
 
 ### 요청 공통 정보
 
-- API를 사용하려면 [Public API > API 호출 및 인증](/nhncloud/ko/public-api/api-authentication/)을 통해 발급 받은 Bearer 유형의 토큰이 필요합니다.
-- 모든 API 요청 헤더의 'X-NHN-AUTHORIZATION'에 토큰을 넣어서 요청해야 합니다.
+- API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다. User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다.
+- User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 토큰](/nhncloud/ko/public-api/user-access-key-token)을 참고하세요.
 
 [요청 헤더]
 
 | 이름 | 값       | 설명 |
 |---|---------|---|
-| X-NHN-AUTHORIZATION | {token} | Bearer 유형의 토큰 |
+| X-NHN-AUTHORIZATION | {token} | Public API로 발급 받은 Bearer 유형 토큰 |
 
 ### 응답 공통 정보
 
