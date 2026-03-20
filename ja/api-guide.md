@@ -67,11 +67,11 @@ Image Managerサービスの APIを説明します。
 [リクエスト内容]
 
 - myfolderという名前のフォルダをルートフォルダの下位に作成します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/folders' \
--H 'Authorization: {secretKey}' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type: application/json' \
 --data '{"path": "/myfolder"}'
 ```
@@ -128,11 +128,11 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 [リクエスト例]
 
 - /myfolder の下位のフォルダとファイルを照会します。
-- {appKey}と {secretKey}はコンソールで確認した値に変更します。
+- {appKey}と {token}はコンソールで確認した値に変更します。
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/folders?basepath=/myfolder' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [リクエスト]
@@ -247,11 +247,11 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/f
 [リクエスト例]
 
 - myfolderのフォルダのプロパティーを照会します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更してください。
+- {appKey}と{token}はコンソールで確認した値に変更してください。
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/properties?path=/myfolder' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [オプション]
@@ -311,11 +311,11 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/p
 [リクエスト本文]
 
 - myfolderのフォルダの属性を照会します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [オプション]
@@ -371,12 +371,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/p
 [リクエスト例]
 
 - /myfolderフォルダに sample.png 画像をアップロードします。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 - 画像ファイルのBinary Dataを転送します。
 
 ```
 curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
--H 'Authorization: {secretKey}' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type:application/octet-stream' \
 --data-binary 'path/to/imageFile/@sample.png'
 ```
@@ -485,12 +485,12 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/i
 [リクエスト例]
 
 - /myfolder/bannerフォルダへleft.png、 right.png 画像をアップロードします。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 - multipart/form–data 形式で転送します。
 
 ```
 curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images' \
--H 'Authorization: {secretKey}' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -F 'params={"basepath": "/myfolder/banner", "overwrite": true, "operationIds":["100x100"]}' \
 -F 'files=@left.png' \
 -F 'files=@right.png'
@@ -689,12 +689,12 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 
 - /myfolder/sample.pngのファイルを削除します。
 - /myfolder/sample.pngのIDは右メニューの"フォルダ内ファイルリスト照会"APIで知ることができます。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images/sync?
 fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [フィールド]
@@ -739,12 +739,12 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 - /myfolder/banner/left.png, /myfolder/banner/right.pngのファイルを削除します。
 - ファイルおよびフォルダIDは [フォルダ内ファイルリスト照会](./api-guide/#_7)を通して知ることができます。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images/async?
 fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [フィールド]
@@ -816,11 +816,11 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 [リクエスト例]
 
 - 画像の横、縦、長い方をを基準として、サイズを100x100に縮小し、100x100という名前で作成または修正します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type: application/json' \
 --data '{"description": "", "realtimeService": true, "data": [{"templateOperationId": "resize_max_fit",
 "option": {"resizeType": "max_fit", "width": 100, "height": 100, "quality": 80,
@@ -1017,11 +1017,11 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 [リクエスト例]
 
 - ユーザーのオペレーションリストを照会します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [フィールド]
@@ -1112,11 +1112,11 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 [リクエスト例]
 
 - 100x100 オペレーションを照会します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 #### レスポンス
@@ -1186,11 +1186,11 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 [リクエスト例]
 
 - 100x100 オペレーションを削除します。
-- {appKey}と{secretKey}はコンソールで確認した値を変更します。
+- {appKey}と{token}はコンソールで確認した値を変更します。
 
 ```
 curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [フィールド]
@@ -1229,11 +1229,11 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey
 [リクエスト例]
 
 - /myfolder/left.png、 /myfolder/right.png 原本ファイルから100x100オペレーション指定が適用されたファイルを作成します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations-exec' \
--H 'Authorization: {secretKey}' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type: application/json' \
 --data '{"basepath": "/myfolder", "operationIds": ["100x100"],
 "filepaths": ["/myfolder/left.png", "/myfolder/right.jpg"]}'
@@ -1398,11 +1398,11 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 [リクエスト例]
 
 - ユーザーのリアルタイムサービスを照会します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/users' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 #### レスポンス
@@ -1447,11 +1447,11 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/u
 [リクエスト例]
 
 - ユーザーのリアルタイムサービスの設定を変更します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/users' \
--H 'Authorization: {secretKey}' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type: application/json' \
 --data '{"realtimeService": false}'
 ```
@@ -1494,11 +1494,11 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/u
 [リクエスト例]
 
 - オペレーションリクエストについて現在の状態を照会します。
-- {appKey}と{secretKey}はコンソールで確認した値に変更します。
+- {appKey}と{token}はコンソールで確認した値に変更します。
 
 ```
 curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [フィールド]
