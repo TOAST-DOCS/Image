@@ -831,7 +831,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 
 | 名前 | タイプ | 有効な値の範囲 | 必須か否か | 既定値 | 説明 |
 |---|---|---|---|---|---|
-| operationId | String | 少なくとも1文字、最大20文字、 <br>英数字 | 必須 |  | 生成・修正するオペレーション名 |
+| operationId | String | 少なくとも1文字、最大20文字、 <br>英数字またはハイフン(-) | 必須 |  | 生成・修正するオペレーション名 |
 | description | String | 最大30文字 | オプション |  | オペーションの説明 |
 | realtimeService | boolean |  | オプション | true | リアルタイムでサービス提供するか否か |
 | deleteThumbnail | boolean |  | オプション | false | 以前、当該オペレーションで生成されたサムネイルを削除するか否か |
