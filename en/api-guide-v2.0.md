@@ -831,7 +831,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 | Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| operationId | String | Min.1 character, Max. 20 characters, <br>English letter or number | Required |  | Name of the operation to be created or modified |
+| operationId | String | Min. 1 character, Max. 20 characters, <br>English letter, number, or hyphen(-) | Required |  | Name of the operation to be created or modified |
 | description | String | Max. 30 characters | Optional |  | Operation description |
 | realtimeService | boolean |  | Optional | true | Whether to provide a real-time service |
 | deleteThumbnail | boolean |  | Optional | false | Whether to delete the thumbnails previously created by the operation |
