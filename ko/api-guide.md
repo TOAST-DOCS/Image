@@ -830,7 +830,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| operationId | String | 최소 1글자, 최대 20글자, <br>영문 또는 숫자 | 필수 |  | 생성 및 수정할 오퍼레이션 이름 |
+| operationId | String | 최소 1글자, 최대 20글자, <br>영문, 숫자 또는 하이픈(-) | 필수 |  | 생성 및 수정할 오퍼레이션 이름 |
 | description | String | 최대 30글자 | 선택 |  | 오퍼레이션 설명 |
 | realtimeService | boolean |  | 선택 | true | 실시간 서비스 제공 여부 |
 | deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 섬네일을 삭제할지 여부 |
