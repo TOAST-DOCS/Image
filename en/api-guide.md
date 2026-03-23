@@ -7,19 +7,19 @@ The guide describes APIs of the Image Manager service.
 
 ### Prerequisites
 
-- To use the API, you need AppKey and Secret Key.
-- AppKey and Secret Key can be found in the "URL & Appkey" menu on the top of the console.
+- To use the API, you need AppKey.
+- AppKey can be found in the "URL & Appkey" menu on the top of the console.
 
 ### Common Request Information
 
-- To use the APIs, security key authentication is required.
-- You must send requests by including the Secret Key in 'Authorization' of all API request headers.
+- User Access Key tokens for authentication and authorization when making API calls. The User Access Key token is a temporary, Bearer-type access token issued from a User Access Key. 
+- For more information on issuing and using User Access Key tokens, please refer to the [User Access Key Token](/nhncloud/en/public-api/user-access-key-token).
 
 [Request Header]
 
 | Name | Value | Description |
 |---|---|---|
-| Authorization | {secretKey} | Security key issued from the console |
+| X-NHN-AUTHORIZATION | {token} | Bearer type token issued with the Public API |
 
 ### Common Response Information
 
@@ -62,16 +62,16 @@ The guide describes APIs of the Image Manager service.
 
 | Method | URI |
 |---|---|
-| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
+| POST | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/folders |
 
 [Request Body]
 
 - Creates a folder named myfolder under the root folder.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders' \
--H 'Authorization: {secretKey}' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/folders' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type: application/json' \
 --data '{"path": "/myfolder"}'
 ```
@@ -123,16 +123,16 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/folders |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/folders |
 
 [Request Body]
 
 - Retrieves the folders and files under /myfolder.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/folders?basepath=/myfolder' \
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [Options]
@@ -242,16 +242,16 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/properties |
 
 [Request Body]
 
 - Retrieves the folder properties of myfolder.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/properties?path=/myfolder' \
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [Options]
@@ -306,16 +306,16 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 
 | Method | URI                                                                                 |
 |---|-------------------------------------------------------------------------------------|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/properties/simple |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/properties/simple |
 
 [Request Body]
 
 - Retrieves the folder properties of myfolder.
-- Changes {appKey} and {secretKey} to the values found in the console.
+- Changes {appKey} and {token} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/properties/simple?path=/myfolder' \
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [Option]
@@ -366,17 +366,17 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 
 | Method | URI |
 |---|---|
-| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
+| PUT | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/images |
 
 [Request Body]
 
 - Uploads the sample.png image to the /myfolder folder.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 - Input the binary data of the image file.
 
 ```
-curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
--H 'Authorization: {secretKey}' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type:application/octet-stream' \
 --data-binary 'path/to/imageFile/@sample.png'
 ```
@@ -480,17 +480,17 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/i
 
 | Method | URI |
 |---|---|
-| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images |
+| POST | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/images |
 
 [Request Body]
 
 - Uploads the left.png and right.png images to the /myfolder/banner folder.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 - Delivers the files in the multipart/form-data format.
 
 ```
-curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images' \
--H 'Authorization: {secretKey}' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -F 'params={"basepath": "/myfolder/banner", "overwrite": true, "operationIds":["100x100"]}' \
 -F 'files=@left.png' \
 -F 'files=@right.png'
@@ -683,18 +683,18 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 
 | Method | URI |
 |---|---|
-| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/sync |
+| DELETE | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/images/sync |
 
 [Request Body]
 
 - Deletes the file /myfolder/sample.png.
 - You can check the ID of /myfolder/sample.png through "List Files in a Folder" API on the right menu.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/sync?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images/sync?
 fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [Field]
@@ -733,18 +733,18 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 | Method | URI |
 |---|---|
-| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/images/async |
+| DELETE | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/images/async |
 
 [Request Body]
 
 - Deletes the files /myfolder/banner/left.png and /myfolder/banner/right.png.
 - The file and folder ID can be found through [List Files in a Folder](./api-guide/#list-files-in-a-folder).
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/images/async?
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/images/async?
 fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8' \
--H 'Authorization: {secretKey}'
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [Field]
@@ -811,16 +811,16 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 | Method | URI |
 |---|---|
-| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| PUT | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations/{operationId} |
 
 [Request Body]
 
 - Creates or modifies a task named 100x100 that reduces the image size to 100x100 based on the length of the longer axis between width and height.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type: application/json' \
 --data '{"description": "", "realtimeService": true, "data": [{"templateOperationId": "resize_max_fit",
 "option": {"resizeType": "max_fit", "width": 100, "height": 100, "quality": 80,
@@ -831,7 +831,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 | Name | Type | Valid range | Required | Default | Description |
 |---|---|---|---|---|---|
-| operationId | String | Min.1 character, Max. 20 characters, <br>English letter or number | Required |  | Name of the operation to be created or modified |
+| operationId | String | Min. 1 character, Max. 20 characters, <br>English letter, number, or hyphen(-) | Required |  | Name of the operation to be created or modified |
 | description | String | Max. 30 characters | Optional |  | Operation description |
 | realtimeService | boolean |  | Optional | true | Whether to provide a real-time service |
 | deleteThumbnail | boolean |  | Optional | false | Whether to delete the thumbnails previously created by the operation |
@@ -1012,16 +1012,16 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations |
 
 [Request Body]
 
 - Retrieves a list of user's operations.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations' \
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [Field]
@@ -1107,16 +1107,16 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations/{operationId} |
 
 [Request Body]
 
 - Retrieves the 100x100 operation.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 #### Response
@@ -1181,16 +1181,16 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 
 | Method | URI |
 |---|---|
-| DELETE | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| DELETE | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations/{operationId} |
 
 [Request Body]
 
 - Deletes the 100x100 operation.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}'
+curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations/100x100' \
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [Options]
@@ -1224,16 +1224,16 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey
 
 | Method | URI |
 |---|---|
-| POST | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/operations-exec |
+| POST | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/operations-exec |
 
 [Request Body]
 
 - Creates files to which the 100x100 operation option is applied with the original files /myfolder/left.png, /myfolder/right.png.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/operations-exec' \
--H 'Authorization: {secretKey}' \
+curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/operations-exec' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type: application/json' \
 --data '{"basepath": "/myfolder", "operationIds": ["100x100"],
 "filepaths": ["/myfolder/left.png", "/myfolder/right.jpg"]}'
@@ -1393,16 +1393,16 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/users |
 
 [Request Body]
 
 - Retrieves a user’s real-time service.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/users' \
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 #### Response
@@ -1442,16 +1442,16 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 
 | Method | URI |
 |---|---|
-| PUT | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/users |
+| PUT | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/users |
 
 [Request Body]
 
 - Changes a user’s real-time service.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/users' \
--H 'Authorization: {secretKey}' \
+curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/users' \
+-H 'X-NHN-AUTHORIZATION: {token}' \
 -H 'Content-Type: application/json' \
 --data '{"realtimeService": false}'
 ```
@@ -1489,16 +1489,16 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 
 | Method | URI |
 |---|---|
-| GET | https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
+| GET | https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appkey}/queues/{queueId} |
 
 [Request Body]
 
 - Retrieves the current status of an operation request.
-- You must change {appKey} and {secretKey} to the values found in the console.
+- You must change {appKey} and {token} to the values found in the console.
 
 ```
-curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
+-H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
 [Field]
