@@ -1,5 +1,11 @@
 ## Content Delivery > Image Manager > Release Notes
 
+### March 24, 2026
+#### Feature Updates
+* [API] Added API v3.0 with token authentication
+#### Bug Fixes
+* [API] Fixed thumbnail creation failure when file name contains &
+
 ### November 1, 2023
 #### Feature Updates
 * [API] Added List Folder Default Properties API
