@@ -1,18 +1,24 @@
-## Content Delivery > Image Manager > Console User Guide
+<!-- pre-align:aligned sig=0b6ed03a5615 -->
+
+<a id="content-delivery-image-manager-console-user-guide"></a>
+## Content Delivery > Image Manager > Console User Guide { #content-delivery-image-manager-console-user-guide }
 
 This document explains how to create folders, upload files, and manage thumbnail options using the console.
 
-## Manage Folders and Image Files
+<a id="manage-folders-and-image-files"></a>
+## Manage Folders and Image Files { #manage-folders-and-image-files }
 
 You can manage folders, original image files, and created thumbnail image files on the **File View** screen of the menu.
 
 ![image_01_20220929](https://static.toastoven.net/prod_img/image_01_20220929.png)
 
-### Toolbar Icon Description
+<a id="toolbar-icon-description"></a>
+### Toolbar Icon Description { #toolbar-icon-description }
 
 ![image_02_20220929](https://static.toastoven.net/prod_img/image_02_20220929.png)
 
-### Create a Folder
+<a id="create-a-folder"></a>
+### Create a Folder { #create-a-folder }
 
 ![image_03_20220929](https://static.toastoven.net/prod_img/image_03_20220929.png)
 
@@ -23,7 +29,8 @@ You can manage folders, original image files, and created thumbnail image files 
    - A function to edit the name of a folder is not provided.
    - If you need to modify the name, you must delete the folder and re-create a folder.
 
-### Upload Image Files
+<a id="upload-image-files"></a>
+### Upload Image Files { #upload-image-files }
 
 ![image_04_20220929](https://static.toastoven.net/prod_img/image_04_20220929.png)
 
@@ -38,7 +45,8 @@ You can manage folders, original image files, and created thumbnail image files 
 
    - When the upload is completed normally, the screen is updated and you can check the file list.
 
-### Download
+<a id="download"></a>
+### Download { #download }
 
 ![image_05_20220929](https://static.toastoven.net/prod_img/image_05_20220929.png)
 
@@ -48,7 +56,8 @@ You can manage folders, original image files, and created thumbnail image files 
 
    - You can only download up to 10,000 images at a time, and even if you download images stored in a folder, only 10,000 images can be downloaded in the same way.
 
-### Delete Files or a Folder
+<a id="delete-files-or-a-folder"></a>
+### Delete Files or a Folder { #delete-files-or-a-folder }
 
 ![image_06_20220929](https://static.toastoven.net/prod_img/image_06_20220929.png)
 
@@ -58,7 +67,8 @@ You can manage folders, original image files, and created thumbnail image files 
 
    - If you select a folder, all files in that folder are also deleted.
 
-### View Properties
+<a id="view-properties"></a>
+### View Properties { #view-properties }
 
 ![image_07_20231031](https://static.toastoven.net/prod_img/image_07_20231031.png)
 
@@ -66,7 +76,8 @@ Select one folder or image file and click the **Properties** button.
 
 - If you select an image file, you can check the image's width and height, download URL, and meta information.
 
-### Query and View the List
+<a id="query-and-view-the-list"></a>
+### Query and View the List { #query-and-view-the-list }
 
 ![image_08_20220929](https://static.toastoven.net/prod_img/image_08_20220929.png)
 
@@ -81,7 +92,8 @@ Select one folder or image file and click the **Properties** button.
       - Input example: sample
       - Example results: sample.gif, sample_2.gif, sample 3.gif, sample_sample_100x100.png
 
-### Delete All Files
+<a id="delete-all-files"></a>
+### Delete All Files { #delete-all-files }
 
 ![image_09_20220929](https://static.toastoven.net/prod_img/image_09_20220929.png)
 
@@ -92,7 +104,8 @@ Select one folder or image file and click the **Properties** button.
 
 2. Click **Confirm**.
 
-## Manage Thumbnail Options
+<a id="manage-thumbnail-options"></a>
+## Manage Thumbnail Options { #manage-thumbnail-options }
 
 ![image_10_20220929](https://static.toastoven.net/prod_img/image_10_20220929.png)
 
@@ -100,7 +113,8 @@ Thumbnail options can be managed from the **Settings** screen of the menu.
 
 You can generate thumbnails by a combination of several options.
 
-### Create Thumbnails
+<a id="create-thumbnails"></a>
+### Create Thumbnails { #create-thumbnails }
 
 ![image_11_20220929](https://static.toastoven.net/prod_img/image_11_20220929.png)
 
@@ -143,7 +157,8 @@ The resizing of thumbnails are performed as follows.
 
 After completing the scenario settings, click **Save**.
 
-### Edit Thumbnails
+<a id="edit-thumbnails"></a>
+### Edit Thumbnails { #edit-thumbnails }
 
 ![image_13_20220929](https://static.toastoven.net/prod_img/image_13_20220929.png)
 
@@ -154,7 +169,8 @@ After completing the scenario settings, click **Save**.
    - Even if you modify the options, the thumbnails created with the settings before modification are not modified.
    - If you check the 'Delete Operation Image' checkbox in the dialog box, you can bulk delete thumbnails created with the settings before modification.
 
-### Delete Thumbnails
+<a id="delete-thumbnails"></a>
+### Delete Thumbnails { #delete-thumbnails }
 
 ![image_14_20220929](https://static.toastoven.net/prod_img/image_14_20220929.png)
 
@@ -163,7 +179,8 @@ Click **Delete** to delete the thumbnail option.
 - You can delete the selected thumbnail option with the Delete button.
 - If you check the 'Delete Operation Image' checkbox in the dialog box, you can bulk delete thumbnails created with the operation.
 
-### User Settings
+<a id="user-settings"></a>
+### User Settings { #user-settings }
 
 ![image_15_20220929](https://static.toastoven.net/prod_img/image_15_20220929.png)
 

@@ -1,21 +1,27 @@
-## Content Delivery > Image Manager > 概要
+<!-- pre-align:aligned sig=10ed01c5e832 -->
+
+<a id="content-delivery-image-manager-overview"></a>
+## Content Delivery > Image Manager > 概要 { #content-delivery-image-manager-overview }
 
 お客様のサービスで使用する画像を保存、編集、送信まで一度に提供するシステムです。
 
-## 主な機能
+<a id="main-features"></a>
+## 主な機能 { #main-features }
 
 - アプリケーションで使用できるRESTful APIを提供します。
 - 複数フォルダの作成、複数画像のアップロード、複数ファイルのダウンロード、複数ファイルの削除の機能を提供します。
 - オリジナルのイメージファイルのURLにパラメーターを追加するだけで、 リアルタイムで希望したサイズのサムネイルを作成できます。
 '- イメージファイルURLはHTTPとHTTPSプロトコルを使用できます。
 
-## サポートしている画像ファイル
+<a id="supported-images"></a>
+## サポートしている画像ファイル { #supported-images }
 
 - Imageサービスでサポートしている画像ファイルフォーマットは今の通りです。
 	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png, webp
 - Imageサービスでは最大10MB（API利用時は50MB）のイメージファイルをアップロードできます。
 
-## サービス用語
+<a id="glossary"></a>
+## サービス用語 { #glossary }
 
 | 用語 | 説明 |
 |---|---|

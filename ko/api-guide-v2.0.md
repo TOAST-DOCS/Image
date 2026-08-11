@@ -1,16 +1,22 @@
-## Content Delivery > Image Manager > API 가이드
+<!-- pre-align:aligned sig=983eed836eb1 -->
+
+<a id="content-delivery-image-manager-api-guide"></a>
+## Content Delivery > Image Manager > API 가이드 { #content-delivery-image-manager-api-guide }
 
 Image Manager 서비스의 API를 설명합니다.
 
 
-## API 공통 정보
+<a id="common-api-information"></a>
+## API 공통 정보 { #common-api-information }
 
-### 사전 준비
+<a id="prerequisites"></a>
+### 사전 준비 { #prerequisites }
 
 - API 사용을 위해서는 앱 키와 비밀 키가 필요합니다.
 - 앱 키와 비밀 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
 
-### 요청 공통 정보
+<a id="common-request-information"></a>
+### 요청 공통 정보 { #common-request-information }
 
 - API를 사용하기 위해서는 비밀 키 인증 처리가 필요합니다.
 - 모든 API 요청 헤더의 'Authorization'에 비밀 키를 넣어서 요청해야 합니다.
@@ -21,7 +27,8 @@ Image Manager 서비스의 API를 설명합니다.
 |---|---|---|
 | Authorization | {secretKey} | 콘솔에서 발급받은 비밀 키 |
 
-### 응답 공통 정보
+<a id="common-response-information"></a>
+### 응답 공통 정보 { #common-response-information }
 
 - 모든 API 요청에 "200 OK"로 응답합니다. 자세한 응답 결과는 응답 본문의 헤더를 참고합니다.
 
@@ -50,12 +57,15 @@ Image Manager 서비스의 API를 설명합니다.
 ```
 
 
-## 폴더 API
+<a id="folder-api"></a>
+## 폴더 API { #folder-api }
 
-### 폴더 생성
+<a id="create-folder"></a>
+### 폴더 생성 { #create-folder }
 
 - 지정된 경로에 폴더를 생성합니다.
 
+<a id="create-folder-request"></a>
 #### 요청
 
 [URI]
@@ -82,6 +92,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 |---|---|---|---|---|---|
 | path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성할 폴더의 절대 경로, 상위 폴더 자동 생성 |
 
+<a id="create-folder-response"></a>
 #### 응답
 
 [응답 본문]
@@ -113,10 +124,12 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 | folder.updatedAt | DateTime | 최종 수정일 |
 
 
-### 폴더 내 파일 목록 조회
+<a id="list-files-in-a-folder"></a>
+### 폴더 내 파일 목록 조회 { #list-files-in-a-folder }
 
 - 지정된 경로 하위의 목록을 조회하거나 이름에 특정 문자를 포함한 목록을 조회합니다.
 
+<a id="list-files-in-a-folder-request"></a>
 #### 요청
 
 [URI]
@@ -146,6 +159,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 | rows | int | 최소 1, 최대 10,000 | 선택 | 100 | 조회 개수 |
 | sort | String | | 선택 | name:asc | 정렬 방식 (정렬 대상: name or date, 정렬 방식: asc or desc) |
 
+<a id="list-files-in-a-folder-response"></a>
 #### 응답
 
 [응답 본문]
@@ -231,11 +245,13 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 | files[0].imageProperty.coordinate.lng | double | 경도 |
 
 
-### 폴더 속성 조회
+<a id="list-folder-properties"></a>
+### 폴더 속성 조회 { #list-folder-properties }
 
 - 폴더의 ID, 용량, 파일 개수 등의 속성을 조회합니다.
 - 폴더에 저장된 파일의 개수에 따라 시간이 많이 소요될 수 있습니다. 폴더 내 파일 개수 및 전체 용량 조회가 필요하지 않을 경우 **폴더 기본 속성 조회** API를 사용하십시오.
 
+<a id="list-folder-properties-request"></a>
 #### 요청
 
 [URI]
@@ -260,6 +276,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 |---|---|---|---|---|---|
 | path | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 절대 경로 |
 
+<a id="list-folder-properties-response"></a>
 #### 응답
 
 [응답 본문]
@@ -296,10 +313,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.totalFileCount | long | 하위 파일 개수 |
 | folder.updatedAt | DateTime | 최종 수정일 |
 
-### 폴더 기본 속성 조회
+<a id="list-folder-default-properties"></a>
+### 폴더 기본 속성 조회 { #list-folder-default-properties }
 
 - 폴더 속성 조회 API에서 용량, 파일 개수, 폴더 개수를 제외한 속성을 조회합니다.
 
+<a id="list-folder-default-properties-request"></a>
 #### 요청
 
 [URI]
@@ -324,6 +343,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 |---|---|---|---|---|---|
 | path | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 절대 경로 |
 
+<a id="list-folder-default-properties-response"></a>
 #### 응답
 
 [응답 본문]
@@ -354,12 +374,15 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.path | String | 폴더 절대 경로 |
 | folder.updatedAt | DateTime | 최종 수정일 |
 
-## 업로드 API
+<a id="upload-api"></a>
+## 업로드 API { #upload-api }
 
-### 단일 파일 업로드
+<a id="upload-a-file"></a>
+### 단일 파일 업로드 { #upload-a-file }
 
 - 이미지 파일 한 개를 업로드합니다.
 
+<a id="upload-a-file-request"></a>
 #### 요청
 
 [URI]
@@ -393,6 +416,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/i
 - 이미지 오퍼레이션 ID를 추가해서 요청할 경우, 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성할 수 있습니다.
 - [이미지 오퍼레이션 API](./api-guide/#api_4)를 참고합니다.
 
+<a id="upload-a-file-response"></a>
 #### 응답
 
 [응답 본문]
@@ -469,11 +493,13 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/i
 | file.queues[0].path | String | 생성될 이미지 절대 경로 |
 
 
-### 다중 파일 업로드
+<a id="upload-multiple-files"></a>
+### 다중 파일 업로드 { #upload-multiple-files }
 
 - 여러 개의 이미지 파일을 업로드합니다.
 - 압축 파일 업로드도 가능합니다.
 
+<a id="upload-multiple-files-request"></a>
 #### 요청
 
 [URI]
@@ -508,6 +534,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 | params.operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트. <br>업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성. <br>이미지 오퍼레이션 관련 API 참고 |
 | params.callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 콜백 Url 경로. <br>query string 형식으로 id를 적으면 콜백 전송 시 같이 전달됨. <br>포트는 80, 443만 지원 |
 
+<a id="upload-multiple-files-response"></a>
 #### 응답
 
 [응답 본문]
@@ -671,12 +698,15 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 
 
 
-## 삭제 API
+<a id="deletion-api"></a>
+## 삭제 API { #deletion-api }
 
-### 단일 삭제 (동기)
+<a id="single-deletion-synchronous"></a>
+### 단일 삭제 (동기) { #single-deletion-synchronous }
 
 - 폴더 또는 파일 한 개를 삭제합니다.
 
+<a id="single-deletion-synchronous-request"></a>
 #### 요청
 
 [URI]
@@ -707,6 +737,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 | fileId | String | 최대 50글자 |  |  | 삭제할 파일의 ID |
 | includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
 
+<a id="single-deletion-synchronous-response"></a>
 #### 응답
 
 [응답 본문]
@@ -721,12 +752,14 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 }
 ```
 
-### 다중 삭제 (비동기)
+<a id="multiple-deletion-asynchronous"></a>
+### 다중 삭제 (비동기) { #multiple-deletion-asynchronous }
 
 - 여러 개의 폴더와 파일을 삭제합니다.
 - 실제 데이터 삭제는 비동기로 처리됩니다.
 - 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
 
+<a id="multiple-deletion-asynchronous-request"></a>
 #### 요청
 
 [URI]
@@ -757,6 +790,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 | fileIds | String | ID 하나당 최대 50글자 |  |  | 삭제할 파일의 ID 리스트 (콤마로 구분됨) |
 | includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
 
+<a id="multiple-deletion-asynchronous-response"></a>
 #### 응답
 
 [응답 본문]
@@ -796,15 +830,18 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 | queue.path | String | 생성될 이미지 절대 경로 |
 
 
-## 이미지 오퍼레이션 API
+<a id="image-operation-api"></a>
+## 이미지 오퍼레이션 API { #image-operation-api }
 
 - 이미지 오퍼레이션 API를 통해 다양한 섬네일을 생성할 수 있습니다.
 - 섬네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice), 워터마크 제공
 
-### 이미지 오퍼레이션 생성 및 수정
+<a id="create-and-modify-an-image-operation"></a>
+### 이미지 오퍼레이션 생성 및 수정 { #create-and-modify-an-image-operation }
 
 - 이미지 처리를 위한 오퍼레이션을 생성 또는 수정합니다.
 
+<a id="create-and-modify-an-image-operation-request"></a>
 #### 요청
 
 [URI]
@@ -950,6 +987,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 ```
 
 
+<a id="create-and-modify-an-image-operation-response"></a>
 #### 응답
 
 [응답 본문]
@@ -1002,10 +1040,12 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 | operation.jobTemplate[0].jobType | String | 오퍼레이션 작업 타입 |
 | operation.jobTemplate[0].option | Object | 오퍼레이션 작업 내용 |
 
-### 이미지 오퍼레이션 목록 조회
+<a id="list-image-operations"></a>
+### 이미지 오퍼레이션 목록 조회 { #list-image-operations }
 
 - 이미지 오퍼레이션 목록을 조회합니다.
 
+<a id="list-image-operations-request"></a>
 #### 요청
 
 [URI]
@@ -1034,6 +1074,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 | sort | String |  | 선택 | date:desc | 정렬 방식 (정렬 대상: name or date, 정렬 방식: asc or desc) |
 | template | boolean |  | 선택 | false | 목록 조회 대상 (true: 기본 오퍼레이션, false: 사용자 생성 오퍼레이션) |
 
+<a id="list-image-operations-response"></a>
 #### 응답
 
 [응답 본문]
@@ -1097,10 +1138,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 | operations[0].jobTemplate[0].jobType | String | 오퍼레이션 작업 타입 |
 | operations[0].jobTemplate[0].option | Object | 오퍼레이션 작업 내용 |
 
-### 이미지 오퍼레이션 상세 조회
+<a id="detailed-query-of-image-operations"></a>
+### 이미지 오퍼레이션 상세 조회 { #detailed-query-of-image-operations }
 
 - 특정 이미지 오퍼레이션 상세 내용을 조회합니다.
 
+<a id="detailed-query-of-image-operations-request"></a>
 #### 요청
 
 [URI]
@@ -1119,6 +1162,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 -H 'Authorization: {secretKey}'
 ```
 
+<a id="detailed-query-of-image-operations-response"></a>
 #### 응답
 
 [응답 본문]
@@ -1171,10 +1215,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 | operation.jobTemplate[0].jobType | String | 오퍼레이션 작업 타입 |
 | operation.jobTemplate[0].option | Object | 오퍼레이션 작업 내용 |
 
-### 이미지 오퍼레이션 삭제
+<a id="delete-an-image-operation"></a>
+### 이미지 오퍼레이션 삭제 { #delete-an-image-operation }
 
 - 특정 이미지 오퍼레이션을 삭제합니다.
 
+<a id="delete-an-image-operation-request"></a>
 #### 요청
 
 [URI]
@@ -1199,6 +1245,7 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey
 |---|---|---|---|---|---|
 | deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 섬네일을 삭제할지 여부 |
 
+<a id="delete-an-image-operation-response"></a>
 #### 응답
 
 [응답 본문]
@@ -1213,11 +1260,13 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey
 }
 ```
 
-### 이미지 오퍼레이션 실행 (비동기)
+<a id="execute-image-operations-asynchronous"></a>
+### 이미지 오퍼레이션 실행 (비동기) { #execute-image-operations-asynchronous }
 
 - 지정된 파일에 오퍼레이션을 실행하여 섬네일을 생성합니다.
 - 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
 
+<a id="execute-image-operations-asynchronous-request"></a>
 #### 요청
 
 [URI]
@@ -1248,6 +1297,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 | operationIds | String List |  | 필수 |  | 실행할 오퍼레이션 ID 리스트 |
 | callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 URL 경로. <br>query string 형식으로 id를 적으면 callback 전송 시 같이 전달됨. <br>포트는 80, 443만 지원 |
 
+<a id="execute-image-operations-asynchronous-response"></a>
 #### 응답
 
 [응답 본문]
@@ -1381,12 +1431,15 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 ```
 
 
-## 실시간 서비스 API
+<a id="real-time-service-api"></a>
+## 실시간 서비스 API { #real-time-service-api }
 
-### 실시간 서비스 조회
+<a id="query-a-real-time-service"></a>
+### 실시간 서비스 조회 { #query-a-real-time-service }
 
 - 사용자의 이미지 오퍼레이션 실시간 서비스 사용 여부를 조회합니다.
 
+<a id="query-a-real-time-service-request"></a>
 #### 요청
 
 [URI]
@@ -1405,6 +1458,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 -H 'Authorization: {secretKey}'
 ```
 
+<a id="query-a-real-time-service-response"></a>
 #### 응답
 
 [응답 본문]
@@ -1432,10 +1486,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 | user.realtimeService | boolean | 실시간 서비스 제공 여부 |
 
 
-### 실시간 서비스 변경
+<a id="change-a-real-time-service"></a>
+### 실시간 서비스 변경 { #change-a-real-time-service }
 
 - 사용자의 이미지 오퍼레이션 실시간 서비스 사용 여부를 변경합니다.
 
+<a id="change-a-real-time-service-request"></a>
 #### 요청
 
 [URI]
@@ -1462,6 +1518,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 |---|---|---|---|---|---|
 | realtimeService | boolean |  | 필수 |  | 실시간 서비스 제공 여부 |
 
+<a id="change-a-real-time-service-response"></a>
 #### 응답
 
 [응답 본문]
@@ -1477,12 +1534,15 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 ```
 
 
-## 작업 API
+<a id="task-api"></a>
+## 작업 API { #task-api }
 
-### 작업 조회
+<a id="query-task"></a>
+### 작업 조회 { #query-task }
 
 - 이미지 오퍼레이션 처리 또는 삭제 작업을 조회합니다.
 
+<a id="query-task-request"></a>
 #### 요청
 
 [URI]
@@ -1507,6 +1567,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/q
 |---|---|---|---|---|---|
 | queueId | String | 최대 64글자 | 필수 |  | 조회할 작업 고유 ID |
 
+<a id="query-task-response"></a>
 #### 응답
 
 [응답 본문]

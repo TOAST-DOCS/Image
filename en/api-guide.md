@@ -1,16 +1,22 @@
-## Content Delivery > Image Manager > API Guide
+<!-- pre-align:aligned sig=983eed836eb1 -->
+
+<a id="content-delivery-image-manager-api-guide"></a>
+## Content Delivery > Image Manager > API Guide { #content-delivery-image-manager-api-guide }
 
 The guide describes APIs of the Image Manager service.
 
 
-## Common API Information
+<a id="common-api-information"></a>
+## Common API Information { #common-api-information }
 
-### Prerequisites
+<a id="prerequisites"></a>
+### Prerequisites { #prerequisites }
 
 - To use the API, you need AppKey.
 - AppKey can be found in the "URL & Appkey" menu on the top of the console.
 
-### Common Request Information
+<a id="common-request-information"></a>
+### Common Request Information { #common-request-information }
 
 - User Access Key tokens for authentication and authorization when making API calls. The User Access Key token is a temporary, Bearer-type access token issued from a User Access Key. 
 - For more information on issuing and using User Access Key tokens, please refer to the [User Access Key Token](/nhncloud/en/public-api/user-access-key-token).
@@ -21,7 +27,8 @@ The guide describes APIs of the Image Manager service.
 |---|---|---|
 | X-NHN-AUTHORIZATION | {token} | Bearer type token issued with the Public API |
 
-### Common Response Information
+<a id="common-response-information"></a>
+### Common Response Information { #common-response-information }
 
 - The API responds with "200 OK" to all API requests. For more information on the response results, see Response Body Header.
 
@@ -50,12 +57,15 @@ The guide describes APIs of the Image Manager service.
 ```
 
 
-## Folder API
+<a id="folder-api"></a>
+## Folder API { #folder-api }
 
-### Create Folder
+<a id="create-folder"></a>
+### Create Folder { #create-folder }
 
 - Creates a folder in the specified path.
 
+<a id="create-folder-request"></a>
 #### Request
 
 [URI]
@@ -82,6 +92,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 |---|---|---|---|---|---|
 | path | String | Min. 2 characters, Max. 255 Bytes | Required |  | The absolute path of the folder to be created, and a parent folder is automatically created |
 
+<a id="create-folder-response"></a>
 #### Response
 
 [Response Body]
@@ -113,10 +124,12 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 | folder.updatedAt | DateTime | Last modified date |
 
 
-### List Files in a Folder
+<a id="list-files-in-a-folder"></a>
+### List Files in a Folder { #list-files-in-a-folder }
 
 - Retrieves a list of items under the specified path or a list including specific characters in the name.
 
+<a id="list-files-in-a-folder-request"></a>
 #### Request
 
 [URI]
@@ -146,6 +159,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/f
 | rows | int | Min. 1, Max. 10,000 | Optional | 100 | Query count |
 | sort | String | | Optional | name:asc | Sorting method (Sort criteria: name or date, sorting method: asc or desc) |
 
+<a id="list-files-in-a-folder-response"></a>
 #### Response
 
 [Response Body]
@@ -231,11 +245,13 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/f
 | files[0].imageProperty.coordinate.lng | double | Longitude |
 
 
-### List Folder Properties
+<a id="list-folder-properties"></a>
+### List Folder Properties { #list-folder-properties }
 
 - Retrieves properties such as the folder ID, capacity, and number of files.
 - Retrieving properties can be time consuming depending on the number of files in the folder. If you don't need to retrieve the number of files in a folder and their total size, use the **List Folder Default Properties**.
 
+<a id="list-folder-properties-request"></a>
 #### Request
 
 [URI]
@@ -260,6 +276,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/p
 |---|---|---|---|---|---|
 | path | String | Min. 2 characters, Max. 255 Bytes | Required |  | Absolute path of the folder to retrieve |
 
+<a id="list-folder-properties-response"></a>
 #### Response
 
 [Response Body]
@@ -296,10 +313,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/p
 | folder.totalFileCount | long | Total number of subfiles |
 | folder.updatedAt | DateTime | Last modified date |
 
-### List Folder Default Properties
+<a id="list-folder-default-properties"></a>
+### List Folder Default Properties { #list-folder-default-properties }
 
 - Retrieves folder properties from the List Folder Properties API, excluding the size, number of files, and number folders.
 
+<a id="list-folder-default-properties-request"></a>
 #### Request
 
 [URI]
@@ -324,6 +343,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/p
 |---|---|---|---|---|---|
 | path | String | Min. 2 characters, Max. 255 bytes | Required |  | Absolute path to the folder to be retrieved  |
 
+<a id="list-folder-default-properties-response"></a>
 #### Response
 
 [Response Body]
@@ -354,12 +374,15 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/p
 | folder.path | String | Absolute path to the folder |
 | folder.updatedAt | DateTime | Last modified date |
 
-## Upload API
+<a id="upload-api"></a>
+## Upload API { #upload-api }
 
-### Upload a File
+<a id="upload-a-file"></a>
+### Upload a File { #upload-a-file }
 
 - Uploads a single image file.
 
+<a id="upload-a-file-request"></a>
 #### Request
 
 [URI]
@@ -393,6 +416,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/i
 - If you request by adding an image operation ID, you can create an operation file with the options you want when uploading.
 - Refer to [Image Operation API](./api-guide/#image-operation-api).
 
+<a id="upload-a-file-response"></a>
 #### Response
 
 [Response Body]
@@ -469,11 +493,13 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/i
 | file.queues[0].path | String | Absolute path of the image to be created |
 
 
-### Upload Multiple Files
+<a id="upload-multiple-files"></a>
+### Upload Multiple Files { #upload-multiple-files }
 
 - Uploads multiple image files.
 - You can also upload compressed files.
 
+<a id="upload-multiple-files-request"></a>
 #### Request
 
 [URI]
@@ -508,6 +534,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 | params.operationIds | String List |  | Optional |  | List of image operation IDs. <br>Creates an operation file with the option you want when uploading. <br>Refer to the API related to image operation |
 | params.callbackUrl | String |  | Optional |  | Callback URL path to receive processing result. <br>If you write the id in a query string format, it will be delivered together when sending a callback. <br>Only supports port 80 and port 443 |
 
+<a id="upload-multiple-files-response"></a>
 #### Response
 
 [Response Body]
@@ -671,12 +698,15 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 
 
 
-## Deletion API
+<a id="deletion-api"></a>
+## Deletion API { #deletion-api }
 
-### Single Deletion (synchronous)
+<a id="single-deletion-synchronous"></a>
+### Single Deletion (synchronous) { #single-deletion-synchronous }
 
 - Deletes a single folder or file.
 
+<a id="single-deletion-synchronous-request"></a>
 #### Request
 
 [URI]
@@ -707,6 +737,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 | fileId | String | Max. 50 characters |  |  | ID of the file to be deleted |
 | includeThumbnail | boolean |  | Optional | false | Also deletes the operation file created by the file to be deleted |
 
+<a id="single-deletion-synchronous-response"></a>
 #### Response
 
 [Response Body]
@@ -721,12 +752,14 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 }
 ```
 
-### Multiple Deletion (asynchronous)
+<a id="multiple-deletion-asynchronous"></a>
+### Multiple Deletion (asynchronous) { #multiple-deletion-asynchronous }
 
 - Deletes multiple folders and files.
 - Actual deletion of data is processed asynchronously.
 - The processing result can be checked through the [Query a Task](./api-guide/#query-a-task) API with the "queueId" received as a response.
 
+<a id="multiple-deletion-asynchronous-request"></a>
 #### Request
 
 [URI]
@@ -757,6 +790,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 | fileIds | String | Max. 50 characters per ID |  |  | List of IDs of files to be deleted (separated by commas) |
 | includeThumbnail | boolean |  | Optional | false | Also deletes the operation file created by the file to be deleted |
 
+<a id="multiple-deletion-asynchronous-response"></a>
 #### Response
 
 [Response Body]
@@ -796,15 +830,18 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 | queue.path | String | Absolute path of the image to be created |
 
 
-## Image Operation API
+<a id="image-operation-api"></a>
+## Image Operation API { #image-operation-api }
 
 - You can create various thumbnails with Image Operation API.
 - Provides the thumbnail size, black and white filter, crop (Rectangle, Circle, and Slice), and watermark.
 
-### Create and Modify an Image Operation
+<a id="create-and-modify-an-image-operation"></a>
+### Create and Modify an Image Operation { #create-and-modify-an-image-operation }
 
 - Creates or modifies an operation for image processing.
 
+<a id="create-and-modify-an-image-operation-request"></a>
 #### Request
 
 [URI]
@@ -950,6 +987,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 ```
 
 
+<a id="create-and-modify-an-image-operation-response"></a>
 #### Response
 
 [Response Body]
@@ -1002,10 +1040,12 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 | operation.jobTemplate[0].jobType | String | Operation task type |
 | operation.jobTemplate[0].option | Object | Operation task content |
 
-### List Image Operations
+<a id="list-image-operations"></a>
+### List Image Operations { #list-image-operations }
 
 - Retrieves a list of image operations.
 
+<a id="list-image-operations-request"></a>
 #### Request
 
 [URI]
@@ -1034,6 +1074,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 | sort | String |  | Optional | date:desc | Sorting method (Sort criteria: name or date, sorting method: asc or desc) |
 | template | boolean |  | Optional | false | Target of the list query (true: default operation, false: user-created operation) |
 
+<a id="list-image-operations-response"></a>
 #### Response
 
 [Response Body]
@@ -1097,10 +1138,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 | operations[0].jobTemplate[0].jobType | String | Operation task type |
 | operations[0].jobTemplate[0].option | Object | Operation task content |
 
-### Detailed Query of Image Operations
+<a id="detailed-query-of-image-operations"></a>
+### Detailed Query of Image Operations { #detailed-query-of-image-operations }
 
 - Retrieves the details of a specific image operation.
 
+<a id="detailed-query-of-image-operations-request"></a>
 #### Request
 
 [URI]
@@ -1119,6 +1162,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 -H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
+<a id="detailed-query-of-image-operations-response"></a>
 #### Response
 
 [Response Body]
@@ -1171,10 +1215,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/o
 | operation.jobTemplate[0].jobType | String | Operation task type |
 | operation.jobTemplate[0].option | Object | Operation task content |
 
-### Delete an Image Operation
+<a id="delete-an-image-operation"></a>
+### Delete an Image Operation { #delete-an-image-operation }
 
 - Deletes a specific image operation.
 
+<a id="delete-an-image-operation-request"></a>
 #### Request
 
 [URI]
@@ -1199,6 +1245,7 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey
 |---|---|---|---|---|---|
 | deleteThumbnail | boolean |  | Optional | false | Whether to delete the thumbnails previously created by the operation |
 
+<a id="delete-an-image-operation-response"></a>
 #### Response
 
 [Response Body]
@@ -1213,11 +1260,13 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey
 }
 ```
 
-### Execute Image Operations (asynchronous)
+<a id="execute-image-operations-asynchronous"></a>
+### Execute Image Operations (asynchronous) { #execute-image-operations-asynchronous }
 
 - Executes operations on the specified file to generate thumbnails.
 - The processing result can be checked through the [Query a Task](./api-guide/#query-a-task) API with the "queueId" received as a response.
 
+<a id="execute-image-operations-asynchronous-request"></a>
 #### Request
 
 [URI]
@@ -1248,6 +1297,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 | operationIds | String List |  | Required |  | List of operation IDs to execute |
 | callbackUrl | String |  | Optional |  | The URL path to receive the processing result. <br>If you write an id in a query string format, it is delivered together when sending the callback. <br>Only supports port 80 and port 443 |
 
+<a id="execute-image-operations-asynchronous-response"></a>
 #### Response
 
 [Response Body]
@@ -1381,12 +1431,15 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/
 ```
 
 
-## Real-time Service API
+<a id="real-time-service-api"></a>
+## Real-time Service API { #real-time-service-api }
 
-### Query a Real-time Service
+<a id="query-a-real-time-service"></a>
+### Query a Real-time Service { #query-a-real-time-service }
 
 - Retrieves whether a user used the image operation real-time service.
 
+<a id="query-a-real-time-service-request"></a>
 #### Request
 
 [URI]
@@ -1405,6 +1458,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/u
 -H 'X-NHN-AUTHORIZATION: {token}'
 ```
 
+<a id="query-a-real-time-service-response"></a>
 #### Response
 
 [Response Body]
@@ -1432,10 +1486,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/u
 | user.realtimeService | boolean | Whether to provide a real-time service |
 
 
-### Change a Real-time Service
+<a id="change-a-real-time-service"></a>
+### Change a Real-time Service { #change-a-real-time-service }
 
 - Changes whether a user used the image operation real-time service.
 
+<a id="change-a-real-time-service-request"></a>
 #### Request
 
 [URI]
@@ -1462,6 +1518,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/u
 |---|---|---|---|---|---|
 | realtimeService | boolean |  | Required |  | Whether to provide a real-time service |
 
+<a id="change-a-real-time-service-response"></a>
 #### Response
 
 [Response Body]
@@ -1477,12 +1534,15 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/u
 ```
 
 
-## Task API
+<a id="task-api"></a>
+## Task API { #task-api }
 
-### Query Task
+<a id="query-task"></a>
+### Query Task { #query-task }
 
 - Retrieves the tasks of processing or deleting image operations.
 
+<a id="query-task-request"></a>
 #### Request
 
 [URI]
@@ -1507,6 +1567,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/q
 |---|---|---|---|---|---|
 | queueId | String | Max. 64 characters | Required |  | Task unique ID to search for |
 
+<a id="query-task-response"></a>
 #### Response
 
 [Response Body]

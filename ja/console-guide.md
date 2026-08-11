@@ -1,18 +1,24 @@
-## Content Delivery > Image Manager > コンソール使用ガイド
+<!-- pre-align:aligned sig=0b6ed03a5615 -->
+
+<a id="content-delivery-image-manager-console-user-guide"></a>
+## Content Delivery > Image Manager > コンソール使用ガイド { #content-delivery-image-manager-console-user-guide }
 
 本文書では、コンソールを利用して、フォルダの作成とファイルのアップロード、サムネイル オプションを管理する方法について説明します。
 
-## フォルダと画像ファイルの管理
+<a id="manage-folders-and-image-files"></a>
+## フォルダと画像ファイルの管理 { #manage-folders-and-image-files }
 
 メニューの 'ファイル表示' 画面でフォルダと原本画像ファイル、生成されたサムネイル画像ファイルを管理することができます。
 
 ![image_01_ja_20220929](https://static.toastoven.net/prod_img/image_01_ja_20220929.png)
 
-### ツールバーアイコンの説明
+<a id="toolbar-icon-description"></a>
+### ツールバーアイコンの説明 { #toolbar-icon-description }
 
 ![image_02_ja_20220929](https://static.toastoven.net/prod_img/image_02_ja_20220929.png)
 
-### フォルダの作成
+<a id="create-a-folder"></a>
+### フォルダの作成 { #create-a-folder }
 
 ![image_03_ja_20220929](https://static.toastoven.net/prod_img/image_03_ja_20220929.png)
 
@@ -23,7 +29,8 @@
 - フォルダーの名前の修正機能は提供していません。
 - 名前の修正が必要な場合、フォルダを削除して再作成する必要があります。
 
-### 画像ファイルをアップロード
+<a id="upload-image-files"></a>
+### 画像ファイルをアップロード { #upload-image-files }
 
 ![image_04_ja_20220929](https://static.toastoven.net/prod_img/image_04_ja_20220929.png)
 
@@ -38,7 +45,8 @@
 
 - 正常にアップロードが完了すると、画面が更新されファイル一覧を確認できます。
 
-### ダウンロード
+<a id="download"></a>
+### ダウンロード { #download }
 
 ![image_05_ja_20220929](https://static.toastoven.net/prod_img/image_05_ja_20220929.png)
 
@@ -48,7 +56,8 @@
 
     - 一度に最大10,000個の画像ファイルのみダウンロードできます。フォルダ内に保存される画像をダウンロードする場合も同様に、10,000個の画像のみダウンロード可能です。
 
-### ファイル/フォルダ削除
+<a id="delete-files-or-a-folder"></a>
+### ファイル/フォルダ削除 { #delete-files-or-a-folder }
 
 ![image_06_ja_20220929](https://static.toastoven.net/prod_img/image_06_ja_20220929.png)
 
@@ -59,7 +68,8 @@
    - フォルダを選択した場合には該当フォルダ内のファイルもすべて削除されます。
 
 
-### プロパティ表示
+<a id="view-properties"></a>
+### プロパティ表示 { #view-properties }
 
 ![image_07_ja_20231031](https://static.toastoven.net/prod_img/image_07_ja_20231031.png)
 
@@ -67,7 +77,8 @@
 
 - 画像ファイルを選択した場合には画像のt当て横の長さ、ダウンロードURLとメタ情報を確認できます。
 
-### 照会とリスト表示
+<a id="query-and-view-the-list"></a>
+### 照会とリスト表示 { #query-and-view-the-list }
 
 ![image_08_ja_20220929](https://static.toastoven.net/prod_img/image_08_ja_20220929.png)
 
@@ -82,7 +93,8 @@
       - 入力例：sample
       - 結果例：sample.gif、 sample_2.gif、 sample 3.gif、 サンプル_sample_100x100.png
 
-### 全ファイル削除
+<a id="delete-all-files"></a>
+### 全ファイル削除 { #delete-all-files }
 
 ![image_09_ja_20220929](https://static.toastoven.net/prod_img/image_09_ja_20220929.png)
 
@@ -93,7 +105,8 @@
 
 2. **確認** ボタンをクリックします。
 
-## サムネイルオプション管理
+<a id="manage-thumbnail-options"></a>
+## サムネイルオプション管理 { #manage-thumbnail-options }
 
 ![image_10_ja_20220929](https://static.toastoven.net/prod_img/image_10_ja_20220929.png)
 
@@ -101,7 +114,8 @@
 
 さまざまなオプションを組み合わせて作ることができます。
 
-### サムネイル生成
+<a id="create-thumbnails"></a>
+### サムネイル生成 { #create-thumbnails }
 
 ![image_11_ja_20220929](https://static.toastoven.net/prod_img/image_11_ja_20220929.png)
 
@@ -144,7 +158,8 @@
 
 シナリオ設定完了後、 **保存** ボタンをクリックします。  
 
-### サムネイル修正
+<a id="edit-thumbnails"></a>
+### サムネイル修正 { #edit-thumbnails }
 
 ![image_13_ja_20220929](https://static.toastoven.net/prod_img/image_13_ja_20220929.png)
 
@@ -155,7 +170,8 @@
 - オプションを変更しても、修正する前の設定で作成されたサムネイルは修正されません。
 - ダイアログボックスで 'オペレーション画像の削除' のチェックボックスをチェックすると、修正前の設定で作成されたサムネイルを一括削除できます。
 
-### サムネイル削除
+<a id="delete-thumbnails"></a>
+### サムネイル削除 { #delete-thumbnails }
 
 ![image_14_ja_20220929](https://static.toastoven.net/prod_img/image_14_ja_20220929.png)
 
@@ -164,7 +180,8 @@
 - 削除ボタンで選択したサムネイルオプションを削除できます。
 - ダイアログで 'オペレーション画像の削除' チェックボックスをチェックすると、そのオペレーションで作成されたサムネイルを一括削除することができます。
 
-### ユーザー設定
+<a id="user-settings"></a>
+### ユーザー設定 { #user-settings }
 
 ![image_15_ja_20220929](https://static.toastoven.net/prod_img/image_15_ja_20220929.png)
 

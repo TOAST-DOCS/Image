@@ -1,21 +1,27 @@
-## Content Delivery > Image Manager > Overview
+<!-- pre-align:aligned sig=10ed01c5e832 -->
+
+<a id="content-delivery-image-manager-overview"></a>
+## Content Delivery > Image Manager > Overview { #content-delivery-image-manager-overview }
 
 Image is a service that provides comprehensive functions for storing, editing, and transferring images used in the customer's service.
 
-## Main Features
+<a id="main-features"></a>
+## Main Features { #main-features }
 
 - Provides a RESTful API that can be used by applications.
 - Provides functions to create multiple folders, upload multiple images, download multiple files, and delete multiple files.
 - Allows you to create thumbnails of the desired size in real time simply by adding parameters to the original image file URL.
 - HTTP and HTTPS protocols can be used for the image file URL.
 
-## Supported Images 
+<a id="supported-images"></a>
+## Supported Images { #supported-images }
 
 - The image file formats supported by the Image Manager service are as follows:
 	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png, webp
 - The Image Manager service allows you to upload image files of up to 10 MB(50 MB when using the API).
 
-## Glossary
+<a id="glossary"></a>
+## Glossary { #glossary }
 
 | Term | Description |
 |---|---|
