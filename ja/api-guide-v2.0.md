@@ -1,16 +1,22 @@
-## Content Delivery > Image Manager > API ガイド
+<!-- pre-align:aligned sig=983eed836eb1 -->
+
+<a id="content-delivery-image-manager-api-guide"></a>
+## Content Delivery > Image Manager > API ガイド { #content-delivery-image-manager-api-guide }
 
 Image Managerサービスの APIを説明します。
 
 
-## API共通情報
+<a id="common-api-information"></a>
+## API共通情報 { #common-api-information }
 
-### 事前準備
+<a id="prerequisites"></a>
+### 事前準備 { #prerequisites }
 
 '- API使用のためには、アプリキーと秘密鍵が必要です。
 - アプリキーと秘密鍵はコンソール上部の"URL & Appkey"メニューで確認できます。
 
-### リクエスト共通情報
+<a id="common-request-information"></a>
+### リクエスト共通情報 { #common-request-information }
 
 '- APIを使用するためには秘密鍵認証処理が必要です。
 - すべてのAPIリクエストに対して、リクエストヘッダーの'Authorization'に秘密鍵を入れてリクエストしてください。
@@ -21,7 +27,8 @@ Image Managerサービスの APIを説明します。
 |---|---|---|
 | Authorization | {secretKey} | コンソールで発行された秘密鍵 |
 
-### レスポンス共通情報
+<a id="common-response-information"></a>
+### レスポンス共通情報 { #common-response-information }
 
 - すべてのAPIリクエストに "200 OK"で応答します。詳しいレスポンスの結果はレスポンス内容のヘッダーを参照してください。
 
@@ -50,12 +57,15 @@ Image Managerサービスの APIを説明します。
 ```
 
 
-## フォルダAPI
+<a id="folder-api"></a>
+## フォルダAPI { #folder-api }
 
-### フォルダ作成
+<a id="create-folder"></a>
+### フォルダ作成 { #create-folder }
 
 - 指定したパスにフォルダを作成します。
 
+<a id="create-folder-request"></a>
 #### リクエスト
 
 [URI]
@@ -82,6 +92,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 |---|---|---|---|---|---|
 | path | String | 少なくとも 2文字、最大 255Byte | 必須 |  | 作成するフォルダの絶対パス、上位フォルダの自動生成 |
 
+<a id="create-folder-response"></a>
 #### レスポンス
 
 [レスポンス内容]
@@ -113,10 +124,12 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 | folder.updatedAt | DateTime | フォルダの最終更新日 |
 
 
-### フォルダ内のファイルリストの照会
+<a id="list-files-in-a-folder"></a>
+### フォルダ内のファイルリストの照会 { #list-files-in-a-folder }
 
 - 指定したパスの配下の一覧を照会するか、名前に特定の文字を含むリストを照会します。
 
+<a id="list-files-in-a-folder-request"></a>
 #### リクエスト
 
 [URI]
@@ -146,6 +159,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 | rows | int | 最小 1, 最大 10,000 | オプション | 100 | 照会の表示件数 |
 | sort | String | | オプション | name:asc | 並べ替えの仕方 (ソート対象 : name or date、ソート方式 : asc or dsc) |
 
+<a id="list-files-in-a-folder-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -231,11 +245,13 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/f
 | files[0].imageProperty.coordinate.lng | double | 経度 |
 
 
-### フォルダのプロパティー照会
+<a id="list-folder-properties"></a>
+### フォルダのプロパティー照会 { #list-folder-properties }
 
 - フォルダのID、容量、ファイル数などのプロパティーを照会します。
 - フォルダに保存されたファイルの数によっては、時間がかなりかかる場合があります。フォルダ内のファイル数および全体容量の照会が必要でない場合は、**フォルダ基本属性照会**APIを使用してください。
 
+<a id="list-folder-properties-request"></a>
 #### リクエスト
 
 [URI]
@@ -260,6 +276,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 |---|---|---|---|---|---|
 | path | String | 少なくとも2文字、最大255Byte | 必須 |  | 照会するフォルダの絶対パス |
 
+<a id="list-folder-properties-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -296,10 +313,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.totalFileCount | long | 配下のファイル数 |
 | folder.updatedAt | DateTime | 最終更新日 |
 
-### フォルダ基本属性照会
+<a id="list-folder-default-properties"></a>
+### フォルダ基本属性照会 { #list-folder-default-properties }
 
 - フォルダ属性照会APIで容量、ファイル数、フォルダ数を除外した属性を照会します。
 
+<a id="list-folder-default-properties-request"></a>
 #### リクエスト
 
 [URI]
@@ -324,6 +343,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 |---|---|---|---|---|---|
 | path | String | 最低2文字、最大255Byte | 必須 |  | 照会するフォルダの絶対パス |
 
+<a id="list-folder-default-properties-response"></a>
 #### レスポンス
 
 [レスポンス本文]
@@ -354,12 +374,15 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/p
 | folder.path | String | フォルダ絶対パス |
 | folder.updatedAt | DateTime | 最終修正日 |
 
-## アップロードAPI
+<a id="upload-api"></a>
+## アップロードAPI { #upload-api }
 
-### 単一ファイルのアップロード
+<a id="upload-a-file"></a>
+### 単一ファイルのアップロード { #upload-a-file }
 
 - 画像ファイルをひとつアップロードします。
 
+<a id="upload-a-file-request"></a>
 #### リクエスト
 
 [URI]
@@ -393,6 +416,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/i
 - 画像オペレーションIDを追加してリクエストする場合、アップロード時に希望のオプションを指定し、オペレーションファイルを作成することができます。
 - [イメージオプションAPI](./api-guide/#api_4)を参照ください。
 
+<a id="upload-a-file-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -469,11 +493,13 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/i
 | file.queues[0].path | String | 作成される画像の絶対パス |
 
 
-### 複数ファイルの一括アップロード
+<a id="upload-multiple-files"></a>
+### 複数ファイルの一括アップロード { #upload-multiple-files }
 
 - 複数の画像ファイルアップロードします。
 - 圧縮ファイルのアップロードも可能です。
 
+<a id="upload-multiple-files-request"></a>
 #### リクエスト
 
 [URI]
@@ -508,6 +534,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 | params.operationIds | String List |  | オプション |  | 画像オペレーションIDリスト。 <br>アプロード時、希望のオプションでオペレーションファイルを生成。 <br>画像オペレーション関連APIを参照 |
 | params.callbackUrl | String |  | オプション |  | 処理結果の通知を受け取るコールバックURLのパス。 <br>cクエリ文字列にidを付与するとコールバック転送時に一緒に送信される。 <br>ポートは80番と443番のみサポート。 |
 
+<a id="upload-multiple-files-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -671,12 +698,15 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 
 
 
-## 削除API
+<a id="deletion-api"></a>
+## 削除API { #deletion-api }
 
-### 単一削除 (同期)
+<a id="single-deletion-synchronous"></a>
+### 単一削除 (同期) { #single-deletion-synchronous }
 
 - フォルダまたはファイルをひとつ削除します。
 
+<a id="single-deletion-synchronous-request"></a>
 #### リクエスト
 
 [URI]
@@ -707,6 +737,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 | fileId | String | 最大50文字 |  |  | 削除するファイルのID |
 | includeThumbnail | boolean |  | オプション | false | 削除するファイルによって生成されたオペレーションファイルも削除 |
 
+<a id="single-deletion-synchronous-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -721,12 +752,14 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 }
 ```
 
-### 一括削除 (非同期)
+<a id="multiple-deletion-asynchronous"></a>
+### 一括削除 (非同期) { #multiple-deletion-asynchronous }
 
 - 複数のフォルダとファイルを削除します。
 - 実際のデータの削除は非同期で処理されます。
 - 処理結果は、レスポンスで受け取った"queueId"を用い [作業照会API](./api-guide/#api_6)を通じて確認することができます。
 
+<a id="multiple-deletion-asynchronous-request"></a>
 #### リクエスト
 
 [URI]
@@ -757,6 +790,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 | fileIds | String | IDひとつ当たり最大50文字 |  |  | 削除するフィールドのIDリスト (カンマで区分される) |
 | includeThumbnail | boolean |  | オプション| false | 削除するファイルによって生成されたオペレーションファイルも削除 |
 
+<a id="multiple-deletion-asynchronous-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -796,15 +830,18 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 | queue.path | String | 生成された画像の絶対パス |
 
 
-## 画像オペレーションAPI
+<a id="image-operation-api"></a>
+## 画像オペレーションAPI { #image-operation-api }
 
 - 画像オペレーションAPIを通じ、さまざまなサムネイルを作成することができます。
 - サムネイルの大きさ、モノクロフィルター、クロップ(Rectangle, Circle, Slice)、ウォーターマークを提供
 
-### 画像オペレーション生成と修正
+<a id="create-and-modify-an-image-operation"></a>
+### 画像オペレーション生成と修正 { #create-and-modify-an-image-operation }
 
 - 画像処理のためのオペレーションを生成または修正します。
 
+<a id="create-and-modify-an-image-operation-request"></a>
 #### リクエスト
 
 [URI]
@@ -950,6 +987,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 ```
 
 
+<a id="create-and-modify-an-image-operation-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -1002,10 +1040,12 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 | operation.jobTemplate[0].jobType | String | オペレーション作業のタイプ |
 | operation.jobTemplate[0].option | Object | オペレーション作業の内容 |
 
-### 画像オペレーションリストの照会
+<a id="list-image-operations"></a>
+### 画像オペレーションリストの照会 { #list-image-operations }
 
 - 画像のリストを照会します。
 
+<a id="list-image-operations-request"></a>
 #### リクエスト
 
 [URI]
@@ -1034,6 +1074,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 | sort | String |  | オプション | date:desc | ソート方式 (ソート対象 : name or date, ソート方式 : asc or desc) |
 | template | boolean |  | オプション | false | リスト照会対象(true: 基本オペレーション、 false: ユーザー生成オペレーション) |
 
+<a id="list-image-operations-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -1097,10 +1138,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 | operations[0].jobTemplate[0].jobType | String | オペレーション作業タイプ |
 | operations[0].jobTemplate[0].option | Object | オペレーション作業内容 |
 
-### 画像オペレーション詳細照会
+<a id="detailed-query-of-image-operations"></a>
+### 画像オペレーション詳細照会 { #detailed-query-of-image-operations }
 
 - 特定の画像オペレーションの詳細を照会します・
 
+<a id="detailed-query-of-image-operations-request"></a>
 #### リクエスト
 
 [URI]
@@ -1119,6 +1162,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 -H 'Authorization: {secretKey}'
 ```
 
+<a id="detailed-query-of-image-operations-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -1171,10 +1215,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/o
 | operation.jobTemplate[0].jobType | String | オペレーション作業タイプ |
 | operation.jobTemplate[0].option | Object | オペレーション作業内容 |
 
-### 画像オペレーション削除
+<a id="delete-an-image-operation"></a>
+### 画像オペレーション削除 { #delete-an-image-operation }
 
 - 特定の画像オペレーションを削除します。
 
+<a id="delete-an-image-operation-request"></a>
 #### リクエスト
 
 [URI]
@@ -1199,6 +1245,7 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey
 |---|---|---|---|---|---|
 | deleteThumbnail | boolean |  | オプション | false | 以前に当該オペレーションで生成されたサムネイルを削除するかどうか |
 
+<a id="delete-an-image-operation-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -1213,11 +1260,13 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey
 }
 ```
 
-### 画像オペレーションの実行 (非同期)
+<a id="execute-image-operations-asynchronous"></a>
+### 画像オペレーションの実行 (非同期) { #execute-image-operations-asynchronous }
 
 - 指定されたファイルにオペレーションを実行してサムネイルを作成します。
 - 処理結果は、回答で受け取った "queueId"を用い [作業照会API](./api-guide/#api_6)を通じて確認することができます。
 
+<a id="execute-image-operations-asynchronous-request"></a>
 #### リクエスト
 
 [URI]
@@ -1248,6 +1297,7 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 | operationIds | String List |  | 必須 |  | 実行するオペレーションIDリスト |
 | callbackUrl | String |  | オプション |  | 処理結果の通知を受けるURLパス、 <br>クエリ文字列にidを付与するとコールバック送信時に一緒に送信される。 <br>ポートは80番、443番のみサポート |
 
+<a id="execute-image-operations-asynchronous-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -1381,12 +1431,15 @@ curl -X POST 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/
 ```
 
 
-## リアルタイムサービスAPI
+<a id="real-time-service-api"></a>
+## リアルタイムサービスAPI { #real-time-service-api }
 
-### リアルタイムサービスの照会
+<a id="query-a-real-time-service"></a>
+### リアルタイムサービスの照会 { #query-a-real-time-service }
 
 - ユーザーの画像オペレーションをリアルタイムで利用するか、設定状況を照会します。
 
+<a id="query-a-real-time-service-request"></a>
 #### リクエスト
 
 [URI]
@@ -1405,6 +1458,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 -H 'Authorization: {secretKey}'
 ```
 
+<a id="query-a-real-time-service-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -1432,10 +1486,12 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 | user.realtimeService | boolean | リアルタイムでサービス提供するか否か |
 
 
-### リアルタイムサービスの変更
+<a id="change-a-real-time-service"></a>
+### リアルタイムサービスの変更 { #change-a-real-time-service }
 
 - ユーザーの画像オペレーションをリアルタイムで使用するかどうかの設定内容を変更します。
 
+<a id="change-a-real-time-service-request"></a>
 #### リクエスト
 
 [URI]
@@ -1462,6 +1518,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 |---|---|---|---|---|---|
 | realtimeService | boolean |  | 必須 |  | リアルタイムでサービスを提供するか否か |
 
+<a id="change-a-real-time-service-response"></a>
 #### レスポンス
 
 [レスポンス例]
@@ -1477,12 +1534,15 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/u
 ```
 
 
-## 作業API
+<a id="task-api"></a>
+## 作業API { #task-api }
 
-### 作業照会
+<a id="query-task"></a>
+### 作業照会 { #query-task }
 
 - 画像オペレーション処理と削除作業を照会します。
 
+<a id="query-task-request"></a>
 #### リクエスト
 
 [URI]
@@ -1507,6 +1567,7 @@ curl -X GET 'https://api-image.nhncloudservice.com/image/v2.0/appkeys/{appKey}/q
 |---|---|---|---|---|---|
 | queueId | String | 最大64文字 | 必須 |  | 照会する作業のユニークID |
 
+<a id="query-task-response"></a>
 #### レスポンス
 
 [レスポンス例]

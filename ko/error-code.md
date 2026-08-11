@@ -1,4 +1,7 @@
-## Content Delivery > Image Manager > 오류 코드
+<!-- pre-align:aligned sig=a4e545144de1 -->
+
+<a id="content-delivery-image-manager-error-code"></a>
+## Content Delivery > Image Manager > 오류 코드 { #content-delivery-image-manager-error-code }
 
 | resultCode | resultKey | resultMessage |
 |---|---|----|

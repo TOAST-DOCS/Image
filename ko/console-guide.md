@@ -1,18 +1,24 @@
-## Content Delivery > Image Manager > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=0b6ed03a5615 -->
+
+<a id="content-delivery-image-manager-console-user-guide"></a>
+## Content Delivery > Image Manager > 콘솔 사용 가이드 { #content-delivery-image-manager-console-user-guide }
 
 본 문서에서는 콘솔을 이용하여 폴더 생성 및 파일 업로드, 섬네일 옵션을 관리하는 방법에 대해 설명합니다.
 
-## 폴더 및 이미지 파일 관리
+<a id="manage-folders-and-image-files"></a>
+## 폴더 및 이미지 파일 관리 { #manage-folders-and-image-files }
 
 메뉴의 **파일 보기** 화면에서 폴더와 원본 이미지 파일, 생성된 섬네일 이미지 파일을 관리할 수 있습니다.
 
 ![image_01_20220929](https://static.toastoven.net/prod_img/image_01_20220929.png)
 
-### 툴바 아이콘 설명
+<a id="toolbar-icon-description"></a>
+### 툴바 아이콘 설명 { #toolbar-icon-description }
 
 ![image_02_20220929](https://static.toastoven.net/prod_img/image_02_20220929.png)
 
-### 폴더 생성
+<a id="create-a-folder"></a>
+### 폴더 생성 { #create-a-folder }
 
 ![image_03_20220929](https://static.toastoven.net/prod_img/image_03_20220929.png)
 
@@ -23,7 +29,8 @@
    - 폴더의 이름 수정 기능은 제공하지 않습니다.
    - 이름 수정이 필요할 경우 폴더를 삭제하고 다시 생성해야 합니다.
 
-### 이미지 파일 업로드
+<a id="upload-image-files"></a>
+### 이미지 파일 업로드 { #upload-image-files }
 
 ![image_04_20220929](https://static.toastoven.net/prod_img/image_04_20220929.png)
 
@@ -38,7 +45,8 @@
 
    - 정상적으로 업로드가 완료되면, 화면이 갱신되어 파일 목록을 확인할 수 있습니다.
 
-### 다운로드
+<a id="download"></a>
+### 다운로드 { #download }
 
 ![image_05_20220929](https://static.toastoven.net/prod_img/image_05_20220929.png)
 
@@ -48,7 +56,8 @@
 
    - 한 번에 최대 10,000개의 이미지만 다운로드가 가능하며, 폴더 내 저장된 이미지를 다운로드할 경우에도 동일하게 10,000개의 이미지만 다운로드가 가능합니다.
 
-### 파일/폴더 삭제
+<a id="delete-files-or-a-folder"></a>
+### 파일/폴더 삭제 { #delete-files-or-a-folder }
 
 ![image_06_20220929](https://static.toastoven.net/prod_img/image_06_20220929.png)
 
@@ -58,7 +67,8 @@
 
    - 폴더를 선택한 경우에는 해당 폴더 내 파일도 모두 삭제됩니다.
 
-### 속성 보기
+<a id="view-properties"></a>
+### 속성 보기 { #view-properties }
 
 ![image_07_20231031](https://static.toastoven.net/prod_img/image_07_20231031.png)
 
@@ -66,7 +76,8 @@
 
 - 이미지 파일을 선택한 경우에는 이미지의 가로 세로 길이, 다운로드 URL과 메타정보를 확인할 수 있습니다.
 
-### 조회 및 목록 보기
+<a id="query-and-view-the-list"></a>
+### 조회 및 목록 보기 { #query-and-view-the-list }
 
 ![image_08_20220929](https://static.toastoven.net/prod_img/image_08_20220929.png)
 
@@ -81,7 +92,8 @@
       - 입력 예: sample
       - 결과 예: sample.gif, sample_2.gif, sample 3.gif, 샘플_sample_100x100.png
 
-### 전체 파일 삭제
+<a id="delete-all-files"></a>
+### 전체 파일 삭제 { #delete-all-files }
 
 ![image_09_20220929](https://static.toastoven.net/prod_img/image_09_20220929.png)
 
@@ -92,7 +104,8 @@
 
 2. **확인** 버튼을 클릭합니다.
 
-## 섬네일 옵션 관리
+<a id="manage-thumbnail-options"></a>
+## 섬네일 옵션 관리 { #manage-thumbnail-options }
 
 ![image_10_20220929](https://static.toastoven.net/prod_img/image_10_20220929.png)
 
@@ -100,7 +113,8 @@
 
 여러 가지 옵션을 조합하여 만들 수 있습니다.
 
-### 섬네일 생성
+<a id="create-thumbnails"></a>
+### 섬네일 생성 { #create-thumbnails }
 
 ![image_11_20220929](https://static.toastoven.net/prod_img/image_11_20220929.png)
 
@@ -143,7 +157,8 @@
 
 시나리오 설정 완료 후 **저장** 버튼을 클릭합니다.
 
-### 섬네일 수정
+<a id="edit-thumbnails"></a>
+### 섬네일 수정 { #edit-thumbnails }
 
 ![image_13_20220929](https://static.toastoven.net/prod_img/image_13_20220929.png)
 
@@ -154,7 +169,8 @@
    - 옵션을 수정하더라도 수정하기 전의 설정으로 생성된 섬네일은 수정되지 않습니다.
    - 대화 상자에서 '오퍼레이션 이미지 삭제' 체크박스를 체크하면, 수정 전의 설정으로 생성된 섬네일을 일괄 삭제할 수 있습니다.
 
-### 섬네일 삭제
+<a id="delete-thumbnails"></a>
+### 섬네일 삭제 { #delete-thumbnails }
 
 ![image_14_20220929](https://static.toastoven.net/prod_img/image_14_20220929.png)
 
@@ -163,7 +179,8 @@
 - 삭제 버튼으로 선택한 섬네일 옵션을 삭제할 수 있습니다.
 - 대화 상자에서 '오퍼레이션 이미지 삭제' 체크박스를 체크하면, 해당 오퍼레이션으로 생성된 섬네일을 일괄 삭제할 수 있습니다.
 
-### 사용자 설정
+<a id="user-settings"></a>
+### 사용자 설정 { #user-settings }
 
 ![image_15_20220929](https://static.toastoven.net/prod_img/image_15_20220929.png)
 

@@ -1,30 +1,45 @@
-## Content Delivery > Image Manager > 릴리스 노트
+<!-- pre-align:aligned sig=65087328ad5c -->
 
-### 2026. 03. 24.
+<a id="content-delivery-image-manager-release-notes"></a>
+## Content Delivery > Image Manager > 릴리스 노트 { #content-delivery-image-manager-release-notes }
+
+<a id="march-24-2026"></a>
+### 2026. 03. 24. { #march-24-2026 }
+<a id="march-24-2026-feature-updates"></a>
 #### 기능 개선/변경
 * [API] token 인증이 적용된 API v3.0 추가
+<a id="march-24-2026-bug-fixes"></a>
 #### 버그 수정
 * [API] 파일명에 &가 들어가는 경우 썸네일 생성 실패 오류 수정
 
-### 2023. 11. 01.
+<a id="november-1-2023"></a>
+### 2023. 11. 01. { #november-1-2023 }
+<a id="november-1-2023-feature-updates"></a>
 #### 기능 개선/변경
 * [API] 폴더 속성 조회 신규 API 추가
 * [Console] 폴더 속성 정보에서 폴더 크기, 파일 수 정보 제거
+<a id="november-1-2023-bug-fixes"></a>
 #### 버그 수정
 * [API] webp 파일에 대한 오퍼레이션 오류 수정
 * [Console] 허용된 확장자임에도 파일이 업로드되지 않는 오류 수정
 
-### 2023. 09. 14.
+<a id="september-14-2023"></a>
+### 2023. 09. 14. { #september-14-2023 }
+<a id="september-14-2023-feature-updates"></a>
 #### 기능 개선/변경
 * [API] 지원 파일 포맷 추가(.webp)
 * [API] 업로드 이미지 크기 제한 변경(12MB > 50MB로 증가)
 * [API] 응답에 원본 url 경로 추가
 
-### 2022. 09. 27.
+<a id="september-27-2022"></a>
+### 2022. 09. 27. { #september-27-2022 }
+<a id="september-27-2022-service-name-change"></a>
 #### 서비스명 변경
 * 서비스명을 Image Manager로 변경
 
-### 2018. 02. 22.
+<a id="february-22-2018"></a>
+### 2018. 02. 22. { #february-22-2018 }
+<a id="february-22-2018-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] '섬네일 옵션 관리' 화면의 접근 방식을 '폴더 및 이미지 파일 관리' 화면 내부의 버튼에서 상위 메뉴로 변경
 	* 폴더 및 이미지 파일 관리는 'File View' 메뉴에서 접근 가능
@@ -33,29 +48,37 @@
 	* 기존 화면에서 폴더 경로 이동 기능, 폴더 트리 기능 추가
 	* 폴더 목록에 이전 폴더로 이동 기능 추가
 
+<a id="february-22-2018-bug-fixes"></a>
 #### 버그 수정
 * [API] operation-exec API 요청 시 파일(또는 오퍼레이션)이 잘못된 경우 작업과 무관하게 성공 응답 처리하는 버그 수정
 	* 작업 내용(queues)이 없는 경우 실패 응답으로 처리
 	* 작업 내용(queues) 개수가 요청 수와 맞지 않은 경우 부분 성공 응답으로 처리
 
-### 2017. 12. 21.
+<a id="december-21-2017"></a>
+### 2017. 12. 21. { #december-21-2017 }
+<a id="december-21-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [API] 처리 결과 Callback에 덮어쓰기 되었는지 여부 표시 추가
 	* [다중 이미지 업로드](./api-guide/#_16)
 	* [이미지 오퍼레이션 실행](./api-guide/#_37)
 * [Console] 화면 UI 디자인 변경
 
-### 2017. 11. 30.
+<a id="november-30-2017"></a>
+### 2017. 11. 30. { #november-30-2017 }
+<a id="november-30-2017-more-features"></a>
 #### 기능 추가
 * [API] 처리 결과 Callback 기능 추가
 	* API 호출 시 callbackUrl을 파라미터로 전달하면 처리 결과를 callbackUrl로 전송해주는 기능 추가
 		* [다중 이미지 업로드](./api-guide/#_16)
 		* [이미지 오퍼레이션 실행](./api-guide/#_37)
 
+<a id="november-30-2017-bug-fixes"></a>
 #### 버그 수정
  * [Console] 압축 파일이 포함된 폴더 업로드 시 하위 폴더 경로가 잘못 생성되던 버그 수정
 
-### 2017. 11. 23.
+<a id="november-23-2017"></a>
+### 2017. 11. 23. { #november-23-2017 }
+<a id="november-23-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [이미지 처리 기능 추가](./api-guide/#_25)
 	* 이미지 분할 기능에 격자 분할 추가
@@ -73,11 +96,15 @@
 	* 상품 이용 종료 시 남아있는 파일이 있는 경우 이용 종료 불가능
 	* 전체 파일 삭제 기능이 추가되었고, 전체 삭제 후 상품 이용 종료 가능
 
-### 2017. 05. 25.
+<a id="may-25-2017"></a>
+### 2017. 05. 25. { #may-25-2017 }
+<a id="may-25-2017-bug-fixes"></a>
 #### 버그 수정
 * Image Meta 정보 파싱 에러 수정
 
-### 2017. 04. 20.
+<a id="april-20-2017"></a>
+### 2017. 04. 20. { #april-20-2017 }
+<a id="april-20-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [섬네일 크기 조절 방식 추가](./console-guide/#_10)
     * Option의 가로 세로에 맞게 Size 변경
@@ -87,10 +114,13 @@
     * Slice Crop 추가
 * [Console] [Gif 애니메이션 유지 옵션 글로벌 설정으로 변경](./console-guide/#_10)
 
+<a id="april-20-2017-bug-fixes"></a>
 #### 버그 수정
 * 물결(~) 문자가 포함된 폴더가 생성되지 않도록 수정
 
-### 2017. 03. 23.
+<a id="march-23-2017"></a>
+### 2017. 03. 23. { #march-23-2017 }
+<a id="march-23-2017-bug-fixes"></a>
 #### 버그 수정
 * [Console] macOS에서 업로드한 한글 파일 검색 불가 이슈 수정
 

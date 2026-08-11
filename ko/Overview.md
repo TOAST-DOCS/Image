@@ -1,21 +1,27 @@
-## Content Delivery > Image Manager > 개요
+<!-- pre-align:aligned sig=10ed01c5e832 -->
+
+<a id="content-delivery-image-manager-overview"></a>
+## Content Delivery > Image Manager > 개요 { #content-delivery-image-manager-overview }
 
 고객의 서비스에서 사용하는 이미지의 저장, 편집 그리고 전송 기능까지 한번에 제공하는 서비스입니다.
 
-## 주요 기능
+<a id="main-features"></a>
+## 주요 기능 { #main-features }
 
 - 애플리케이션에서 사용 가능한 RESTful API를 제공합니다.
 - 다중 폴더 생성, 다중 이미지 업로드, 다중 파일 다운로드, 다중 파일 삭제 기능을 제공합니다.
 - 원본 이미지 파일 URL에 파라미터만 추가하면 실시간으로 원하는 사이즈의 섬네일을 생성할 수 있습니다.
 - 이미지 파일 URL은 HTTP와 HTTPS 프로토콜을 사용할 수 있습니다.
 
-## 지원 가능한 이미지 
+<a id="supported-images"></a>
+## 지원 가능한 이미지 { #supported-images }
 
 - 지원하는 이미지 파일 형식은 다음과 같습니다.
 	- bmp, tif, tiff, miff, gif, jpe, jpeg, jpg, jps, pjpeg, jng, mng, png, webp
 - 이미지 파일은 최대 10MB(API 사용시 50MB)까지 업로드할 수 있습니다.
 
-## 서비스 용어
+<a id="glossary"></a>
+## 서비스 용어 { #glossary }
 
 | 용어 | 설명 |
 |---|---|
