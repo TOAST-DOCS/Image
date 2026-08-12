@@ -44,7 +44,7 @@
 * [Console] Changed the method of accessing 'Thumbnail Option Management' from a button within the 'Folder and Image File Management' to a top menu  
 	* Folder and image file management is accessible from 'File View'
 	* Thumbnail option management is accessible from 'Operation Setting'
-* [Console] [Folder and Image File Management](./console-guide/#manage-folders-and-image-files)
+* [Console] [Folder and Image File Management](./console-guide/#_1)
 	* Added the feature of moving folder paths on the existing page, as well as the folder tree feature 
 	* Added the feature of moving to a previous folder on the folder list
 
@@ -59,8 +59,8 @@
 <a id="december-21-2017-feature-updates"></a>
 #### Feature Updates
 * [API] Added the display of whether the files have been overwritten to the processing result callback 
-	* [Uploading Multiple Images](./api-guide/#upload-multiple-files)
-	* [Executing Image Operations](./api-guide/#execute-image-operations-asynchronous)
+	* [Uploading Multiple Images](./api-guide/#_16)
+	* [Executing Image Operations](./api-guide/#_37)
 * [Console] Changed UI design of the page 
 
 <a id="november-30-2017"></a>
@@ -69,8 +69,8 @@
 #### More Features 
 * [API] Added the processing result callback feature
 	* Added the feature of sending processing result to callbackUrl when callbackUrl is sent as a parameter for an API call
-		* [Uploading Multiple Images](./api-guide/#upload-multiple-files)
-		* [Executing Image Operations](./api-guide/#execute-image-operations-asynchronous)
+		* [Uploading Multiple Images](./api-guide/#_16)
+		* [Executing Image Operations](./api-guide/#_37)
 
 <a id="november-30-2017-bug-fixes"></a>
 #### Bug Fixes 
@@ -80,19 +80,19 @@
 ### November 23, 2017 { #november-23-2017 }
 <a id="november-23-2017-feature-updates"></a>
 #### Feature Updates 
-* [Added Features of Image Processing](./api-guide/#image-operation-api)
+* [Added Features of Image Processing](./api-guide/#_25)
 	* Added grid-split as part of splitting images
 	* Added the watermark feature
-* [Console] [Added Image Processing Option](./console-guide/#manage-thumbnail-options)
+* [Console] [Added Image Processing Option](./console-guide/#_10)
 	* The option was available only for resizing but now is configurable as a common option  
 		* Quality, image format, callback URL for result, whether to maintain meta data, whether to rotate based on orientation data  
 	* Changed the default value for the option of maintaining GIF animation: Changed from Not Maintain to Maintain  
-* [Console] [Grouping by image processing features](./console-guide/#manage-thumbnail-options)
+* [Console] [Grouping by image processing features](./console-guide/#_10)
 	* Group 1 for Basic Processing: Resize, Gray, or Rectangle Crop
 	* Group 2 for Split Processing: Slice Crop (width, height, grid)
 	* Group 3 for Composite Processing : Circle Crop
 	* Images are to be processed in the group sequence 
-* [Console] [Changed Process of Product Closure](./console-guide/#delete-all-files)
+* [Console] [Changed Process of Product Closure](./console-guide/#_8)
 	* Unable to close when there is a file left when stopping the use of the service
 	* Added the feature to delete the whole files, and service use can be stopped after all files are deleted  
 
@@ -106,13 +106,13 @@
 ### April 20, 2017 { #april-20-2017 }
 <a id="april-20-2017-feature-updates"></a>
 #### Feature Updates 
-* [Added Thumbnail Resizing Method](./console-guide/#manage-thumbnail-options) 
+* [Added Thumbnail Resizing Method](./console-guide/#_10) 
     * Changed size to meet the width and height of option 
     * Changed standard size of the width of option
     * Changed standard size of the height of option 
-* [Added the method of cropping](./console-guide/#manage-thumbnail-options)
+* [Added the method of cropping](./console-guide/#_10)
     * Added Slice Crop 
-* [Console] [Changed the option of maintaining Gif animation as global configuration](./console-guide/#manage-thumbnail-options)
+* [Console] [Changed the option of maintaining Gif animation as global configuration](./console-guide/#_10)
 
 <a id="april-20-2017-bug-fixes"></a>
 #### Bug Fixes 
