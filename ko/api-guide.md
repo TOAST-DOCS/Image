@@ -413,7 +413,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/i
 | operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트 (콤마로 구분됨) |
 
 - 이미지 오퍼레이션 ID를 추가해서 요청할 경우, 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성할 수 있습니다.
-- [이미지 오퍼레이션 API](./api-guide/#api_4)를 참고합니다.
+- [이미지 오퍼레이션 API](./api-guide/#image-operation-api)를 참고합니다.
 
 <a id="upload-a-file-response"></a>
 #### 응답
@@ -756,7 +756,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 - 여러 개의 폴더와 파일을 삭제합니다.
 - 실제 데이터 삭제는 비동기로 처리됩니다.
-- 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
+- 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#query-task)를 통해 확인할 수 있습니다.
 
 <a id="multiple-deletion-asynchronous-request"></a>
 #### 요청
@@ -770,7 +770,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 [요청 본문]
 
 - /myfolder/banner/left.png, /myfolder/banner/right.png의 파일을 삭제합니다.
-- 파일 및 폴더 ID는 [폴더 내 파일 목록 조회](./api-guide/#_7)를 통해서 알 수 있습니다.
+- 파일 및 폴더 ID는 [폴더 내 파일 목록 조회](./api-guide/#list-files-in-a-folder)를 통해서 알 수 있습니다.
 - {appKey}와 {token}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
@@ -1263,7 +1263,7 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey
 ### 이미지 오퍼레이션 실행 (비동기) { #execute-image-operations-asynchronous }
 
 - 지정된 파일에 오퍼레이션을 실행하여 섬네일을 생성합니다.
-- 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
+- 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#query-task)를 통해 확인할 수 있습니다.
 
 <a id="execute-image-operations-asynchronous-request"></a>
 #### 요청
