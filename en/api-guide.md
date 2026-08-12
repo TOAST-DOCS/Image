@@ -757,7 +757,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 - Deletes multiple folders and files.
 - Actual deletion of data is processed asynchronously.
-- The processing result can be checked through the [Query a Task](./api-guide/#query-a-task) API with the "queueId" received as a response.
+- The processing result can be checked through the [Query a Task](./api-guide/#query-task) API with the "queueId" received as a response.
 
 <a id="multiple-deletion-asynchronous-request"></a>
 #### Request
@@ -1264,7 +1264,7 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey
 ### Execute Image Operations (asynchronous) { #execute-image-operations-asynchronous }
 
 - Executes operations on the specified file to generate thumbnails.
-- The processing result can be checked through the [Query a Task](./api-guide/#query-a-task) API with the "queueId" received as a response.
+- The processing result can be checked through the [Query a Task](./api-guide/#query-task) API with the "queueId" received as a response.
 
 <a id="execute-image-operations-asynchronous-request"></a>
 #### Request
