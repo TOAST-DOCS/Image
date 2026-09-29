@@ -414,7 +414,7 @@ curl -X PUT 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey}/i
 | operationIds | String List |  | Optional |  | List of image operation IDs (separated by commas) |
 
 - If you request by adding an image operation ID, you can create an operation file with the options you want when uploading.
-- Refer to [Image Operation API](./api-guide/#image-operation-api).
+- Refer to [Image Operation API](#image-operation-api).
 
 <a id="upload-a-file-response"></a>
 #### Response
@@ -757,7 +757,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 - Deletes multiple folders and files.
 - Actual deletion of data is processed asynchronously.
-- The processing result can be checked through the [Query a Task](./api-guide/#query-task) API with the "queueId" received as a response.
+- The processing result can be checked through the [Query a Task](#query-task) API with the "queueId" received as a response.
 
 <a id="multiple-deletion-asynchronous-request"></a>
 #### Request
@@ -771,7 +771,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 [Request Body]
 
 - Deletes the files /myfolder/banner/left.png and /myfolder/banner/right.png.
-- The file and folder ID can be found through [List Files in a Folder](./api-guide/#list-files-in-a-folder).
+- The file and folder ID can be found through [List Files in a Folder](#list-files-in-a-folder).
 - You must change {appKey} and {token} to the values found in the console.
 
 ```
@@ -1264,7 +1264,7 @@ curl -X DELETE 'https://api-image.nhncloudservice.com/image/v3.0/appkeys/{appKey
 ### Execute Image Operations (asynchronous) { #execute-image-operations-asynchronous }
 
 - Executes operations on the specified file to generate thumbnails.
-- The processing result can be checked through the [Query a Task](./api-guide/#query-task) API with the "queueId" received as a response.
+- The processing result can be checked through the [Query a Task](#query-task) API with the "queueId" received as a response.
 
 <a id="execute-image-operations-asynchronous-request"></a>
 #### Request
