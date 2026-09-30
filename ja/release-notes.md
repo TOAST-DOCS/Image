@@ -1,125 +1,14 @@
-<!-- pre-align:aligned sig=65087328ad5c -->
+<!-- pre-align:aligned sig=46797c9b0dcc -->
 
 <a id="content-delivery-image-manager-release-notes"></a>
 ## Content Delivery > Image Manager > リリースノート { #content-delivery-image-manager-release-notes }
 
-<a id="march-24-2026"></a>
-### 2026. 03. 24. { #march-24-2026 }
-<a id="march-24-2026-feature-updates"></a>
-#### 機能改善/変更
-* [API] token認証が適用されたAPI v3.0を追加
-<a id="march-24-2026-bug-fixes"></a>
-#### バグ修正
-* [API] ファイル名に&が含まれる場合、サムネイル作成が失敗するエラーを修正
+{% include-markdown './release-notes/2026.md' %}
 
-<a id="november-1-2023"></a>
-### 2023. 11. 01. { #november-1-2023 }
-<a id="november-1-2023-feature-updates"></a>
-#### 機能改善/変更
-* [API]フォルダ属性照会新規APIを追加
-* [Console]フォルダ属性情報からフォルダサイズ、ファイル数情報を削除
-<a id="november-1-2023-bug-fixes"></a>
-#### バグ修正
-* [API] webpファイルに対するオペレーションエラーを修正
-* [Console] 許可された拡張子であるにもかかわらず、ファイルがアップロードされないエラーを修正
+{% include-markdown './release-notes/2023.md' %}
 
-<a id="september-14-2023"></a>
-### 2023. 09. 14. { #september-14-2023 }
-<a id="september-14-2023-feature-updates"></a>
-#### 機能改善/変更
-* [API]サポートファイルフォーマットを追加(.webp)
-* [API]アップロードイメージサイズ制限を変更(12MB → 50MBに増加)
-* [API]レスポンスに原本urlパスを追加
+{% include-markdown './release-notes/2022.md' %}
 
-<a id="september-27-2022"></a>
-### 2022. 09. 27. { #september-27-2022 }
-<a id="september-27-2022-service-name-change"></a>
-#### サービス名変更
-* サービス名をImage Managerに変更
+{% include-markdown './release-notes/2018.md' %}
 
-<a id="february-22-2018"></a>
-### 2018. 02. 22. { #february-22-2018 }
-<a id="february-22-2018-feature-updates"></a>
-#### 機能改善/変更
-* [Console] 「サムネイルオプション管理」画面のアクセス方式を「フォルダおよびイメージファイル管理」画面内のボタンから上位メニューに変更
-	* フォルダおよびイメージファイルの管理は「File View」メニューからアクセス可能
-	* サムネイルオプション管理は「Operation Setting」メニューからアクセス可能
-* [Console] [フォルダおよびイメージファイル管理](./console-guide/#manage-folders-and-image-files)
-	* 既存画面でフォルダパス移動機能、フォルダツリー機能を追加
-	* フォルダリストに以前のフォルダに移動する機能を追加
-
-<a id="february-22-2018-bug-fixes"></a>
-#### バグ修正
-* [API] operation-exec APIリクエスト時、ファイル(またはオペレーション)が無効な場合、作業と関係なく成功レスポンスを返すバグを修正
-	* 作業内容(queues)がない場合、失敗レスポンスを返す
-	* 作業内容(queues)数がリクエスト数と合わない場合、部分成功レスポンスを返す
-
-<a id="december-21-2017"></a>
-### 2017. 12. 21. { #december-21-2017 }
-<a id="december-21-2017-feature-updates"></a>
-#### 機能改善/変更
-* [API]処理結果Callbackに上書きされているかどうかの表示を追加
-	* [多重イメージアップロード](./api-guide/#upload-multiple-files)
-	* [イメージオペレーション実行](./api-guide/#execute-image-operations-asynchronous)
-* [Console]画面UIデザインを変更
-
-<a id="november-30-2017"></a>
-### 2017. 11. 30. { #november-30-2017 }
-<a id="november-30-2017-more-features"></a>
-#### 機能追加
-* [API]処理結果Callback機能を追加
-	* API呼び出し時、callbackUrlをパラメータに渡すと、処理結果をcallbackUrlに転送する機能を追加
-		* [多重イメージアップロード](./api-guide/#upload-multiple-files)
-		* [イメージオペレーション実行](./api-guide/#execute-image-operations-asynchronous)
-
-<a id="november-30-2017-bug-fixes"></a>
-#### バグ修正
- * [Console]圧縮ファイルが含まれるフォルダをアップロードした時、サブフォルダが作成されるバグを修正
-
-<a id="november-23-2017"></a>
-### 2017. 11. 23. { #november-23-2017 }
-<a id="november-23-2017-feature-updates"></a>
-#### 機能改善/変更
-* [イメージ処理機能を追加](./api-guide/#image-operation-api)
-	* イメージ分割機能に格子分割を追加
-	* 透かし機能を追加
-* [Console] [イメージ処理オプションを追加](./console-guide/#manage-thumbnail-options)
-	* 既存Resizeでのみ設定可能だったオプションを共通オプションに設定できるように修正
-		* 品質、イメージフォーマット、結果コールバックURL、メタ情報を維持するかどうか、Orientation情報を基準に回転するかどうか
-	* GIFアニメーション維持オプションのdefault値を変更：維持しないから維持するに変更
-* [Console] [イメージ処理機能に応じてGrouping](./console-guide/#manage-thumbnail-options)
-	* Group 1基本処理：Resize、Gray、Rectangle Crop
-	* Group 2分割処理：Slice Crop (横、縦、格子)
-	* Group 3合成処理：Circle Crop
-	* イメージ処理はGroup順序通りに処理される
-* [Console] [サービス終了プロセス変更](./console-guide/#delete-all-files)
-	* サービスの利用終了時、残っているファイルがある場合は利用終了不可
-	* 全てのファイルの削除機能が追加され、全て削除した後にサービスの利用を終了可能
-
-<a id="may-25-2017"></a>
-### 2017. 05. 25. { #may-25-2017 }
-<a id="may-25-2017-bug-fixes"></a>
-#### バグ修正
-* Image Meta情報解析エラーを修正
-
-<a id="april-20-2017"></a>
-### 2017. 04. 20. { #april-20-2017 }
-<a id="april-20-2017-feature-updates"></a>
-#### 機能改善/変更
-* [サムネイルサイズ調節方式を追加](./console-guide/#manage-thumbnail-options)
-    * Optionの縦横に合わせてSizeを変更
-    * Optionの横基準でSize変更
-    * Optionの縦基準でSize変更
-* [クロップ方式を追加](./console-guide/#manage-thumbnail-options)
-    * Slice Cropを追加
-* [Console] [Gifアニメーション維持オプションをグローバル設定に変更](./console-guide/#manage-thumbnail-options)
-
-<a id="april-20-2017-bug-fixes"></a>
-#### バグ修正
-* チルダ(~)が含まれるフォルダが作成されないように修正
-
-<a id="march-23-2017"></a>
-### 2017. 03. 23. { #march-23-2017 }
-<a id="march-23-2017-bug-fixes"></a>
-#### バグ修正
-* [Console] macOSで、アップロードしたハングルファイルが検索できないイシューを修正
+{% include-markdown './release-notes/2017.md' %}
